@@ -1,0 +1,308 @@
+
+body {
+    background: #ffffff;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+
+/*---------------------------------------
+    Typography
+-----------------------------------------*/
+
+h1,h2,h3,h4,h5,h6 {
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 62px;
+    padding-bottom: 14px;
+    margin-bottom: 0px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 46px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+h4 {
+  color: #666;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+p {
+    color: #777;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 0.2px;
+}
+
+strong {
+  font-weight: 400;
+}
+
+.btn-success:focus {
+  background-color: #000;
+  border-color: transparent;
+}
+
+
+/*---------------------------------------
+    General styles
+-----------------------------------------*/
+
+html{
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #4d638c;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  text-decoration: none !important;
+}
+a:hover, a:active, a:focus {
+  color: #4d638c;
+  outline: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*custom general css*/
+#customhr{
+  padding-top: 3%;
+  margin-top: 3%;
+}
+
+/* Place your custom styles in the respective sections. feel free to edit/remove the following comments */
+
+
+/*---------------------------------------
+    Main Navigation
+-----------------------------------------*/
+.navbar{
+  background: #ffffff;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-color: white;
+
+}
+i.fa-magnet{
+  color: black;
+  font-size:220%;
+  text-align: right;
+}
+.navbar-default .navbar-nav>.active>a,
+ .navbar-default .navbar-nav>.active>a:focus,
+  .navbar-default .navbar-nav>.active>a:hover {
+    background-color: white;
+}
+
+
+/*---------------------------------------
+    Home section
+-----------------------------------------*/
+#home{
+  text-align: center;
+  padding-bottom: 3%;
+}
+#home hr{
+  width: 8%;
+}
+
+/*---------------------------------------
+   Portfolio section
+-----------------------------------------*/
+.portfolio-thumb {
+  position: relative;
+  padding: 3%;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #2d2d2d;
+}
+
+.portfolio-thumb:hover .portfolio-overlay {
+  opacity: 0.8;
+}
+
+.portfolio-item {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+
+
+/*---------------------------------------
+   Single Project section
+-----------------------------------------*/
+#single-project {
+  text-align: center;
+}
+
+#single-project .col-md-12{
+  padding: 42px 0px 20px 0px;
+}
+#single-project .col-md-6,
+#single-project .col-md-4 {
+  padding-left: 0;
+  padding-bottom: 2%;
+  padding-right: 0;
+}
+#single-project a {
+  color: #555;
+  font-weight: bold;
+}
+
+/*---------------------------------------
+   About section
+-----------------------------------------*/
+div.section-title{
+  text-align: center;
+}
+
+#about #customhr{
+  width: 8%;
+}
+#about ul{
+  padding-left: 6%;
+}
+
+
+/*---------------------------------------
+   Contact section
+-----------------------------------------*/
+#contact .form-control {
+  margin-bottom: 3.5%;
+}
+#contact .section-title{
+  padding-bottom: 6%;
+}
+
+
+/*---------------------------------------
+   Blog section
+-----------------------------------------*/
+#blog .section-title{
+  padding-bottom: 8%;
+}
+#blog .blog-post-title a{
+  color: #555;
+}
+.img-circle{
+  display: inline-block;
+  width: 42px;
+  margin-right: 4px;
+}
+.blog-post-format{
+  padding-bottom: 2%;
+}
+.blog-post-format span{
+  padding-right: 1%;
+}
+.blog-post-des p{
+  padding-bottom: 2%;
+}
+.blog-post-des a{
+  border-radius: 50px;
+}
+.blog-post-title{
+  padding-top: 2%;
+}
+
+/*---------------------------------------
+   Blog Single Post section
+-----------------------------------------*/
+.blog-post-des blockquote{
+  margin-left: 2%;
+}
+.blog-comment h3{
+  padding-bottom: 1.5%;
+}
+.media-body h3{
+  padding-right: 2%;
+  display: inline-block;
+}
+#blog-single-post .blog-comment-form textarea,input{
+  margin-bottom: 1%;
+}
+.col-md-3  .form-control{
+  border-radius: 50px;
+  margin-top: 2%;
+  background-color: black;
+  color: white;
+}
+/*---------------------------------------
+   Footer section
+-----------------------------------------*/
+footer{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+div.clearfix{
+  padding-bottom: 3%;
+}
+div.clearfix hr{
+  border-color: white;
+}
+footer a{
+  color: #555;
+}
+
+/*---------------------------------------
+   Social icon
+-----------------------------------------*/
+ul.social-icon {
+	align-items: center;
+  text-align: center;
+}
+.social-icon li {
+  padding-right: 1%;
+  display: inline;
+}
+.social-icon li a {
+  color: #555;
+}
+
+
+/*---------------------------------------
+   Mobile Responsive
+-----------------------------------------*/
