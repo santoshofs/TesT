@@ -7,12 +7,12 @@ table {
 }
 
 td, th {
-  border: 1px solid #383535;
+  border: 1px solid #999999;
   padding: 10px 20px;
 }
 
 th {
-  background-color: rgb(230, 235, 235);
+  background-color: #e6ebeb;
 }
 
 td {
@@ -24,6 +24,6 @@ td {
   background-color: black;
   color: white;
   height: 5%;
-  width: 15%;
-  margin-left: 50%;
+  width: 10%;
+  margin-left: 45%;
 }
