@@ -15,28 +15,27 @@ $(document).ready(function() {
       },
       {
         "data": "city"
-      }      
+      }
     ]
   });
 });
 
 $(document).ready(function() {
-    var table = $('#customtable').DataTable();
+  var table = $('#customtable').DataTable();
 
-    $('#customtable tbody').on( 'click', 'tr', function () {
-        if ( $(this).hasClass('selected') ) {
-            $(this).removeClass('selected');
-        }
-        else {
-            table.$('tr.selected').removeClass('selected');
-            $(this).addClass('selected');
-        }
-    } );
+  $('#customtable tbody').on('click', 'tr', function() {
+    if ($(this).hasClass('selected')) {
+      $(this).removeClass('selected');
+    } else {
+      table.$('tr.selected').removeClass('selected');
+      $(this).addClass('selected');
+    }
+  });
 
-    $('#removerow').click( function () {
-        table.row('.selected').remove().draw( false );
-    } );
-} );
+  $('#removerow').click(function() {
+    table.row('.selected').remove().draw(false);
+  });
+});
 
 // $(document).ready(function() {
 // 	$('#customtable tbody').on( 'click', 'button', function () {
