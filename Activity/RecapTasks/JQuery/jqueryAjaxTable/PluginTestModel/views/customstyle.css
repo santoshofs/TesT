@@ -1,6 +1,5 @@
 table {
   border-collapse: collapse;
-  /*border: 2px solid rgb(200, 200, 200);*/
   letter-spacing: 1px;
   font-size: 100%;
   padding-top: 2%;
@@ -8,7 +7,7 @@ table {
 }
 
 td, th {
-  border: 1px solid rgb(190, 190, 190);
+  border: 1px solid #383535;
   padding: 10px 20px;
 }
 
@@ -18,4 +17,13 @@ th {
 
 td {
   text-align: center;
+}
+
+#removerow {
+  border-radius: 50px;
+  background-color: black;
+  color: white;
+  height: 5%;
+  width: 15%;
+  margin-left: 50%;
 }
