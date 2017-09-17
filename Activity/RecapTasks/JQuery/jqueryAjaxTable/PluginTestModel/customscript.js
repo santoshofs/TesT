@@ -15,16 +15,49 @@ $(document).ready(function() {
       },
       {
         "data": "city"
-      },
-      {
-        "targets": -1,
-        "data": null,
-        "defaultContent": "<button>Remove</button>"
-      }
+      }      
     ]
   });
-	$('#customtable tbody').on( 'click', 'button', function () {
-			 //var data = table.row( $(this).parents('tr') ).data();
-			 alert( "Do you want to Remove the contact.? " );
-	 } );
 });
+
+$(document).ready(function() {
+    var table = $('#customtable').DataTable();
+
+    $('#customtable tbody').on( 'click', 'tr', function () {
+        if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+            table.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    } );
+
+    $('#removerow').click( function () {
+        table.row('.selected').remove().draw( false );
+    } );
+} );
+
+// $(document).ready(function() {
+// 	$('#customtable tbody').on( 'click', 'button', function () {
+// 			 //var data = table.row( $(this).parents('tr') ).data();
+// 			 //alert( "Do you want to Remove the contact.? " );
+// 			 var table = $('#customtable').DataTable();
+// 			 $('#customtable tbody').on( 'click', 'tr', function () {
+// 					 if ( $(this).hasClass('selected') ) {
+// 							 $(this).removeClass('selected');
+// 					 }
+// 					 else {
+// 							 table.$('tr.selected').removeClass('selected');
+// 							 $(this).addClass('selected');
+// 					 }
+//
+// 			if (confirm("Do you want to close the directory?")) {
+//       this.click;
+//       table.row('.selected').remove().draw( false );
+//     } else {
+//       alert("Delete Operation Canceled..!");
+//     }
+// 			 } );
+// 		} );
+// } );
