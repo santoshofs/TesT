@@ -1,24 +1,22 @@
-//To parse and get JSON data
+//loadjson Data on table
 $(document).ready(function() {
-  $("#deletelane").hide();
-  $("#customtable").hide();
-  $("#loadjson").click(function() {
-    $("#customtable").show();
-    $.get("https://api.myjson.com/bins/f6839", {
-      format: "json"
-    }, function(data) {
-      $.each(data, function(index, val) {
-        $("#customtable").append("<tr><td>" + val.id + "</td><td>" + val.name + "</td><td>" + val.country + "</td><td>" + val.city + "</td><td><button onClick=remove(val)>Remove</button></td></tr>");
-      })
-    });
-    $("#loadjson").hide();
-    $("#deletelane").show();
+  $("#customtable").show();
+  $.get("https://api.myjson.com/bins/f6839", {
+    format: "json"
+  }, function(data) {
+    $.each(data, function(index, val) {
+      $("#customtable").append("<tr><td>" + val.id + "</td><td>" + val.name + "</td><td>" + val.country + "</td><td>" + val.city + "</td><td><button onClick=remove()>Remove</button></td></tr>");
+    })
   });
+  //$("#deletelane").show();
 });
 
 //Remove Row function
 $(document).ready(function() {
-
+  $('#customtable tbody').on( 'click', 'button', function () {
+			 //var data = table.row( $(this).parents('tr') ).data();
+			 alert( "Do you want to Remove the contact.? " );
+	 } );
 });
 
 //search bar
@@ -88,3 +86,22 @@ $(document).ready(function() {
     });
   });
 });
+
+
+// //To parse and get JSON data on click
+// $(document).ready(function() {
+//   $("#deletelane").hide();
+//   $("#customtable").hide();
+//   $("#loadjson").click(function() {
+//     $("#customtable").show();
+//     $.get("https://api.myjson.com/bins/f6839", {
+//       format: "json"
+//     }, function(data) {
+//       $.each(data, function(index, val) {
+//         $("#customtable").append("<tr><td>" + val.id + "</td><td>" + val.name + "</td><td>" + val.country + "</td><td>" + val.city + "</td><td><button onClick=remove()>Remove</button></td></tr>");
+//       })
+//     });
+//     $("#loadjson").hide();
+//     $("#deletelane").show();
+//   });
+// });
