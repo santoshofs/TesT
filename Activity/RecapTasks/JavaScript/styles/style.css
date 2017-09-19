@@ -1,0 +1,22 @@
+/*.navbar {
+  background-color: black;
+}*/
+
+td {
+  text-align: center;
+}
+.table>thead:first-child>tr:first-child>th {
+    text-align: center;
+}
+
+.tableheader{
+  padding-bottom: 2%;
+}
+.tabletitle {
+  display: inline-block;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.tablelogo{
+  width: 8%;
+}

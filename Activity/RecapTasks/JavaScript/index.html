@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/customscript.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body onload="companyTable()">
+
+  <!-- Header section -->
+
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="active"><a href="index.html">Companies</a></li>
+          <li><a href="employees.html">Employees</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- companies section -->
+  <div id="companydiv">
+    <div class="tableheader">
+      <img class="tablelogo" src="styles/companylogo.png">
+      <h2 class="tabletitle">Company</h2>
+      <button class="btn btn-primary" onclick="onClick()">Add Company</button>
+    </div>
+
+    <table class="table table-hover" id="companytable">
+      <thead>
+        <tr>
+          <th width="10%">RANK</th>
+          <th width="15%">NAME</th>
+          <th width="15%">LOCATION</th>
+          <th width="15%">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
