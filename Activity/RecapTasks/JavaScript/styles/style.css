@@ -1,7 +1,7 @@
-/*.navbar {
-  background-color: black;
-}*/
-
+#navhead {
+    background-color: #000000;
+    border-color: #000;
+}
 td {
   text-align: center;
 }
