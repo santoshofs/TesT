@@ -88,7 +88,7 @@ function companyTable() {
       row.insertCell().innerHTML = (x.data.com[i].cname);
       row.insertCell().innerHTML = (x.data.com[i].loc);
       var b = (x.data.com[i].sno);
-      row.insertCell().innerHTML = ("<button type='button' class='btn btn-sm btn-success' ><span class='glyphicon glyphicon-pencil'></span></button> <button type='button'  class='btn btn-sm btn-danger' onClick='removecompanyfunc(\"" + (x.data.com[i].sno) + "\");'><span class='glyphicon glyphicon-trash'></span></button>");
+      row.insertCell().innerHTML = ("<button type='button' class='btn btn-sm btn-success' ><span class='glyphicon glyphicon-pencil'></span> Edit</button> <button type='button'  class='btn btn-sm btn-danger' onClick='removecompanyfunc(\"" + (x.data.com[i].sno) + "\");'><span class='glyphicon glyphicon-trash'></span> Delete</button>");
     }
   }
 }
@@ -109,20 +109,29 @@ function empTable() {
       row.insertCell().innerHTML = (x.data.emp[i].id);
       row.insertCell().innerHTML = (x.data.emp[i].name);
       row.insertCell().innerHTML = (x.data.emp[i].type);
-      row.insertCell().innerHTML = ("<button type='button' class='btn btn-sm btn-success'><span class='glyphicon glyphicon-pencil'></span>Edit</button> <button type='button' class='btn btn-sm btn-danger'><span class='glyphicon glyphicon-trash'></span> Delete</button>");
+      row.insertCell().innerHTML = ("<button type='button' class='btn btn-sm btn-success' ><span class='glyphicon glyphicon-pencil'></span> Edit</button> <button type='button'  class='btn btn-sm btn-danger' onClick='removeempfunc(\"" + (x.data.emp[i].sno) + "\");'><span class='glyphicon glyphicon-trash'></span> Delete</button>");
     }
   }
 }
 
 function removecompanyfunc(c) {
-
   console.log("button" + c);
   var s = c++;
   ++s;
   console.log(s);
   document.getElementById("companytable").deleteRow(s);
-  //delete x.data.items[s];
+  delete x.data.com[s];
   local.set('value', x.data.com);
+}
+
+function removeempfunc(c) {
+  console.log("button" + c);
+  var s = c++;
+  ++s;
+  console.log(s);
+  document.getElementById("employeetable").deleteRow(s);
+  delete x.data.emp[s];
+  local.set('value', x.data.emp);
 }
 
 //local storage
