@@ -29,9 +29,16 @@
     <div class="tableheader">
       <img class="tablelogo" src="styles/employelogo.png">
       <h2 class="tabletitle">Employee</h2>
-      <button class="btn btn-primary" onclick="onClick()">Add employee</button>
+      <button class="btn btn-primary" onclick="addnewemp()">Add employee</button>
     </div>
-
+    <div id="newempinput">
+      <form method="post">
+        <input type="number" id="empidform" class="form-control" placeholder="ID">
+        <input type="text" id="empnameform" class="form-control" placeholder="Name">
+        <input type="text" id="empposform" class="form-control" placeholder="Position">
+        <input type="submit" id="empsybmitform" class="form-control" onclick="hideaddemp()" value="ADD COMPANY">
+      </form>
+    </div>
     <table class="table table-hover" id="commontablehead">
       <thead>
         <tr>

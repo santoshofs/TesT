@@ -13,7 +13,12 @@
 .tableheader {
   padding-bottom: 2%;
 }
+#empidform {
+width: 20%;
+}
+.form-control {
 
+}
 .tabletitle {
   display: inline-block;
   padding-left: 2%;
