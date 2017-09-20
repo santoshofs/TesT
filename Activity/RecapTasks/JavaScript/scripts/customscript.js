@@ -88,16 +88,16 @@ function companyTable() {
       row.insertCell().innerHTML = (x.data.com[i].cname);
       row.insertCell().innerHTML = (x.data.com[i].loc);
       var b = (x.data.com[i].sno);
-      row.insertCell().innerHTML = ("<button type='button' class='btn btn-sm btn-success' ><span class='glyphicon glyphicon-pencil'></span> Edit</button> <button type='button'  class='btn btn-sm btn-danger' onClick='removecompanyfunc(\"" + (x.data.com[i].sno) + "\");'><span class='glyphicon glyphicon-trash'></span> Delete</button>");
+      row.insertCell().innerHTML = ("<button type='button' class='btn btn-sm btn-success' ><span class='glyphicon glyphicon-pencil'></span> Edit</button> <button type='button'  class='btn btn-sm btn-danger' onClick='removecompanyfunc(\"" + (x.data.com[i]) + "\");'><span class='glyphicon glyphicon-trash'></span> Delete</button>");
     }
   }
 }
 //Employee Table
 function empTable() {
   for (var i = 0; i < (x.data.emp).length; i++) {
-    sno[i] = x.data.emp[i].sno;
-    cname[i] = x.data.emp[i].cname;
-    location[i] = x.data.emp[i].loc;
+    id[i] = x.data.emp[i].id;
+    name[i] = x.data.emp[i].name;
+    type[i] = x.data.emp[i].type;
   }
   for (var i = 0; i < 6; i++) {
     console.log(x.data.emp[i].name);
@@ -109,7 +109,8 @@ function empTable() {
       row.insertCell().innerHTML = (x.data.emp[i].id);
       row.insertCell().innerHTML = (x.data.emp[i].name);
       row.insertCell().innerHTML = (x.data.emp[i].type);
-      row.insertCell().innerHTML = ("<button type='button' class='btn btn-sm btn-success' ><span class='glyphicon glyphicon-pencil'></span> Edit</button> <button type='button'  class='btn btn-sm btn-danger' onClick='removeempfunc(\"" + (x.data.emp[i].sno) + "\");'><span class='glyphicon glyphicon-trash'></span> Delete</button>");
+
+      row.insertCell().innerHTML = ("<button type='button' class='btn btn-sm btn-success' ><span class='glyphicon glyphicon-pencil'></span> Edit</button> <button type='button'  class='btn btn-sm btn-danger' onClick='removeempfunc(\"" + (x.data.emp[i]) + "\");'><span class='glyphicon glyphicon-trash'></span> Delete</button>");
     }
   }
 }
@@ -128,6 +129,7 @@ function removeempfunc(c) {
   console.log("button" + c);
   var s = c++;
   ++s;
+
   console.log(s);
   document.getElementById("employeetable").deleteRow(s);
   delete x.data.emp[s];
