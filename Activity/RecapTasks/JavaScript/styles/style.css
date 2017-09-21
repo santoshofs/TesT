@@ -15,14 +15,20 @@
   padding-bottom: 2%;
 }
 
-#empidform, #empnameform, #empposform, #empsybmitform {
+#empidform, #empnameform, #empposform,#comidform, #comnameform, #composform, #empsybmitform,#comsybmitform {
   width: 24%;
   margin-right: 8px;
   margin-bottom: 2%;
   text-align: center;
+  border-radius: 5px;
 }
-
-#newempinput {
+#empsybmitform,#comsybmitform{
+  color: white;
+  background-color: #5cb85c;
+  border-radius: 10px;
+  border-color: black;
+}
+#newempinput, #newcominput {
   padding-left: 10px;
 }
 

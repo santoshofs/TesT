@@ -72,6 +72,7 @@ cname = [];
 loc = [];
 //Company Table
 function companyTable() {
+  document.getElementById("newcominput").style.display = "none";
   for (var i = 0; i < (x.data.com).length; i++) {
     sno[i] = x.data.com[i].sno;
     cname[i] = x.data.com[i].cname;
@@ -151,7 +152,24 @@ function addnewemp() {
   // local.set('value', x.data.items);
 
 }
+function addnewcom() {
+  document.getElementById("newcominput").style.display = "block";
+  // var row = document.getElementById("employeetable").insertRow();
+  // row.insertCell().innerHTML = ("7");
+  // row.insertCell().innerHTML = ("Tushar");
+  // row.insertCell().innerHTML = ("Comedy");
+  // x.data.items.push({
+  //   "id": "7",
+  //   "name": "Douglas Adams",
+  //   "type": "comedy"
+  // });
+  // local.set('value', x.data.items);
+
+}
 function hideaddemp() {
+  document.getElementsById("newempinput").style.display="none";
+}
+function hideaddcom() {
   document.getElementsById("newempinput").style.display="none";
 }
 //local storage

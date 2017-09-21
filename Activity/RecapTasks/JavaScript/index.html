@@ -30,17 +30,22 @@
     <div class="tableheader">
       <img class="tablelogo" src="styles/companylogo.png">
       <h2 class="tabletitle">Company</h2>
-      <button class="btn btn-primary" onclick="onClick()">Add Company</button>
+      <button class="btn btn-primary" onclick="addnewcom()">Add Company</button>
     </div>
-    <div id="newcompinput">
-
+    <div id="newcominput">
+      <form method="post">
+        <input type="number" id="comidform"  placeholder="Id" required>
+        <input type="text" id="comnameform"  placeholder="Name" required>
+        <input type="text" id="composform"  placeholder="Location" required>
+        <input type="submit" id="comsybmitform" onclick="hideaddcom()" value="Add Company">
+      </form>
     </div>
     <table class="table table-hover" id="commontablehead">
       <thead>
         <tr>
           <th width="4%">ID</th>
           <th width="15%">NAME</th>
-          <th width="15%">POSITION</th>
+          <th width="15%">LOCATION</th>
           <th width="15%">ACTION</th>
         </tr>
       </thead>
