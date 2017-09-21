@@ -111,7 +111,6 @@ function empTable() {
       row.insertCell().innerHTML = (x.data.emp[i].id);
       row.insertCell().innerHTML = (x.data.emp[i].name);
       row.insertCell().innerHTML = (x.data.emp[i].type);
-
       row.insertCell().innerHTML = ("<button type='button' class='btn btn-sm btn-success' ><span class='glyphicon glyphicon-pencil'></span> Edit</button> <button type='button'  class='btn btn-sm btn-danger' onClick='removeempfunc(\"" + (x.data.emp[i]) + "\");'><span class='glyphicon glyphicon-trash'></span> Delete</button>");
     }
   }
@@ -167,8 +166,18 @@ function addnewcom() {
 
 }
 function hideaddemp() {
+  // newempaddrow();
+  // var nempid = document.getElementById("empidform").value;
+  // console.log(nempid);
+  // var newrow = x.data.emp.length;
+  // console.log(newrow);
   document.getElementsById("newempinput").style.display="none";
+
 }
+// function newempaddrow(){
+//   var newrow = document.getElementById("employeetable").insertRow();
+//   console.log(newrow);
+// }
 function hideaddcom() {
   document.getElementsById("newempinput").style.display="none";
 }
