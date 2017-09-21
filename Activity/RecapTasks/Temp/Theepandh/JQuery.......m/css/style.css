@@ -1,0 +1,27 @@
+#data-table{
+	border:1px solid black;
+	background:#d9ffbc;
+	border-radius:10px;
+	border-collapse: collapse;
+}
+#data-table td{
+	border:1px solid black;
+	
+}
+.edit-btn{
+	border-radius: 15px;
+	background: #3de1ff;
+	color: white;
+	border:1px solid #00b7d8;
+	padding: 5px;
+}
+.del-btn{
+	border-radius: 15px;
+	background: #ff4e42;
+	color: white;
+	border:1px solid #e80e00;
+	padding: 5px;
+}
+#search-option{
+	padding: 20px 0;
+}

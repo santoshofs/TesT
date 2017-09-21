@@ -1,0 +1,39 @@
+
+<!-- <h2>this is employee page</h2> -->
+
+<html>
+<head>
+<style>
+table,tr,th,td{
+border:1px solid black;
+}
+
+
+</style>
+</head>
+<body>
+
+ <div ng-app="myApp2" ng-controller="employeeController">
+       
+       
+        <table>
+            <tr>
+                <th>age</th>
+                <th>name</th>
+                <th>place</th>
+				
+            </tr>
+            
+                <tr ng-repeat="y in empdetails">
+                    <td>{{y.age}}</td>
+                    <td>{{y.name}}</td>
+                    <td>{{y.place}}</td>
+					<td ><button ng-click="employeeEdit()">edit</button></td>
+					<td><button ng-click="employeeDelete()">delete</button></td>
+                </tr>
+            
+        </table>
+    </div>
+	<script src="script2.js"></script>
+</body>
+</html>

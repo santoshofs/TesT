@@ -1,0 +1,62 @@
+[
+	{
+		"id":1,
+		"name":"Madhan",
+		"dept":"Engineering",
+		"mail":"madhan@ofs.com"
+	},
+	{
+		"id":2,
+		"name":"Joy",
+		"dept":"Engineering",
+		"mail":"joye@ofs.com"
+	},
+	{
+		"id":3,
+		"name":"Amirtha",
+		"dept":"Human Resource",
+		"mail":"amirtha@ofs.com"
+	},
+	{
+		"id":4,
+		"name":"Leonard",
+		"dept":"Research",
+		"mail":"leonard@ofs.com"
+	},
+	{
+		"id":5,
+		"name":"Sheldon",
+		"dept":"Research",
+		"mail":"sheldon@ofs.com"
+	},
+	{
+		"id":6,
+		"name":"Kamal",
+		"dept":"Engineering",
+		"mail":"kamal@ofs.com"
+	},
+	{
+		"id":7,
+		"name":"Einstien",
+		"dept":"Research",
+		"mail":"einstien@ofs.com"
+	},
+	{
+		"id":8,
+		"name":"Dravid",
+		"dept":"Human Resource",
+		"mail":"dravid@ofs.com"
+	},
+	{
+		"id":9,
+		"name":"Penny",
+		"dept":"Human Resource",
+		"mail":"penny@ofs.com"
+	},
+	{
+		"id":10,
+		"name":"Bruce Wayne",
+		"dept":"Research",
+		"mail":"bruce.w@ofs.com"
+	}
+]

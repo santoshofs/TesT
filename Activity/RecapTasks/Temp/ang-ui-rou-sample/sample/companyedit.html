@@ -1,0 +1,50 @@
+<!-- <style> -->
+<!-- #comp_edittable table,tr,td{ -->
+<!-- border:white; -->
+<!-- } -->
+
+<!-- </style> -->
+<div   style="margin-left:200px" ng-controller='companyController'>
+</br>
+<style>
+#comp_edittable table{
+border:black;
+}
+#comp_edittable tr{
+border:white;
+}
+#comp_edittable td{
+border:white;
+}
+
+
+	</style>
+	<table style="border:2px solid black">
+	
+	
+	
+		<tr>
+			<td>ID</td>
+			<td><input type="text" value="{{$scope.id}}"/></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" value="{{$scope.name}}"/></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>City</td>
+			<td><input type="text" value="{{$scope.city}}"/></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><button> Save </button></td>
+			<td><button> Cancel </button></td>
+			<td><button> Reset </button></td>
+		</tr>
+	</table>
+</div>
+	
+	
+	

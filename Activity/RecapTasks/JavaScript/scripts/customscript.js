@@ -167,11 +167,11 @@ function addnewcom() {
 }
 function hideaddemp() {
   // newempaddrow();
-  // var nempid = document.getElementById("empidform").value;
-  // console.log(nempid);
-  // var newrow = x.data.emp.length;
-  // console.log(newrow);
-  document.getElementsById("newempinput").style.display="none";
+  var nempid = document.getElementById("empidform").value;
+  console.log(nempid);
+  var newrow = x.data.emp.length;
+  console.log(newrow);
+
 
 }
 // function newempaddrow(){

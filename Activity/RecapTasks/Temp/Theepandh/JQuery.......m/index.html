@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JSON Data Fetching</title>
+		<link rel="stylesheet" href="lib/jquery-ui-1.12.1/jquery-ui.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="lib/jquery-ui-1.12.1/external/jquery/jquery.js" ></script>
+		<script src="lib/jquery-ui-1.12.1/jquery-ui.min.js" ></script>
+		<script src="js/script.js" ></script>
+	</head>
+	<body>
+		<div id="search-option">
+			<input type="text" id="search"><button id="srch-btn" onclick="searchTiggered()">Search</button>
+		</div>
+		<div>
+			<label>Advanced Search</label><br>
+			type: <input type="radio" name="type" value="1" id="eq">equales<input type="radio" name="type" value="0" checked id="cnt">contains<br>
+			fields: <input type="radio" checked name="field" value="1">all<input type="radio" name="field" id="id" value="2">ID<input type="radio" name="field" id="tit" value="3">title<input type="radio" name="field" id="cont" value="4">content
+		</div>
+		<table id="data-table" style="width:100%;">
+			
+		</table>
+		<div id="button-holder">
+		
+		</div>
+	</body>
+</html>

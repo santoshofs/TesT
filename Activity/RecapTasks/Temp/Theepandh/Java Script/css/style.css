@@ -1,0 +1,67 @@
+body{
+	margin:0;
+}
+#fetch-buttons{
+	text-align: center;
+	padding: 15px;
+	background: #f5f9cc;
+	margin: 0;
+}
+#company-btn{
+	background: #5cf913;
+	color:white;
+	padding: 15px;
+	border:1px solid #4ffc00;
+	border-radius: 10px;
+}
+.addt-btn{
+	background: #5cf913;
+	margin:10px 0;
+	color:white;
+	padding: 10px;
+	border:1px solid #4ffc00;
+	border-radius: 10px;
+}
+#employee-btn{
+	background: #ff3f3f;
+	color: white;
+	padding: 15px;
+	border: 1px solid #ff0000;
+	border-radius: 10px;
+}
+.general-btn{
+	background: #fccc5d;
+	color: white;
+	padding: 8px 15px;
+	border: 1px solid #f4aa00;
+	border-radius: 10px;
+	margin: 0 10px;
+}
+#display-table{
+	background:#e0fff5;
+	width:100%;
+
+}
+#display-table .odd-row{
+	background: white;
+}
+#edit-panel{
+	border: 2px solid black;
+	padding: 15px;
+	display: none;
+	margin-top: 20px;
+}
+textarea{
+	width:100%;
+	border-radius:10px;
+}
+.act-btn{
+	margin: 2px;
+	color: white;
+	background: #aa89ff;
+	border:1px solid #4500f9;
+}
+.table-style{
+	margin: 20px;
+	box-sizing: border-box;	
+}
