@@ -139,7 +139,7 @@ function removecomany(rc) {
 
 function addnewcom() {
   document.getElementById("newcompanyeditor").style.display = "block";
-  var neweditclicks = '<button class="btn btn-sm btn-success" id="comsubmitform" onclick="savenewcom()">Submit</button> <button class="btn btn-sm btn-danger" id="comeditcancel" onclick="cancelnewempeditor()">Cancel</button>';
+  var neweditclicks = '<button class="btn btn-sm btn-success" id="comsubmitform" onclick="savenewcom()">Submit</button><button class="btn btn-sm btn-danger" id="comeditcancel" onclick="cancelnewempeditor()">Cancel</button>';
   document.getElementById("newcomeditorcommands").innerHTML = neweditclicks;
 }
 

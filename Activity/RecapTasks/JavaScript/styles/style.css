@@ -14,35 +14,6 @@
 .tableheader {
   padding-bottom: 2%;
 }
-
-#empidform, #empnameform, #empposform, #comidform, #comnameform, #composform, #empsybmitform, #comsybmitform, #comeditorcommands, #newcomidform, #newcomnameform, #newcomposform {
-  width: 24%;
-  /*margin-right: 8px;*/
-  margin-bottom: 2%;
-  text-align: center;
-  border-radius: 5px;
-  margin-top: 1%;
-  margin-left: 1%;
-}
-
-#newcomtitle {
-  color: #89d6e8;
-  padding-top: 1%;
-}
-
-#empsybmitform, #comsybmitform {
-  color: white;
-  background-color: #5cb85c;
-  border-radius: 10px;
-  border-color: black;
-}
-
-#newempinput, #newcominput {
-  padding-left: 10px;
-}
-
-.form-control {}
-
 .tabletitle {
   display: inline-block;
   padding-left: 2%;
@@ -52,34 +23,82 @@
 .tablelogo {
   width: 8%;
 }
-
-#commontablehead {
-  margin-bottom: 0;
-}
-
-p {
-  display: inline;
+/*#commontablehead, #employeetable {
   text-align: center;
-  padding-left: 5.6%;
-}
-
-#companyeditor, #newcompanyeditor {
-  margin-top: -1.2%;
-  background-color: black;
-  text-align: left;
-}
-
-#comidform #comnameform #composform #comeditorcommands #newcomidform #newcomnameform #newcomposform {
-  margin-top: 2%;
-}
-
-#commontablehead #employeetable td, tr, th {
-  text-align: center;
-  width: 15%;
+  width: 100%;
   background-color: black;
   color: white;
-}
-
+}*/
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
   width: 15%;
 }
+#commontablehead{
+  background-color: black;
+  color: white;
+  margin-bottom: -6px;
+}
+#companytable{
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+#comeditorcommands{
+  display: inline;
+}
+#companyeditor{
+  background-color: black;
+  width: 100%;
+      margin-top: -12px;
+}
+#comidform,#comnameform,#composform,#comeditorcommands{
+  margin: 1%;
+  width: 23%;
+  text-align: center;
+  border-radius: 6px;
+}
+/*#empidform, #empnameform, #empposform, #comidform, #comnameform, #composform, #empsybmitform, #comsybmitform, #comeditorcommands, #newcomidform, #newcomnameform, #newcomposform {
+  width: 24%;
+  margin-right: 8px;
+  margin-bottom: 2%;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 1%;
+  margin-left: 1%;
+}*/
+
+/*#newcomtitle {
+  color: #89d6e8;
+  padding-top: 1%;
+}*/
+/*
+#empsybmitform, #comsybmitform {
+  color: white;
+  background-color: #5cb85c;
+  border-radius: 10px;
+  border-color: black;
+}*/
+
+/*#newempinput, #newcominput {
+  padding-left: 10px;
+}*/
+
+
+
+/*#commontablehead {
+  margin-bottom: 0;
+}*/
+
+/*p {
+  display: inline;
+}
+
+#companyeditor, #newcompanyeditor {
+  width: 100%;
+  margin-top: 0%;
+  background-color: black;
+  text-align: left;
+}*/
+
+/*#comidform #comnameform #composform #comeditorcommands #newcomidform #newcomnameform #newcomposform {
+  margin-top: 2%;
+}*/
