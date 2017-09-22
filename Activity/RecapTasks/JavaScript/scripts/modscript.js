@@ -94,12 +94,22 @@ function feedemployeedata() {
 }
 
 function loadcompanytable() {
-   var companytable ='<tr></tr>';
-   for (var i = 0; i < companyjsondata.length; i++) {
-     companytable += "<tr><td>" + companyjsondata[i].sno + "</td><td>" + companyjsondata[i].cname + "</td><td>" + companyjsondata[i].loc + "</td><td><button type='button' class='btn btn-sm btn-success' onclick='editDataCompany(" + i + ")'><span class='glyphicon glyphicon-pencil'></span> Edit</button><button type='button'  class='btn btn-sm btn-danger' onclick='deleteCompanyRecord(" + i + ")'><span class='glyphicon glyphicon-trash'></span> Delete</button></td>";
+  document.getElementById("editcominput").style.display = "none";
+  var companytable = '<tr></tr>';
+  for (var i = 0; i < companyjsondata.length; i++) {
+    companytable += "<tr><td>" + companyjsondata[i].sno + "</td><td>" + companyjsondata[i].cname + "</td><td>" + companyjsondata[i].loc + "</td><td><button type='button' class='btn btn-sm btn-success' onclick='editcompanyrecord(" + i + ")'><span class='glyphicon glyphicon-pencil'></span> Edit</button><button type='button'  class='btn btn-sm btn-danger' onclick='deleteCompanyRecord(" + i + ")'><span class='glyphicon glyphicon-trash'></span> Delete</button></td>";
+  }
+  //  var newcomrecord = '<input type="button" value="create" onclick="createRecordCm()">';
+  var newcomrecord = document.getElementById('addnewcomrecord');
+  document.getElementById("companytable").innerHTML = companytable;
+  document.getElementById("newcominput").innerHTML = newcomrecord;
 }
-  //  var record = '<input type="button" value="create" onclick="createRecordCm()">';
-    var record = document.getElementById('addnewcomrecord');
-   document.getElementById("companytable").innerHTML = companytable;
-   document.getElementById("newcominput").innerHTML = record;
- }
+function editcompanyrecord(d){
+  document.getElementById("editcominput").style.display = "block";
+  // document.getElementById('text6').value =companyjsondata[d].cname;
+  // var companyeditarea = '<form><input id="text7" >' +  '</input><textarea id="text7">' + companyjsondata[d].cname + '</textarea><textarea id="text8">' + companyjsondata[d].loc + '</textarea><button onclick="updateEditCompany(' + d + ')">update</button><button  onClick="editDataCompany(' + d + ')">Reset</button><button  onClick="cancelCm()">Cancel</button></form>';
+  // document.getElementById("companyeditspace").innerHTML = companyeditarea;
+  document.getElementById('comidform').value =companyjsondata[d].sno;
+  document.getElementById('comnameform').value =companyjsondata[d].cname;
+  document.getElementById('composform').value =companyjsondata[d].loc;
+}
