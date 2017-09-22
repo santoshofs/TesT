@@ -4,22 +4,34 @@
      "Age": "21",
      "MobileNumber": "9765468421",
      "Email": "Shyam@gmail.com"
+<<<<<<< HEAD
    },
    {
+=======
+   }, {
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
      "EmployeeId": "1002",
      "EmployeeName": "Saravana",
      "Age": "22",
      "MobileNumber": "9765445621",
      "Email": "Saravana@gmail.com"
+<<<<<<< HEAD
    },
    {
+=======
+   }, {
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
      "EmployeeId": "1003",
      "EmployeeName": "Sundhar",
      "Age": "23",
      "MobileNumber": "9767858421",
      "Email": "Sundhar@gmail.com"
+<<<<<<< HEAD
    },
    {
+=======
+   }, {
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
      "EmployeeId": "1004",
      "EmployeeName": "Ramesh",
      "Age": "22",
@@ -32,22 +44,34 @@
      "Age": "21",
      "MobileNumber": "9765468421",
      "Email": "ShyamKumar@gmail.com"
+<<<<<<< HEAD
    },
    {
+=======
+   }, {
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
      "EmployeeId": "1006",
      "EmployeeName": "QuadSaravana",
      "Age": "02",
      "MobileNumber": "9428445621",
      "Email": "QuadSaravana@gmail.com"
+<<<<<<< HEAD
    },
    {
+=======
+   }, {
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
      "EmployeeId": "1007",
      "EmployeeName": "WelSundhar",
      "Age": "23",
      "MobileNumber": "9147858421",
      "Email": "welSundhar@gmail.com"
+<<<<<<< HEAD
    },
    {
+=======
+   }, {
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
      "EmployeeId": "1008",
      "EmployeeName": "LokRamesh",
      "Age": "22",
@@ -84,6 +108,10 @@
    }
  ];
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
  var company = [{
      "id": 1,
      "name": "Google",
@@ -111,8 +139,13 @@
    }
  ];
 
+<<<<<<< HEAD
  var employeedata = [];
  var companydata = [];
+=======
+ var jsonEmployeeData = [];
+ var jsonCompanyData = [];
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
 
  loadEmployeeData(a);
  //localStorage for employee
@@ -122,6 +155,7 @@
    getEmployeeData();
  }
 
+<<<<<<< HEAD
  //getting values
  function getEmployeeData() {
    var datavalue = localStorage.getItem('employeedata12');
@@ -131,11 +165,31 @@
 
  //localStorage for company
  function loadCompanyData(data1) {
+=======
+
+ //getting values
+ function getEmployeeData() {
+
+   var datavalue = localStorage.getItem('employeedata12');
+   jsonEmployeeData = JSON.parse(datavalue);
+ }
+
+
+
+
+
+
+ loadCompanyData(company);
+ //localStorage for company
+ function loadCompanyData(data1) {
+
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
    var value1 = JSON.stringify(data1);
    localStorage.setItem('companydata12', value1);
    getCompanyData();
  }
 
+<<<<<<< HEAD
  //getting values
  function getCompanyData() {
    var companyValue = localStorage.getItem("companydata12");
@@ -143,6 +197,22 @@
  }
 
  function Company_Details() {
+=======
+
+ //getting values
+ function getCompanyData() {
+
+   var companyValue = localStorage.getItem("companydata12");
+   jsonCompanyData = JSON.parse(companyValue);
+
+ }
+
+
+
+
+ function Company_Details() {
+
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
    var companytable =
      '<tr>' +
      '<th>CompanyId</th>' +
@@ -151,6 +221,7 @@
      '<th colspan="2">Action</th>' +
      '</tr>';
 
+<<<<<<< HEAD
    for (var i = 0; i < companydata.length; i++) {
      companytable += "<tr><td>" + companydata[i].id + "</td><td>" + companydata[i].name + "</td><td>" + companydata[i].type + "</td><td><button onclick='editDataCompany(" + i + ")'>Edit</button></td><td><button onclick='deleteCompanyRecord(" + i + ")'>Delete</button></td></tr>";
    }
@@ -160,6 +231,27 @@
  }
 
  function Employee_Details() {
+=======
+
+   for (var i = 0; i < jsonCompanyData.length; i++) {
+
+     companytable += "<tr><td>" + jsonCompanyData[i].id + "</td><td>" + jsonCompanyData[i].name + "</td><td>" + jsonCompanyData[i].type + "</td><td><button onclick='editDataCompany(" + i + ")'>Edit</button></td><td><button onclick='deleteCompanyRecord(" + i + ")'>Delete</button></td></tr>";
+
+   }
+
+   var record = '<input type="button" value="create" onclick="createRecordCm()">';
+
+   document.getElementById("employeeData").innerHTML = companytable;
+   document.getElementById("textarea1").innerHTML = record;
+
+ }
+
+
+
+
+ function Employee_Details() {
+
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
    var table =
      '<tr>' +
      '<th>EmployeeId</th>' +
@@ -170,6 +262,7 @@
      '<th colspan="2">Action</th>' +
      '</tr>';
 
+<<<<<<< HEAD
    for (var i = 0; i < employeedata.length; i++) {
      table += "<tr><td>" + employeedata[i].EmployeeId + "</td><td>" + employeedata[i].EmployeeName + "</td><td>" + employeedata[i].Age + "</td><td>" + employeedata[i].MobileNumber + "</td><td>" + employeedata[i].Email + "</td><td><button onclick='editDataEmployee(" + i + ")'>Edit</button></td><td><button onclick='deleteEmployeeRecord(" + i + ")'>Delete</button></td></tr>";
    }
@@ -185,6 +278,35 @@
 
  function editDataCompany(d) {
    var textarea2 = '<h3>after updating your values click update button.</h3><form><textarea id="text6">' + companydata[d].id + '</textarea><textarea id="text7">' + companydata[d].name + '</textarea><textarea id="text8">' + companydata[d].type + '</textarea><button onclick="updateEditCompany(' + d + ')">update</button><button  onClick="editDataCompany(' + d + ')">Reset</button><button  onClick="cancelCm()">Cancel</button></form>';
+=======
+
+   for (var i = 0; i < jsonEmployeeData.length; i++) {
+
+     table += "<tr><td>" + jsonEmployeeData[i].EmployeeId + "</td><td>" + jsonEmployeeData[i].EmployeeName + "</td><td>" + jsonEmployeeData[i].Age + "</td><td>" + jsonEmployeeData[i].MobileNumber + "</td><td>" + jsonEmployeeData[i].Email + "</td><td><button onclick='editDataEmployee(" + i + ")'>Edit</button></td><td><button onclick='deleteEmployeeRecord(" + i + ")'>Delete</button></td></tr>";
+
+   }
+
+   var record1 = '<input type="button" value="create" onclick="createRecordEm()">';
+
+   document.getElementById("employeeData").innerHTML = table;
+
+   document.getElementById("textarea1").innerHTML = record1;
+
+ }
+
+
+
+ function editDataEmployee(d) {
+   var textarea1 = '<h3>after updating your values click update button.</h3><form><textarea id="text1">' + jsonEmployeeData[d].EmployeeId + '</textarea><textarea id="text2">' + jsonEmployeeData[d].EmployeeName + '</textarea><textarea id="text3">' + jsonEmployeeData[d].Age + '</textarea><textarea id="text4">' + jsonEmployeeData[d].MobileNumber + '</textarea><textarea id="text5">' + jsonEmployeeData[d].Email + '</textarea><button onclick="updateEditEmployee(' + d + ')">update</button><button  onClick="editDataEmployee(' + d + ')">Reset</button><button  onClick="cancelEm()">Cancel</button></form>';
+   document.getElementById("textarea1").innerHTML = textarea1;
+ }
+
+
+
+
+ function editDataCompany(d) {
+   var textarea2 = '<h3>after updating your values click update button.</h3><form><textarea id="text6">' + jsonCompanyData[d].id + '</textarea><textarea id="text7">' + jsonCompanyData[d].name + '</textarea><textarea id="text8">' + jsonCompanyData[d].type + '</textarea><button onclick="updateEditCompany(' + d + ')">update</button><button  onClick="editDataCompany(' + d + ')">Reset</button><button  onClick="cancelCm()">Cancel</button></form>';
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
    document.getElementById("textarea1").innerHTML = textarea2;
  }
 
@@ -193,6 +315,10 @@
  	document.getElementById("textarea1").removeAttribute;
  } */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
  function cancelCm() {
    document.getElementById("textarea1").parentNode.removeChild(document.getElementById("textarea1"));
    return false;
@@ -204,6 +330,7 @@
  }
 
  function updateEditEmployee(m) {
+<<<<<<< HEAD
    employeedata[m].EmployeeId = document.getElementById("text1").value;
    employeedata[m].EmployeeName = document.getElementById("text2").value;
    employeedata[m].Age = document.getElementById("text3").value;
@@ -225,10 +352,47 @@
  function deleteCompanyRecord(k) {
    companydata.splice(k, 1);
    loadCompanyData(companydata);
+=======
+   jsonEmployeeData[m].EmployeeId = document.getElementById("text1").value;
+   jsonEmployeeData[m].EmployeeName = document.getElementById("text2").value;
+   jsonEmployeeData[m].Age = document.getElementById("text3").value;
+   jsonEmployeeData[m].MobileNumber = document.getElementById("text4").value;
+   jsonEmployeeData[m].Email = document.getElementById("text5").value;
+
+
+   loadEmployeeData(jsonEmployeeData);
+   Employee_Details();
+
+
+ }
+
+
+
+ function updateEditCompany(l) {
+   jsonCompanyData[l].id = document.getElementById("text6").value;
+   jsonCompanyData[l].name = document.getElementById("text7").value;
+   jsonCompanyData[l].type = document.getElementById("text8").value;
+
+   loadCompanyData(jsonCompanyData);
+
+   Company_Details();
+
+ }
+
+
+
+ function deleteCompanyRecord(k) {
+   jsonCompanyData.splice(k, 1);
+   loadCompanyData(jsonCompanyData);
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
    Company_Details();
    alert("data will be deleted");
  }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
  function createRecordCm() {
    var view = '<form id="viewform">' +
      'Company_ID:<input type="number" id="1" ><br><br>' +
@@ -248,12 +412,22 @@
      "type": type
    };
 
+<<<<<<< HEAD
    companydata.push(newData);
    loadCompanyData(companydata);
+=======
+   jsonCompanyData.push(newData);
+   loadCompanyData(jsonCompanyData);
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
    Company_Details();
    alert("new record added");
  }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
  function createRecordEm() {
    var view1 = '<form id="viewform">' +
      'EmployeeId:<input type="number" id="1" ><br><br>' +
@@ -265,6 +439,10 @@
    document.getElementById("textarea1").innerHTML = view1;
  }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
  function SaveEm() {
    var id = document.getElementById("1").value;
    var name = document.getElementById("2").value;
@@ -278,15 +456,35 @@
      "MobileNumber": mobileNumber,
      "Email": email
    };
+<<<<<<< HEAD
    employeedata.push(newData);
    loadEmployeeData(employeedata);
+=======
+
+   jsonEmployeeData.push(newData);
+   loadEmployeeData(jsonEmployeeData);
+
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
    Employee_Details();
    alert("new record added");
  }
 
+<<<<<<< HEAD
  function deleteEmployeeRecord(p) {
    employeedata.splice(p, 1);
    loadEmployeeData(employeedata);
    Employee_Details();
    alert(" row will be deleted");
+=======
+
+
+ function deleteEmployeeRecord(p)
+
+ {
+   jsonEmployeeData.splice(p, 1);
+   loadEmployeeData(jsonEmployeeData);
+   Employee_Details();
+   alert(" row will be deleted");
+
+>>>>>>> 1339d55a0de5ffb40121f70d625af83d2bde103a
  }

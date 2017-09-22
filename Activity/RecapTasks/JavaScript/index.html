@@ -4,13 +4,13 @@
 <head>
   <link rel="stylesheet" href="styles/bootstrap.min.css">
   <link rel="stylesheet" href="styles/style.css">
-  <script src="scripts/customscript.js"></script>
+  <script src="scripts/modscript.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body onload="companyTable()">
+<body onload="loadcompanytable()">
 
   <!-- Header section -->
 
@@ -30,16 +30,16 @@
     <div class="tableheader">
       <img class="tablelogo" src="styles/companylogo.png">
       <h2 class="tabletitle">Company</h2>
-      <button class="btn btn-primary" onclick="addnewcom()">Add Company</button>
+      <button class="btn btn-primary" id="addnewcomrecord" onclick="addnewcom()">Add Company</button>
     </div>
-    <div id="newcominput">
+    <!-- <div id="newcominput">
       <form method="post">
         <input type="number" id="comidform"  placeholder="Id" required>
         <input type="text" id="comnameform"  placeholder="Name" required>
         <input type="text" id="composform"  placeholder="Location" required>
         <input type="submit" id="comsybmitform" onclick="hideaddcom()" value="Add Company">
       </form>
-    </div>
+    </div> -->
     <table class="table table-hover" id="commontablehead">
       <thead>
         <tr>
@@ -51,12 +51,22 @@
       </thead>
     </table>
     <table class="table table-hover" id="companytable">
-      <tbody>
-        <tr>
 
-        </tr>
-      </tbody>
     </table>
+  </div>
+
+  <div id="companyeditor">
+    <input type="number" id="comidform" value="" required>
+    <input type="text" id="comnameform" value="" required>
+    <input type="text" id="composform" value="" required>
+    <p id="comeditorcommands"></p>
+  </div>
+  <div id="newcompanyeditor">
+    <h3 align="center" id="newcomtitle">New Company Details</h3>
+    <input type="number" id="newcomidform" placeholder="Id" required>
+    <input type="text" id="newcomnameform" placeholder="Name" required>
+    <input type="text" id="newcomposform" placeholder="Location" required>
+    <p id="newcomeditorcommands"></p>
   </div>
 </body>
 

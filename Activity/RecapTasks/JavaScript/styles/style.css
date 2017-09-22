@@ -15,19 +15,28 @@
   padding-bottom: 2%;
 }
 
-#empidform, #empnameform, #empposform,#comidform, #comnameform, #composform, #empsybmitform,#comsybmitform {
+#empidform, #empnameform, #empposform, #comidform, #comnameform, #composform, #empsybmitform, #comsybmitform, #comeditorcommands, #newcomidform, #newcomnameform, #newcomposform {
   width: 24%;
-  margin-right: 8px;
+  /*margin-right: 8px;*/
   margin-bottom: 2%;
   text-align: center;
   border-radius: 5px;
+  margin-top: 1%;
+  margin-left: 1%;
 }
-#empsybmitform,#comsybmitform{
+
+#newcomtitle {
+  color: #89d6e8;
+  padding-top: 1%;
+}
+
+#empsybmitform, #comsybmitform {
   color: white;
   background-color: #5cb85c;
   border-radius: 10px;
   border-color: black;
 }
+
 #newempinput, #newcominput {
   padding-left: 10px;
 }
@@ -46,6 +55,22 @@
 
 #commontablehead {
   margin-bottom: 0;
+}
+
+p {
+  display: inline;
+  text-align: center;
+  padding-left: 5.6%;
+}
+
+#companyeditor, #newcompanyeditor {
+  margin-top: -1.2%;
+  background-color: black;
+  text-align: left;
+}
+
+#comidform #comnameform #composform #comeditorcommands #newcomidform #newcomnameform #newcomposform {
+  margin-top: 2%;
 }
 
 #commontablehead #employeetable td, tr, th {
