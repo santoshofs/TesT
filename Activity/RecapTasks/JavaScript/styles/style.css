@@ -9,17 +9,20 @@
 .tableheader {
   padding-bottom: 2%;
 }
+
 .tabletitle {
   display: inline-block;
   padding-left: 2%;
   padding-right: 2%;
   color: #515256;
-    font-weight: bold;
-    font-size: -webkit-xxx-large;
+  font-weight: bold;
+  font-size: -webkit-xxx-large;
 }
+
 .btn-primary {
-    margin-top: -20px;
-  }
+  margin-top: -20px;
+}
+
 .tablelogo {
   width: 8%;
 }
@@ -27,33 +30,38 @@
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
   width: 15%;
 }
-#commontablehead,#empcommontablehead{
+
+#commontablehead, #empcommontablehead {
   background-color: black;
   color: white;
   margin-bottom: -6px;
 }
-#companytable,#employeetable{
+
+#companytable, #employeetable {
   text-align: center;
   background-color: black;
   color: white;
 }
-#comeditorcommands,#newcomeditorcommands,#newempeditorcommands{
+
+#comeditorcommands, #newcomeditorcommands, #empeditorcommands, #newempeditorcommands {
   display: inline;
-      margin-left: 8%;
+  margin-left: 8%;
 }
-#companyeditor,#newcompanyeditor,#employeeeditor,#newemployeeeditor{
+
+#companyeditor, #newcompanyeditor, #employeeeditor, #newemployeeeditor {
   background-color: black;
   width: 100%;
   margin-top: -8px;
-
 }
-#comidform,#comnameform,#composform,#newcomidform,#newcomnameform,#newcomposform,#empidform,#empnameform,#empposform,#newempidform,#newempnameform,#newempposform{
+
+#comidform, #comnameform, #composform, #newcomidform, #newcomnameform, #newcomposform, #empidform, #empnameform, #empposform, #newempidform, #newempnameform, #newempposform {
   margin: 1%;
   width: 23%;
   text-align: center;
   border-radius: 6px;
 }
-#newcomtitle,#comtitle,#newemptitle,#emptitle{
+
+#newcomtitle, #comtitle, #newemptitle, #emptitle {
   color: #14deb1;
-      padding-top: 7px;
+  padding-top: 7px;
 }
