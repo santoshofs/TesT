@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body onload="loadcompanytable()">
+<body onload="loadcompanytable()" id="body">
 
   <!-- Header section -->
 
@@ -32,14 +32,7 @@
       <h2 class="tabletitle">Company</h2>
       <button class="btn btn-primary" id="addnewcomrecord" onclick="addnewcom()">Add Company</button>
     </div>
-    <!-- <div id="newcominput">
-      <form method="post">
-        <input type="number" id="comidform"  placeholder="Id" required>
-        <input type="text" id="comnameform"  placeholder="Name" required>
-        <input type="text" id="composform"  placeholder="Location" required>
-        <input type="submit" id="comsybmitform" onclick="hideaddcom()" value="Add Company">
-      </form>
-    </div> -->
+
     <table class="table table-hover" id="commontablehead">
       <thead>
         <tr>
@@ -49,24 +42,23 @@
           <th width="15%">ACTION</th>
         </tr>
       </thead>
-    </table>
-    <table class="table table-hover" id="companytable">
-
-    </table>
+    </table>    
+    <table class="table table-hover" id="companytable"></table>
   </div>
 
   <div id="companyeditor">
+    <h3 align="center" id="comtitle">Company Editor</h3>
     <input type="number" id="comidform" value="" required>
     <input type="text" id="comnameform" value="" required>
     <input type="text" id="composform" value="" required>
-    <p id="comeditorcommands"></p>
+    <div id="comeditorcommands"></div>
   </div>
   <div id="newcompanyeditor">
     <h3 align="center" id="newcomtitle">New Company Details</h3>
     <input type="number" id="newcomidform" placeholder="Id" required>
     <input type="text" id="newcomnameform" placeholder="Name" required>
     <input type="text" id="newcomposform" placeholder="Location" required>
-    <p id="newcomeditorcommands"></p>
+    <div id="newcomeditorcommands"></div>
   </div>
 </body>
 

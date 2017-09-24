@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body onload="empTable()">
+<body onload="loademployeetable()" >
 
   <!-- Header section -->
 
@@ -18,46 +18,48 @@
     <div class="container">
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
-          <li><a href="index.html">Companies</a></li>
-          <li class="active"><a href="employees.html">Employees</a></li>
-        </ul>
+            <li><a href="index.html">Companies</a></li>
+            <li class="active"><a href="employees.html">Employees</a></li>
+          </ul>
       </div>
     </div>
   </div>
 
+  <!-- companies section -->
   <div id="employeediv">
     <div class="tableheader">
       <img class="tablelogo" src="styles/employelogo.png">
       <h2 class="tabletitle">Employee</h2>
-      <button class="btn btn-primary" onclick="addnewemp()">Add employee</button>
+      <button class="btn btn-primary" id="addnewemprecord" onclick="addnewemp()">Add Employee</button>
     </div>
-    <div id="newempinput">
-      <form method="post">
-        <input type="number" id="empidform"  placeholder="Id" required>
-        <input type="text" id="empnameform"  placeholder="Name" required>
-        <input type="text" id="empposform"  placeholder="Position" required>
-        <input type="button" id="empsybmitform" onclick="hideaddemp()" value="Add Employee">
-      </form>
-    </div>
-    <table class="table table-hover" id="commontablehead">
+
+    <table class="table table-hover" id="empcommontablehead">
       <thead>
         <tr>
           <th width="4%">ID</th>
           <th width="15%">NAME</th>
-          <th width="15%">POSITION</th>
+          <th width="15%">TYPE</th>
           <th width="15%">ACTION</th>
         </tr>
       </thead>
     </table>
-    <table class="table table-hover" id="employeetable">
-      <tbody>
-        <tr>
-
-        </tr>
-      </tbody>
-    </table>
+    <table class="table table-hover" id="employeetable"></table>
   </div>
 
+  <div id="employeeeditor">
+    <h3 align="center" id="emptitle">Employee Editor</h3>
+    <input type="number" id="empidform" value="" required>
+    <input type="text" id="empnameform" value="" required>
+    <input type="text" id="empposform" value="" required>
+    <div id="empeditorcommands"></div>
+  </div>
+  <div id="newemployeeeditor">
+    <h3 align="center" id="newemptitle">New Employee Details</h3>
+    <input type="number" id="newempidform" placeholder="Id" required>
+    <input type="text" id="newempnameform" placeholder="Name" required>
+    <input type="text" id="newempposform" placeholder="Type" required>
+    <div id="newempeditorcommands"></div>
+  </div>
 </body>
 
 </html>
