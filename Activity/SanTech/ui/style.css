@@ -1,0 +1,67 @@
+
+
+
+		form div{
+			display:block;
+		}
+body{
+  color:#000;
+}
+
+#Compform{
+  display: none;
+}
+
+#empform{
+  display: none;
+}
+
+
+#employee{
+  display: none;
+}
+
+
+#company{
+  display: none;
+}
+
+
+form input,select {
+  height: 60px;
+}
+
+.col-md-6, .col-md-3 {
+  padding-left: 0px;
+}
+
+.form-control {
+  border: 1px solid #f0f0f0;
+  box-shadow: none;
+  margin: 10px 0px;
+
+}
+.form-control:hover {
+  border-color: #000;
+}
+
+input[type="submit"] {
+  background: #333;
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: 400;
+  height: 35px;
+}
+ input[type="submit"]:hover {
+  background: #000;
+}
+#button {
+  background: #333;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 400;
+
+}
+ #button:hover {
+  background: #000;
+}

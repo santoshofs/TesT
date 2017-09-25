@@ -5,7 +5,7 @@ $(document).ready(function() {
     format: "json"
   }, function(data) {
     $.each(data, function(index, val) {
-      $("#customtable").append("<tr><td>" + val.id + "</td><td>" + val.name + "</td><td>" + val.country + "</td><td>" + val.city + "</td><td><button onClick=remove()>Remove</button></td></tr>");
+      $("#customtable").append("<tr><td>" + val.id + "</td><td>" + val.name + "</td><td>" + val.country + "</td><td>" + val.city + "</td><td><button onClick=edit()>Edit</button><button onClick=remove()>Remove</button></td></tr>");
     })
   });
   //$("#deletelane").show();
