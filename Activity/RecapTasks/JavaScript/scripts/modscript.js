@@ -110,7 +110,7 @@ function editcompanyrecord(ce) {
   document.getElementById('comidform').value = companyjsondata[ce].sno;
   document.getElementById('comnameform').value = companyjsondata[ce].cname;
   document.getElementById('composform').value = companyjsondata[ce].loc;
-  var editclicks = '<button type="submit" class="btn btn-sm btn-success" id="comsubmitform" onclick="updatecom(' + ce + ')">update</button> <button class="btn btn-sm btn-danger" id="comeditcancel" onclick="cancelempeditor()">Cancel</button>';
+  var editclicks = '<button type="submit" class="btn btn-sm btn-success" id="comsubmitform" onclick="updatecom(' + ce + ')">update</button> <button class="btn btn-sm btn-danger" id="comeditcancel" onclick="cancelcomeditor()">Cancel</button>';
   document.getElementById("comeditorcommands").innerHTML = editclicks;
 }
 
@@ -123,7 +123,7 @@ function updatecom(uc) {
   loadcompanytable();
 }
 
-function cancelempeditor() {
+function cancelcomeditor() {
   document.getElementById("companyeditor").style.display = "none";
 }
 
@@ -136,11 +136,11 @@ function removecomany(rc) {
 function addnewcom() {
   document.getElementById("newcompanyeditor").style.display = "block";
   document.getElementById("companyeditor").style.display = "none";
-  var neweditclicks = '<button class="btn btn-sm btn-success" id="comsubmitform" onclick="savenewcom()">Submit</button> <button class="btn btn-sm btn-danger" id="comeditcancel" onclick="cancelnewempeditor()">Cancel</button>';
+  var neweditclicks = '<button class="btn btn-sm btn-success" id="comsubmitform" onclick="savenewcom()">Submit</button> <button class="btn btn-sm btn-danger" id="comeditcancel" onclick="cancelnewcomeditor()">Cancel</button>';
   document.getElementById("newcomeditorcommands").innerHTML = neweditclicks;
 }
 
-function cancelnewempeditor() {
+function cancelnewcomeditor() {
   document.getElementById("newcompanyeditor").style.display = "none";
 }
 
