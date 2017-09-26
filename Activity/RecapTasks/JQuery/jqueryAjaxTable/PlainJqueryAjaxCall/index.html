@@ -11,10 +11,19 @@
 </head>
 
 <body>
-  <div>
+  <div id="searchnameblock">
     Search : <input id="myInput" onkeyup="searchintable()" placeholder="Search for names.." />
   </div>
-
+  <button id="Addnewcontact">Add contact</button>
+  <div id="newcontactblock">
+    <form>
+        <input type="number" id="newid" placeholder="Id">
+        <input type="text" id="newname" placeholder="Name">
+        <input type="text" id="newcountry" placeholder="Country">
+        <input type="text" id="newcity" placeholder="City">
+    	  <input type="button" id="newcontactsubmit" value="Submit">
+    </form>
+  </div>
   <br />
   <table id="customtable">
     <tr>
@@ -22,7 +31,7 @@
       <th width="30%" id="name"><strong>NAME</strong></th>
       <th width="30%" id="country"><strong>COUNTRY</strong></th>
       <th width="30%" id="city"><strong>CITY</strong></th>
-      <th id="action">ACTION</th>
+      <th id="actionhead" width="30%" id="action">ACTION</th>
     </tr>
   </table>
   <br />

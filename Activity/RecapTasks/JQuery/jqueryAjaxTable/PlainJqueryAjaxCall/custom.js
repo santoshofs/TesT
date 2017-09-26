@@ -1,11 +1,12 @@
 //loadjson Data on table
 $(document).ready(function() {
+  $("#newcontactblock").hide();
   $("#customtable").show();
   $.get("https://api.myjson.com/bins/f6839", {
     format: "json"
   }, function(data) {
     $.each(data, function(index, val) {
-      $("#customtable").append("<tr><td>" + val.id + "</td><td>" + val.name + "</td><td>" + val.country + "</td><td>" + val.city + "</td><td><button onClick=edit()>Edit</button><button onClick=remove()>Remove</button></td></tr>");
+      $("#customtable").append("<tr><td>" + val.id + "</td><td>" + val.name + "</td><td>" + val.country + "</td><td>" + val.city + "</td><td><button type='button' class='btn btn-sm btn-success' onclick='editcompanyrecord()'><span class='glyphicon glyphicon-pencil'></span> Edit</button> <button type='button'  class='btn btn-sm btn-danger' id='removecontact'><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
     })
   });
   //$("#deletelane").show();
@@ -13,10 +14,14 @@ $(document).ready(function() {
 
 //Remove Row function
 $(document).ready(function() {
-  $('#customtable tbody').on( 'click', 'button', function () {
-			 //var data = table.row( $(this).parents('tr') ).data();
-			 alert( "Do you want to Remove the contact.? " );
-	 } );
+  $('#customtable tbody').on( 'click', '#removecontact', function () {
+    if (confirm("Do you want to Remove the contact.?")) {
+      this.click;
+      $(this).parents("tr").remove();
+    } else {
+      alert("Remove Operation Canceled..!");
+    }
+	 });
 });
 
 //search bar
@@ -53,6 +58,28 @@ function searchintable() {
     }
   }
 }
+//hide show block
+$(document).ready(function(){
+    $("#Addnewcontact").click(function(){
+        $("#Addnewcontact").hide();
+        $("#newcontactblock").show();
+    });
+});
+//new contact
+$(document).ready(function(){
+        $("#newcontactsubmit").click(function(){
+            var newid,newname,newcountry,newcity = null;
+             newid = $("#newid").val();
+             newname = $("#newname").val();
+             newcountry = $("#newcountry").val();
+             newcity = $("#newcity").val();
+             newcontact = "<tr><td>" + newid + "</td><td>" + newname + "</td><td>" + newcountry + "</td><td>" + newcity + "</td><td><button type='button' class='btn btn-sm btn-success' onclick='editcompanyrecord()'><span class='glyphicon glyphicon-pencil'></span> Edit</button> <button type='button'  class='btn btn-sm btn-danger' id='removecontact'><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>";
+            $("#customtable tbody").append(newcontact);
+
+            $("#Addnewcontact").show();
+            $("#newcontactblock").hide();
+        });
+});
 //Delete Entire Table
 $(document).ready(function() {
   $('#deletetable').click(function() {
@@ -69,15 +96,10 @@ $(document).ready(function() {
 //sorting with table column
 $(document).ready(function() {
   $('th').each(function(col) {
-    $(this).hover(
-      function() {
-        $(this).addClass('focus');
-      },
-      function() {
-        $(this).removeClass('focus');
-      }
-    );
+
     $(this).click(function() {
+      if ($(this).index() == 4) {
+      return false;}
       if ($(this).is('.asc')) {
         $(this).removeClass('asc');
         $(this).addClass('desc selected');
