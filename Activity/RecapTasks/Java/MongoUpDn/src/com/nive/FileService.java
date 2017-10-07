@@ -64,7 +64,7 @@ public class FileService {
 		StringBuffer jsonRes = new StringBuffer();
 
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
-		DB mongoDB = mongoClient.getDB("javatpoint");
+		DB mongoDB = mongoClient.getDB("JavaTempDB");
 
 		// Let's store the standard data in regular collection
 		DBCollection collection = mongoDB.getCollection(colName);
@@ -99,10 +99,10 @@ public class FileService {
 		System.out.println("FileId is :" + fileId + " ***** File name is :" + fileInputDetails.getFileName());
 
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
-		DB mongoDB = mongoClient.getDB("javatpoint");
+		DB mongoDB = mongoClient.getDB("JavaTempDB");
 
 		// Let's store the standard data in regular collection
-		DBCollection collection = mongoDB.getCollection("employee");
+		DBCollection collection = mongoDB.getCollection("LocalCollection");
 
 		BasicDBObject query = new BasicDBObject();
 		query.put("_id", fileId);
@@ -118,7 +118,7 @@ public class FileService {
 			collection.insert(document);
 
 			// Now let's store the binary file data using mycollection GridFS
-			GridFS fileStore = new GridFS(mongoDB, "employee");
+			GridFS fileStore = new GridFS(mongoDB, "LocalCollection");
 			GridFSInputFile inputFile = fileStore.createFile(fileInputStream);
 			inputFile.setId(fileId);
 			inputFile.setFilename(fileInputDetails.getFileName());
@@ -145,10 +145,10 @@ public class FileService {
 	public Response downloadFilebyID(@PathParam("id") String id) throws IOException {
 
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
-		DB mongoDB = mongoClient.getDB("javatpoint");
+		DB mongoDB = mongoClient.getDB("JavaTempDB");
 
 		// Let's store the standard data in regular collection
-		DBCollection collection = mongoDB.getCollection("employee");
+		DBCollection collection = mongoDB.getCollection("LocalCollection");
 
 		logger.info("Inside downloadFilebyID...");
 		logger.info("ID: " + id);
@@ -168,7 +168,7 @@ public class FileService {
 
 			logger.info("filename: " + fields.get("filename" + ".mp4"));
 
-			GridFS fileStore = new GridFS(mongoDB, "employee");
+			GridFS fileStore = new GridFS(mongoDB, "LocalCollection");
 
 			GridFSDBFile gridFile = fileStore.findOne(query);
 
@@ -192,187 +192,153 @@ public class FileService {
 		return response;
 	}
 
-	// @GET
-	// @Produces("video/mp4")
-	// @Path("/streamVideo/{id}")
-	// public Response streamVideo(@HeaderParam("Range") String range,
-	// @PathParam ("id") String id
-	// ) {
-	//
-	// try{
-	// mycollectionStreamer medaiStreamer = new mycollectionStreamer();
-	//
-	// MongoClient mongoClient = new MongoClient("localhost", 27017);
-	// DB mongoDB = mongoClient.getDB("testdb");
-	//
-	// //Let's store the standard data in regular collection
-	// DBCollection collection = mongoDB.getCollection("mycollection");
-	//
-	// logger.info("Inside downloadFilebyID...");
-	// logger.info("ID: " + id);
-	//
-	// BasicDBObject query = new BasicDBObject();
-	// query.put("_id", id);
-	// DBObject doc = collection.findOne(query);
-	// DBCursor cursor = collection.find(query);
-	//
-	// if (cursor.hasNext()) {
-	//
-	// Set<String> allKeys = doc.keySet();
-	// HashMap<String, String> fields = new HashMap<>();
-	// for (String key: allKeys) {
-	// fields.put(key, doc.get(key).toString());
-	// }
-	//
-	//
-	// logger.info("filename: " + fields.get("filename"));
-	//
-	// GridFS fileStore = new GridFS(mongoDB, "mycollection");
-	//
-	//
-	//
-	// GridFSDBFile gridFile = fileStore.findOne(query);
-	//
-	// File file = new File(" .wmv");
-	// gridFile.writeTo(file);
-	//
-	//
-	//
-	// // File audio = new File("D:\\Wildlife.wmv");
-	//
-	// response = medaiStreamer.buildStream(file, range);
-	//
-	// }
-	//
-	//
-	// }catch(Exception e)
-	// {
-	//
-	// }
-	// return response;
-	//
-	//
-	//
-	// }
-	//
-	//
-	//
-	// @GET
-	// @Produces(MediaType.APPLICATION_OCTET_STREAM)
-	// @Path("/istreamVideo/{id}")
-	// public Response iStreamVideo(@HeaderParam("Range") String range,
-	// @PathParam ("id") String id
-	// ) {
-	//
-	// try{
-	// mycollectionStreamer medaiStreamer = new mycollectionStreamer();
-	//
-	// MongoClient mongoClient = new MongoClient("localhost", 27017);
-	// DB mongoDB = mongoClient.getDB("testdb");
-	//
-	// //Let's store the standard data in regular collection
-	// DBCollection collection = mongoDB.getCollection("mycollection");
-	//
-	// logger.info("Inside downloadFilebyID...");
-	// logger.info("ID: " + id);
-	//
-	// BasicDBObject query = new BasicDBObject();
-	// query.put("_id", id);
-	// DBObject doc = collection.findOne(query);
-	// DBCursor cursor = collection.find(query);
-	//
-	// if (cursor.hasNext()) {
-	//
-	// Set<String> allKeys = doc.keySet();
-	// HashMap<String, String> fields = new HashMap<>();
-	// for (String key: allKeys) {
-	// fields.put(key, doc.get(key).toString());
-	// }
-	//
-	//
-	// logger.info("filename: " + fields.get("filename"));
-	//
-	// GridFS fileStore = new GridFS(mongoDB, "mycollection");
-	//
-	//
-	//
-	// GridFSDBFile gridFile = fileStore.findOne(query);
-	//
-	// File file = new File("");
-	// gridFile.writeTo(file);
-	//
-	// ResponseBuilder response = Response.ok(file,
-	// mycollectionType.APPLICATION_OCTET_STREAM);
-	// response.header("Content-Disposition", "filename=videofile.wmv");
-	// return response.build();
-	//
-	// return Response.ok(file, mycollectionType.APPLICATION_OCTET_STREAM)
-	// .build();
-	//
-	// // File audio = new File("D:\\Wildlife.wmv");
-	//
-	// // response = medaiStreamer.buildStream(file, range);
-	//
-	// }
-	//
-	//
-	// }catch(Exception e)
-	// {
-	//
-	// }
-	// return response;
-	//
-	//
-	//
-	// }
-	//
-	//
-	//
-	// @GET
-	// @Path("/download/details/{id}")
-	// @Produces(mycollectionType.TEXT_HTML)
-	// public Response showFileStoreDetails(@PathParam("id") String id) throws
-	// UnknownHostException {
-	//
-	// //Response response = null;
-	// MongoClient mongoClient = new MongoClient("localhost", 27017);
-	// DB mongoDB = mongoClient.getDB("testdb");
-	//
-	// //Let's store the standard data in regular collection
-	// DBCollection collection = mongoDB.getCollection("mycollection");
-	//
-	// logger.info("Inside showFileStoreDetails...");
-	// logger.info("ID: " + id);
-	//
-	// BasicDBObject query = new BasicDBObject();
-	// query.put("fileid", id);
-	// DBObject doc = collection.findOne(query);
-	//
-	// DBCursor cursor = collection.find(query);
-	//
-	// if (cursor.hasNext()) {
-	// Set<String> allKeys = doc.keySet();
-	// HashMap<String, String> fields = new HashMap<>();
-	// for (String key: allKeys) {
-	// fields.put(key, doc.get(key).toString());
-	// }
-	//
-	//
-	// logger.info("filename: " + fields.get("filename"));
-	//
-	// StringBuffer status1 = new StringBuffer("Inside showHeaders: <br/><br/>");
-	// status1.append("filename : ");
-	// status1.append(fields.get("filename"));
-	// status1.append("<br/>");
-	//
-	// response = Response.status(200).entity(status1.toString()).build();
-	// } else {
-	// response = Response.status(404).
-	// entity(" Unable to get file with ID: " + id).
-	// type("text/plain").
-	// build();
-	// }
-	// return response;
-	// }
+	@GET
+	@Produces("video/mp4")
+	@Path("/streamVideo/{id}")
+	public Response streamVideo(@HeaderParam("Range") String range, @PathParam("id") String id) {
 
+		try {
+			FileStreamer medaiStreamer = new FileStreamer();
+
+			MongoClient mongoClient = new MongoClient("localhost", 27017);
+			DB mongoDB = mongoClient.getDB("JavaTempDB");
+
+			// Let's store the standard data in regular collection
+			DBCollection collection = mongoDB.getCollection("LocalCollection");
+
+			logger.info("Inside downloadFilebyID...");
+			logger.info("ID: " + id);
+
+			BasicDBObject query = new BasicDBObject();
+			query.put("_id", id);
+			DBObject doc = collection.findOne(query);
+			DBCursor cursor = collection.find(query);
+
+			if (cursor.hasNext()) {
+
+				Set<String> allKeys = doc.keySet();
+				HashMap<String, String> fields = new HashMap<>();
+				for (String key : allKeys) {
+					fields.put(key, doc.get(key).toString());
+				}
+
+				logger.info("filename: " + fields.get("filename"));
+
+				GridFS fileStore = new GridFS(mongoDB, "LocalCollection");
+
+				GridFSDBFile gridFile = fileStore.findOne(query);
+
+				File file = new File(" .wmv");
+				gridFile.writeTo(file);
+
+				// File audio = new File("D:\\Wildlife.wmv");
+
+				response = medaiStreamer.buildStream(file, range);
+
+			}
+
+		} catch (Exception e) {
+
+		}
+		return response;
+
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_OCTET_STREAM)
+	@Path("/istreamVideo/{id}")
+	public Response iStreamVideo(@HeaderParam("Range") String range, @PathParam("id") String id) {
+
+		try {
+			FileStreamer medaiStreamer = new FileStreamer();
+
+			MongoClient mongoClient = new MongoClient("localhost", 27017);
+			DB mongoDB = mongoClient.getDB("JavaTempDB");
+
+			// Let's store the standard data in regular collection
+			DBCollection collection = mongoDB.getCollection("LocalCollection");
+
+			logger.info("Inside downloadFilebyID...");
+			logger.info("ID: " + id);
+
+			BasicDBObject query = new BasicDBObject();
+			query.put("_id", id);
+			DBObject doc = collection.findOne(query);
+			DBCursor cursor = collection.find(query);
+
+			if (cursor.hasNext()) {
+
+				Set<String> allKeys = doc.keySet();
+				HashMap<String, String> fields = new HashMap<>();
+				for (String key : allKeys) {
+					fields.put(key, doc.get(key).toString());
+				}
+
+				logger.info("filename: " + fields.get("filename"));
+
+				GridFS fileStore = new GridFS(mongoDB, "LocalCollection");
+
+				GridFSDBFile gridFile = fileStore.findOne(query);
+
+				File file = new File("");
+				gridFile.writeTo(file);
+
+				ResponseBuilder response = Response.ok(file, MediaType.APPLICATION_OCTET_STREAM);
+				response.header("Content-Disposition", "filename=videofile.wmv");
+				return response.build();
+
+				// return Response.ok(file, MediaType.APPLICATION_OCTET_STREAM).build();
+
+				// File audio = new File("D:\\Wildlife.wmv");
+
+				// response = medaiStreamer.buildStream(file, range);
+			}
+
+		} catch (Exception e) {
+
+		}
+		return response;
+	}
+
+	@GET
+	@Path("/download/details/{id}")
+	@Produces(MediaType.TEXT_HTML)
+	public Response showFileStoreDetails(@PathParam("id") String id) throws UnknownHostException {
+
+		// Response response = null;
+		MongoClient mongoClient = new MongoClient("localhost", 27017);
+		DB mongoDB = mongoClient.getDB("JavaTempDB");
+
+		// Let's store the standard data in regular collection
+		DBCollection collection = mongoDB.getCollection("LocalCollection");
+
+		logger.info("Inside showFileStoreDetails...");
+		logger.info("ID: " + id);
+
+		BasicDBObject query = new BasicDBObject();
+		query.put("fileid", id);
+		DBObject doc = collection.findOne(query);
+
+		DBCursor cursor = collection.find(query);
+
+		if (cursor.hasNext()) {
+			Set<String> allKeys = doc.keySet();
+			HashMap<String, String> fields = new HashMap<>();
+			for (String key : allKeys) {
+				fields.put(key, doc.get(key).toString());
+			}
+
+			logger.info("filename: " + fields.get("filename"));
+
+			StringBuffer status1 = new StringBuffer("Inside showHeaders: <br/><br/>");
+			status1.append("filename : ");
+			status1.append(fields.get("filename"));
+			status1.append("<br/>");
+
+			response = Response.status(200).entity(status1.toString()).build();
+		} else {
+			response = Response.status(404).entity(" Unable to get file with ID: " + id).type("text/plain").build();
+		}
+		return response;
+	}
 }
