@@ -1,20 +1,18 @@
 <html>
 
 <head>
-
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  <script src="script.js"></script>
+  <script src="customscript.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="customstyles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </head>
+
 
 <body>
 
   <button class="btn btn-primary" data-toggle="modal" data-target="#usermodal">Login/SignUP</button>
-
   <div class="modal fade" id="usermodal" tabindex="-1" role="dialog" aria-labelledby="userLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -43,11 +41,15 @@
               <!-- Tab panes -->
               <div ng-app="usermodule" ng-controller="usercontroller" class="tab-content">
                 <div class="tab-pane active" id="Login">
+
                   <form role="form" class="form-horizontal">
+
                     <div class="form-group">
                       <label for="email" class="col-sm-2 control-label">
-                                          Email</label>
+                                          <span class="glyphicon glyphicon-envelope input-group-addon"></span></label>
+                                          <!-- <div class="input-group-addon"></div> -->
                       <div class="col-sm-10">
+
                         <input type="email" class="form-control" id="email1" placeholder="Email" />
                       </div>
                     </div>
@@ -67,7 +69,23 @@
                         <a>Forgot your password?</a>
                       </div>
                     </div>
+
                   </form>
+
+                  <!-- New -->
+                  <!-- <form role="form" class="form-horizontal">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon col-sm-2 control-label"><span class="glyphicon glyphicon-user"></span></div>
+                        <div class="col-sm-10">
+                          <input name="Email" type="text" class="form-control" id="email1" placeholder="Email" />
+                        </div>
+                      </div>
+                      <span class="help-block" id="error"></span>
+                    </div>
+                  </form> -->
+
+
                 </div>
                 <div class="tab-pane" id="SignUp">
                   <form role="form" class="form-horizontal">
@@ -130,6 +148,8 @@
         </div>
       </div>
     </div>
+  </div>
+
 
 </body>
 

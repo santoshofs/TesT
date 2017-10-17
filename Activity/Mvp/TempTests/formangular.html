@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+  var app = angular.module('myApp', []);
+  app.controller('validateCtrl', function($scope) {});
+</script>
+
+<body>
+
+  <h2>Form</h2>
+
+  <form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate>
+
+    <p>Employee name:<br>
+      <input type="text" name="name" ng-model="name" required>
+      <span style="color:red" ng-show="myForm.name.$dirty && myForm.name.$invalid || myForm.name.$touched ">
+        <span ng-show="myForm.name.$error.required">Employee name is required.</span>
+      </span>
+    </p>
+
+    <p>Employee ID:<br>
+      <input type="number" name="user" ng-model="user" ng-minlength="4" ng-maxlength="10" required>
+      <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid || myForm.user.$touched ">
+        <span ng-show="myForm.user.$error.required">Employee ID is required.</span>
+      <span ng-if="myForm.user.$valid">Id must be 4 to 10 charecter length</span>
+      </span>
+    </p>
+
+    <p>Select Department:<br>
+      <select name="dept" ng-model="dept" required>
+        <option value="">select</option>
+        <option value="1">ECE</option>
+        <option value="2">CSE</option>
+        <option value="3">Mech</option>
+      </select>
+      <span style="color:red" ng-show="myForm.dept.$dirty && myForm.dept.$invalid || myForm.dept.$touched ">
+        <span ng-show="myForm.dept.$error.required">Employee dept is required.</span>
+      </span>
+    </p>
+
+
+    <p>Gender:<br>
+      <input type="radio" ng-model="gender" value="Male" required>Male
+      <input type="radio" ng-model="gender" value="Female" required>Female
+      <input type="radio" ng-model="gender" value="Other" required>Other
+      <span style="color:red">
+        <span ng-show="myForm.gender.$error.required">Gender is required.</span>
+      </span>
+    </p>
+
+    <p>Email:<br>
+      <input type="email" name="email" ng-model="email" required>
+      <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid || myForm.email.$touched">
+        <span ng-show="myForm.email.$error.required">Email is required.</span>
+      <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+      </span>
+    </p>
+
+    <p>Date of Joining: <br>
+      <input type="date" name="doj" ng-model="doj" required />
+      <span style="color:red" ng-show="myForm.doj.$dirty && myForm.doj.$invalid || myForm.doj.$touched">
+        <span ng-show="myForm.doj.$error.required">doj is required.</span>
+      <span ng-show="myForm.doj.$error.doj">Invalid doj address.</span>
+    </p>
+
+    <p>
+      <input class="save" type="submit" value="save" ng-disabled="myForm.name.$dirty && myForm.name.$invalid || myForm.email.$pristine || myForm.name.$pristine || myForm.email.$dirty && myForm.email.$invalid || !gender ||myForm.gender.$pristine || myForm.dept.$pristine || myForm.dept.$dirty && myForm.dept.$invalid || myForm.doj.$pristine || myForm.doj.$dirty && myForm.doj.$invalid">
+    </p>
+
+  </form>
+
+
+
+</body>
+
+</html>
