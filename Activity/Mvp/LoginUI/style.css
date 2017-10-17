@@ -3,7 +3,9 @@
       padding-top: 2%;
 }
 
-
+#iconinherit{
+  display: inherit;
+}
 a{
       padding-left: 10;
 }
