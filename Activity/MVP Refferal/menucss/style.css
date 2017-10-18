@@ -1,0 +1,34 @@
+/*to provide space below login/SignUp head tag*/
+#Login, #SignUp{
+      padding-top: 2%;
+}
+
+#iconinherit{
+  display: inherit;
+}
+a{
+      padding-left: 10;
+}
+.close {
+    color: red;
+    opacity: 1;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
