@@ -1,3 +1,16 @@
 https://bootsnipp.com/snippets/VElzQ
 
 https://bootstrap-datepicker.readthedocs.io/en/latest/
+
+https://www.journaldev.com/4011/mongodb-java-servlet-web-application-example-tutorial
+
+
+jsonloginangular test   ANGULAR1
+http://jasonwatmore.com/post/2016/04/05/angularjs-jwt-authentication-example-tutorial
+
+jsonloginangular test   ANGULAR2/4 converted
+http://jasonwatmore.com/post/2016/08/16/angular-2-jwt-authentication-example-tutorial
+
+Login Form with Spring Data MongoDB in Spring MVC Framework 
+
+https://www.youtube.com/watch?v=kBD_o6OAcRI
