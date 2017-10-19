@@ -1,0 +1,108 @@
+Project : Develop a app like sky scanner (https://www.skyscanner.net/)
+
+ 
+
+Feature:
+
+ 
+
+    A world travel search engine
+    Flight booking
+    Hotel booking
+    Local Cab booking
+    Flight ticket /Hotel cost comparison chart
+    List of Tourist location in world and deals 
+
+ 
+
+Technology to be Used in the project :
+
+ 
+
+Java / J2EE
+
+- Core Java
+
+- Multithreading
+
+- Collections
+
+- Generics
+
+- Annotations
+
+- Design Patterns
+
+- JDBC
+
+- Servlets / JSP
+
+ 
+
+Server: Apache Tomcat
+
+ 
+
+Web Services - using any, Rest Full Web services Frameworks either
+
+ 
+
+A) Jersey Rest Full Framework OR
+
+B) Spring Rest Full Framework OR
+
+ 
+
+Application Framework - Spring core & Spring Web & MVC OR Jersey
+
+ 
+
+ORM - Hibernate (Use only when you choose SQL Database) with JPA Persistence.
+
+ 
+
+UI - HTML5, AngularJS1.x, JQuery, CSS, Bootstrap
+
+ 
+
+Database: Use Either
+
+ 
+
+A) SQL (MySQL or MS SQL Express or PostgreSQL ) OR
+
+B) NoSQL (Mongo Db or Couch).
+
+ 
+
+Project Start Date : 17th Oct 2017
+
+ 
+
+Project Submission Date : 31st Oct 2017
+
+ 
+
+For any Technical related Queries , please contact your mentor :
+
+ 
+
+Mentor Name : Saravanan Rengasamy
+
+ 
+
+Mentor Email id  : saravanan.rengasamy@object-frontier.com
+
+ 
+
+For any other queries related to  any functional support , please reach the below L& D coordinators
+
+ 
+
+1 ) Naveen Kumar Bakthavatchalam [Mobile Number : 9941050549]
+
+2) Vijaykumar V.K [ Mobile Number  : [Mobile Number : 9940295626]
+
+ 
+
+Thanks & Regards
