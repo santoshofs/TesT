@@ -1,17 +1,20 @@
 /*to provide space below login/SignUp head tag*/
-#Login, #SignUp{
-      padding-top: 2%;
+
+#Login, #SignUp {
+  padding-top: 2%;
 }
 
-#iconinherit{
+#iconinherit {
   display: inherit;
 }
-a{
-      padding-left: 10;
+
+a {
+  padding-left: 10;
 }
+
 .close {
-    color: red;
-    opacity: 1;
+  color: red;
+  opacity: 1;
 }
 
 .modal {
@@ -33,6 +36,12 @@ a{
   vertical-align: middle;
 }
 
-.modal-body{
-  background-image: url('blackwood.jpg');
+.modal-body {
+  text-align: -webkit-center;
+  background-image: url('blkpatrn.jpg');
+  border-radius: inherit;
+}
+
+.nav-tabs {
+    margin-left: 3%;
 }
