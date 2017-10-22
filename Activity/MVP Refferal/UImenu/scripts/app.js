@@ -15,16 +15,36 @@ $(document).ready(function(){
         $("#usercheckinModal").modal();
         $("#login-inner-nav").addClass("active");
         $("#register-inner-nav").removeClass("active");
+        $("#registerForm").removeClass("active");
+        $("#LoginForm").addClass("active");
     });
     $("#logintab").click(function(){
         $("#usercheckinModal").modal();
         $("#login-inner-nav").addClass("active");
         $("#register-inner-nav").removeClass("active");
+        $("#registerForm").removeClass("active");
+        $("#LoginForm").addClass("active");
+    });
+    $("#login-inner-nav").click(function(){
+        $("#usercheckinModal").modal();
+        $("#login-inner-nav").addClass("active");
+        $("#register-inner-nav").removeClass("active");
+        $("#registerForm").removeClass("active");
+        $("#LoginForm").addClass("active");
     });
     $("#registertab").click(function(){
         $("#usercheckinModal").modal();
         $("#register-inner-nav").addClass("active");
         $("#login-inner-nav").removeClass("active");
+        $("#LoginForm").removeClass("active");
+        $("#registerForm").addClass("active");
+    });
+    $("#register-inner-nav").click(function(){
+        $("#usercheckinModal").modal();
+        $("#register-inner-nav").addClass("active");
+        $("#login-inner-nav").removeClass("active");
+        $("#LoginForm").removeClass("active");
+        $("#registerForm").addClass("active");
     });
 
 });
@@ -45,7 +65,7 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
 
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('about', {
-            // we'll get to this in a bit
+
         })
         .state("user", {
             url: "/user",

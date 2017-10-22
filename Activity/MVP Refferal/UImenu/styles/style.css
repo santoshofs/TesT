@@ -69,3 +69,47 @@
 #customicons{
   width: 23px;
 }
+
+
+/*user credentials pane*/
+#LoginForm, #registerForm {
+  padding-top: 2%;
+}
+
+#iconinherit {
+  display: inherit;
+}
+
+.close {
+  color: red;
+  opacity: 1;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.modal-body {
+  text-align: -webkit-center;
+  /*background-image: url('wild.jpg');*/
+  border-radius: inherit;
+}
+
+.nav-tabs {
+    margin-left: 3%;
+}
