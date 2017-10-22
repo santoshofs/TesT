@@ -27,11 +27,32 @@
         </ul>
 
         <div class="dropdown" style="float:right;">
-          <button class="dropbtn"><span class="glyphicon glyphicon-user"></span> ACCOUNT</button>
+          <button class="dropbtn" id="accountcheckin"><span class="glyphicon glyphicon-user"></span> ACCOUNT</button>
           <div class="dropdown-content">
-            <a href="#"><img src="styles/images/friends_group.png" alt=""id="customicons" /> LOGIN</a>
-            <a href="#"><img src="styles/images/edit.png" alt="" id="customicons"/> REGISTER</a>
+            <a id="logintab"><img src="styles/images/friends_group.png" alt=""id="customicons" /> LOGIN</a>
+            <a id="registertab"><img src="styles/images/edit.png" alt="" id="customicons"/> REGISTER</a>
           </div>
+        </div>
+
+        <div class="modal fade" id="usercheckinModal" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <ul class="nav nav-tabs">
+                <li id="login-inner-nav"><a data-toggle="tab">Login</a></li>
+                <li id="register-inner-nav"><a data-toggle="tab">SignUp</a></li>
+                <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>

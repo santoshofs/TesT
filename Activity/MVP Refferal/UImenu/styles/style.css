@@ -20,6 +20,7 @@
   font-size: 20px;
 }
 
+/*Navigation account dropdown */
 .dropbtn {
     background-color: transparent;
     color: rgba(248, 182, 135, 1);
@@ -64,6 +65,7 @@
     background-color: black;
 }
 
+/*navigation user icons*/
 #customicons{
   width: 23px;
 }
