@@ -17,8 +17,8 @@ public class UserDetailsDaoImplementer implements UserDetailsDao {
 	@Override
 	public DBCollection getUserDetailsCollection() throws UnknownHostException{
 		MongoClient mongo = new MongoClient("localhost",27017);
-		DB mongoDB = mongo.getDB("carshop");
-		return mongoDB.getCollection("user_details");
+		DB mongoDB = mongo.getDB("SanTechTestDB");
+		return mongoDB.getCollection("user_credentials");
 	}
 	@Override
 	public Boolean insertDataForSignUp(UserModel user) throws UnknownHostException, NoSuchAlgorithmException, UnsupportedEncodingException{
