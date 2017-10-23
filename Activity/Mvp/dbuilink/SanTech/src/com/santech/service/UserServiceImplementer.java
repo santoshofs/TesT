@@ -25,6 +25,7 @@ public class UserServiceImplementer implements UserService {
 		else{
 			location = new URI("https://www.facebook.com");
 			System.out.println("signup failed");
+			return failed;
 		}
 		return Response.temporaryRedirect(location).build();
 	}

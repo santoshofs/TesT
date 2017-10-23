@@ -34,7 +34,6 @@ public class UserDetailsDaoImplementer implements UserDetailsDao {
 			newDocument.append("name", user.getName());
 			newDocument.append("email", user.getEmail());
 			newDocument.append("phone", user.getPhone());
-//			newDocument.append("region", user.getRegion());
 			encryptPassword = service.Md5Encrypt(user.getPassword());
 			newDocument.append("password", encryptPassword );
 			collection.insert(newDocument);
@@ -45,6 +44,7 @@ public class UserDetailsDaoImplementer implements UserDetailsDao {
 		}
 		return status;
 	}
+	
 	@Override
 	public UserModel fetchRowByEmail(UserModel user) throws UnknownHostException{
 		DBCollection collection = getUserDetailsCollection();
@@ -59,7 +59,6 @@ public class UserDetailsDaoImplementer implements UserDetailsDao {
 			gotUser.setName(holder.getString("name"));
 			gotUser.setPassword(holder.getString("password"));
 			gotUser.setPhone(holder.getString("phone"));
-//			gotUser.setRegion(holder.getString("region"));
 		}
 		return gotUser;
 	}

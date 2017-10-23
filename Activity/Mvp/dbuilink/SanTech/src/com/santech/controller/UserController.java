@@ -26,7 +26,6 @@ public class UserController {
 		userModel.setName(name);
 		userModel.setEmail(email);
 		userModel.setPassword(pwd);
-//		userModel.setRegion(region);
 		userModel.setPhone(phone);
 		System.out.println("details in");
 		return userService.addNewUser(userModel);
