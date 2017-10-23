@@ -157,15 +157,14 @@
   background-attachment: fixed;
   /* This is what makes the background image rescale based on its container's size */
   background-size: cover;
-  /* Pick a solid background color that will be displayed while the background image is loading */
-  background-color: #464646;
-  /* SHORTHAND CSS NOTATION
+
+  background-color: #222222;
+  /* SHORTHAND
    * background: url(background-photo.jpg) center center cover no-repeat fixed;
    */
 }
 
 /* For mobile devices */
-
 @media only screen and (max-width: 767px) {
   #homediv {
     /* The file size of this background image is 93% smaller
