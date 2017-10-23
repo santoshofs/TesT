@@ -1,3 +1,4 @@
+// navigation bar active class adder
 $(function() {
   $("#hometag").addClass("active");
   $("#brandhear").on("click", function() {
@@ -10,6 +11,7 @@ $(function() {
   });
 });
 
+// user checkin credentials
 $(document).ready(function(){
     $("#accountcheckin").click(function(){
         $("#usercheckinModal").modal();
@@ -49,6 +51,7 @@ $(document).ready(function(){
 
 });
 
+// ui routing
 var SanTechApp = angular.module('SanTechApp', ["ui.router"]);
 
 SanTechApp.config(function($stateProvider, $urlRouterProvider) {
@@ -63,13 +66,9 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/home.html'
         })
 
-        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-        .state('about', {
-
-        })
-        .state("user", {
-            url: "/user",
-            templateUrl: 'views/usercheckin.html'
+        .state("about", {
+            url: "/about",
+            templateUrl: 'views/about.html'
         });
 
 });
