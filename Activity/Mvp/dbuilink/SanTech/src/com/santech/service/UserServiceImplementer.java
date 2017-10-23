@@ -21,6 +21,7 @@ public class UserServiceImplementer implements UserService {
 		if(userDetails.insertDataForSignUp(user)){
 			location = new URI("https://www.google.com");
 			System.out.println("signup success");
+		
 		}
 		else{
 			location = new URI("https://www.facebook.com");

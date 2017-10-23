@@ -9,10 +9,12 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+  <script src="scripts/customscript.js"></script>
   <script src="scripts/app.js"></script>
+  <script src="scripts/services.js"></script>
 </head>
 
-<body ng-app="SanTechApp" >
+<body ng-app="SanTechApp" ng-controller="RootController">
   <div id="navigator">
     <nav class="navbar navbar-inverse col-md-12">
       <div class="container-fluid">
@@ -52,14 +54,14 @@
               <div class="modal-body">
                 <div class="tab-content">
 
-                  <div class="tab-pane" id="LoginForm">
+                  <div class="tab-pane" id="LoginForm" >
 
-                    <form role="form" class="form-horizontal" method="post" action="http://localhost:8080/SanTech/Jserv/control/userLogin">
+                    <form role="form" class="form-horizontal" ng-submit="test()" method="post" action="http://localhost:8080/SanTech/Jserv/control/userLogin">
                       <div class="form-group input-group col-sm-12">
 
                         <div class="col-sm-12" id="iconinherit">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                          <input type="email" class="form-control" id="email1" placeholder="Email" name="email" required/>
+                          <input type="email" class="form-control" id="email1" placeholder="Email" name="email" />
                         </div>
                       </div>
 

@@ -5,7 +5,6 @@ public class UserModel {
 	private String name;
 	private String email;
 	private String password;
-//	private String region;
 	private String phone;
 	public String getId() {
 		return id;
@@ -31,12 +30,6 @@ public class UserModel {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-//	public String getRegion() {
-//		return region;
-//	}
-//	public void setRegion(String region) {
-//		this.region = region;
-//	}
 	public String getPhone() {
 		return phone;
 	}
