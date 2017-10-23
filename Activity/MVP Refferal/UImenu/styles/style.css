@@ -14,7 +14,9 @@
 .navbar-inverse {
   border-radius: 0px;
 }
-
+.navbar{
+  margin-bottom: 0;
+}
 .customheadertags{
   font-family: Droid Sans, Lobster, Vollkorn;
   font-size: 20px;
@@ -112,4 +114,14 @@
 
 .nav-tabs {
     margin-left: 3%;
+}
+
+
+#homediv{
+  background-size: cover;
+  background-image: url("images/nightflight.jpg");
+  background-repeat: no-repeat;
+}
+#testdiv{
+  padding: 33%;
 }
