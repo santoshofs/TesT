@@ -1,0 +1,58 @@
+
+//city table
+CREATE TABLE city (
+    city_id int NOT NULL PRIMARY KEY,
+    city_name varchar(50) NOT NULL,
+);
+
+select * from city;
+
+INSERT INTO city VALUES ('5','Bangalore');
+
+
+CREATE TABLE hotel (
+    hotel_id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+    hotel_name varchar(250) NOT NULL,
+	hotel_address varchar(250) NOT NULL,
+	hotel_contactno varchar(50) NOT NULL,
+    city_id int FOREIGN KEY REFERENCES city(city_id)
+);
+
+select * from hotel;
+
+INSERT INTO hotel VALUES ('Treebo','No.123,Basherbagh,Hyderabad','9344235911','2');
+
+drop table hotel;
+
+
+CREATE TABLE hotel (
+    hotel_id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+    hotel_name varchar(250) NOT NULL,
+	hotel_address varchar(250) NOT NULL,
+	hotel_contactno varchar(50) NOT NULL,
+    city_id int FOREIGN KEY REFERENCES city(city_id)
+);
+
+select * from hotel;
+
+INSERT INTO hotel VALUES ('Fairfield Vista ',' KR Nagar,Bangalore','889450082','5');
+drop table hotel;
+
+DELETE from hotel
+ WHERE hotel_id= '22';
+ 
+ 
+ 
+ CREATE TABLE image  (
+    image_id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+    img varbinary(max) NOT NULL,
+    room_id int FOREIGN KEY REFERENCES room(room_id)
+);
+select * from image
+
+
+
+insert into image
+select 1,BulkColumn 
+FROM Openrowset( Bulk 'D:\dev\Assignments\MVP\images\one.jpg', Single_Blob) as OnePicture;
+
