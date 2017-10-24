@@ -42,22 +42,31 @@ public class UserServiceImplementer implements UserService {
 	        encryptPassword += Integer.toString((digestPassword[i] & 0xff) + 0x100, 16).substring(1);
 		return encryptPassword;
 	}
+	
 	@Override
 	public Response userLoginCheck(UserModel user) throws UnknownHostException,
 	NoSuchAlgorithmException, UnsupportedEncodingException, URISyntaxException{
 		UserModel gotUser = new UserModel();
 		URI location;
+		String response="";
 		gotUser = userDetails.fetchRowByEmail(user);
 		String checkPassword = Md5Encrypt(user.getPassword());
 		if(checkPassword.equals(gotUser.getPassword())){
-			location = new URI("https://www.google.com");
+//			location = new URI("https://www.google.com");
 			System.out.println("login success");
+			jsonObject.put("Status", "Success");
+			jsonObject.put("name", user.getName());
+			jsonObject.put("email", user.getEmail());
+			jsonObject.put("uid", user.getPhone());
+			
+			response = jsonObject.toString();
+			
 		}
 		else{
 			location = new URI("https://www.facebook.com");
 			System.out.println("login failed");
 		}
-		return Response.temporaryRedirect(location).build();
+		return response;
 		
 	}
 }

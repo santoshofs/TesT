@@ -32,8 +32,9 @@ public class UserController {
 		
 	}
 
-	@POST
+	@GET
 	@Path("/userLogin")
+	@Produces("application/json")
 	public Response userLogin(@FormParam("email") String email, @FormParam("pwd") String password)
 			throws UnknownHostException, NoSuchAlgorithmException, UnsupportedEncodingException, URISyntaxException {
 		UserModel user = new UserModel();

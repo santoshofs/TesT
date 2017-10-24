@@ -19,12 +19,8 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
     });
 });
 
-SanTechApp.controller("RootController", function($scope) {
-  // function loginfunction() {
-  //   console.log("login form submitted..!");
-  //   alert("LoginTest");
-  // };
-  $scope.test = function (){
+SanTechApp.controller("RootController", function($scope,$http) {
+  $scope.loginfunction = function (){
     alert("asdf");
   }
 });
