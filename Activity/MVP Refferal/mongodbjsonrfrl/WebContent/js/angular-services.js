@@ -1,6 +1,6 @@
 mainPage.service('userServices',function($rootScope,$state,$http){
 	this.checkLogin = function(email, pwd){
-		$.post("http://localhost:8080/carshop/Jserv/control/userLogin",
+		$.post("http://localhost:8080/FinalMongoAttempt/SanService/control/userLogin",
 		{
 		  mail: email,
 		  pwd: pwd
@@ -29,7 +29,7 @@ mainPage.service('userServices',function($rootScope,$state,$http){
 		});
 	}
 	this.checkSession = function(){
-		$.post("http://localhost:8080/carshop/Jserv/control/checkSession",
+		$.post("http://localhost:8080/FinalMongoAttempt/SanService/control/checkSession",
 		{
 		  session: $rootScope.sessionHolder
 		},
@@ -42,7 +42,7 @@ mainPage.service('userServices',function($rootScope,$state,$http){
 		);
 	}
 	this.userSignUp = function(email,name,pwd,phone,region){
-		$.post("http://localhost:8080/carshop/Jserv/control/newUser",
+		$.post("http://localhost:8080/FinalMongoAttempt/SanService/control/newUser",
 		{
 		  name: name,
 		  email: email,
@@ -75,7 +75,7 @@ mainPage.service('userServices',function($rootScope,$state,$http){
 	}
 	this.sellCar = function(formdata){
 		$.ajax( {
-      url: 'http://localhost:8080/carshop/Jserv/control/newUsedCar',
+      url: 'http://localhost:8080/FinalMongoAttempt/SanService/control/newUsedCar',
       type: 'POST',
       data: formdata,
       processData: false,
