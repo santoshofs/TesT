@@ -17,3 +17,5 @@ https://www.youtube.com/watch?v=kBD_o6OAcRI
 
 
 https://codepen.io/ehermanson/pen/KwKWEv
+
+https://scotch.io/tutorials/submitting-ajax-forms-the-angularjs-way
