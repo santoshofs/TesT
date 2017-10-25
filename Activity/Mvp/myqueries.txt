@@ -40,3 +40,5 @@ select * from Flights_list;
 
 
 drop table Flights_list;
+
+DELETE FROM destination where destination_id=12;

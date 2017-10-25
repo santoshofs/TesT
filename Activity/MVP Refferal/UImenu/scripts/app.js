@@ -7,15 +7,19 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/home');
 
   $stateProvider
+  .state("/", {
+    url: "/home",
+    templateUrl: 'views/home.html'
+  })
     // HOME STATES AND NESTED VIEWS ========================================
     .state("home", {
       url: "/home",
       templateUrl: 'views/home.html'
     })
 
-    .state("about", {
-      url: "/about",
-      templateUrl: 'views/about.html'
+    .state("flight", {
+      url: "/flight",
+      templateUrl: 'views/flight.html'
     });
 });
 

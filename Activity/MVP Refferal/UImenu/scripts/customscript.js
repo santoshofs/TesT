@@ -1,15 +1,15 @@
 // navigation bar active class adder
-$(function() {
-  $("#hometag").addClass("active");
-  $("#brandhear").on("click", function() {
-    $(".nav li").removeClass("active");
-    $("#hometag").addClass("active");
-  });
-  $(".nav li").on("click", function() {
-    $(".nav li").removeClass("active");
-    $(this).addClass("active");
-  });
-});
+// $(function() {
+//   $("#hometag").addClass("active");
+//   $("#brandhear").on("click", function() {
+//     $(".nav li").removeClass("active");
+//     $("#hometag").addClass("active");
+//   });
+//   $(".nav li").on("click", function() {
+//     $(".nav li").removeClass("active");
+//     $(this).addClass("active");
+//   });
+// });
 
 // user checkin credentials
 $(document).ready(function() {
