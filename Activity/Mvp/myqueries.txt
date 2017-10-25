@@ -1,0 +1,42 @@
+CREATE TABLE user_table (
+    user_id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+    user_name varchar(50) NOT NULL,
+	user_email varchar(50) NOT NULL UNIQUE,
+	user_password varchar(10) NOT NULL,
+);
+
+select * from user_table;
+
+INSERT INTO user_table VALUES ('Treebo','No.123,Basherbagh,Hyderabad','9344235911','2');
+
+drop table user;
+
+
+
+CREATE TABLE destination (
+    destination_id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+    destination_name varchar(60) NOT NULL,
+	
+);
+
+
+select * from destination;
+INSERT INTO destination VALUES ('Chennai-Delhi');
+
+drop table user;
+
+CREATE TABLE Flights_list (
+    flight_id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+    flight_name varchar(60) NOT NULL,
+	flight_depature_time varchar(30) NOT NULL,
+	flight_arrival_time varchar(30) NOT NULL,
+	flight_price varchar(30) NOT NULL,
+	destination_id int FOREIGN KEY REFERENCES destination(destination_id)
+	
+);
+
+
+select * from Flights_list;
+
+
+drop table Flights_list;

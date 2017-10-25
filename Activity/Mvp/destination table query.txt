@@ -1,0 +1,30 @@
+destination 
+
+CREATE TABLE destination (
+    destination_id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+    destination_name varchar(60) NOT NULL,
+	
+);
+
+
+select * from destination;
+
+
+INSERT INTO destination VALUES ('Chennai-Delhi');
+INSERT INTO destination VALUES ('Chennai-Mumbai');
+INSERT INTO destination VALUES ('Chennai-Kolkata');
+
+INSERT INTO destination VALUES ('Delhi-Chennai');
+INSERT INTO destination VALUES ('Delhi-Mumbai');
+INSERT INTO destination VALUES ('Delhi-Kolkata');
+
+INSERT INTO destination VALUES ('Kolkata-Chennai');
+INSERT INTO destination VALUES ('Kolkata-Delhi');
+INSERT INTO destination VALUES ('Kolkata-Mumbai');
+
+INSERT INTO destination VALUES ('Mumbai-Delhi');
+INSERT INTO destination VALUES ('Mumbai-Chennai');
+INSERT INTO destination VALUES ('Mumbai-kolkata');
+
+
+
