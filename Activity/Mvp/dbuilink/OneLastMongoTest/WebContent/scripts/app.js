@@ -12,7 +12,11 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
       url: "/home",
       templateUrl: 'views/home.html'
     })
-
+    .state("user", {
+      url: "/user",
+      controller:'signinCtrl',
+      templateUrl: 'views/userpage.html'
+    })
     .state("about", {
       url: "/about",
       templateUrl: 'views/about.html'

@@ -1,0 +1,18 @@
+<div class="user-note">
+	<div class="dropdown">
+	  <button class="dropbtn">Welcome {{user.name}}</button>
+	  <div class="dropdown-content">
+	    <a style="cursor:pointer;" ng-click="">My Account</a>
+	    <a style="cursor:pointer;" ng-click="signOut()">Sign Out</a>
+	  </div>
+	</div>
+
+</div>
+<div ui-view></div>
+<div ng-show="compare.length > 0" class="comparer">
+<div style="display:inline-block; background:#dddddd;margin: 0 5px; padding:2px;" ng-click="removeCompare(car)" ng-repeat="car in compareName">
+{{car}}
+<i class="glyphicon glyphicon-remove-circle" style="color:red;"></i>
+</div>
+<button class="btn btn-default" style="float:right;" ng-click="goCompare()">Compare</button>
+</div>
