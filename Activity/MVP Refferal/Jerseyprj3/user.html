@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl"> 
+
+<h2 style="text-align:center;font-color:black">POLICY PLANS</h2>
+
+<table border="2">
+<tr>
+	<th>Id</th>
+	<th>Name</th>
+	<th>Description</th>
+	<th>Policy Amount</th>
+	<th>Policy Interest</th>
+	<th>Policy Period</th>
+</tr>
+  <tr ng-repeat="x in details">
+    <td>{{x.id}}</td>
+    <td>{{x.name}}</td>
+	<td>{{x.content}}</td>
+	<td>{{x.amount}}</td>
+	<td>{{x.interest}}</td>
+	<td>{{x.period}}</td>
+	</tr>
+</table>
+<div style="padding-top:20px"><button type="button"  style="padding:10px;border-color:black">Health insurance offers</button></div>
+<div style="padding-top:20px">	<button type="button" style="padding:10px;border-color:black">Motor insurance offers</button><div>
+	<div style="padding-top:20px"><button type="button"  style="padding:10px;border-color:black">Home and Travel insurance offers</button><div>
+</div>
+<body>
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('myCtrl', function($scope, $http) {
+$scope.details;
+var url="http://localhost:8089/Jerseyprj/user/getAllUsers";
+	$http({
+	method: 'GET',
+	url: url
+		}).then(function successCallback(response) {
+		console.log("----------",response);
+		$scope.details = response.data;
+		}, function errorCallback(response) {
+		console.log("-------err---",response);
+		});
+
+
+   
+});
+</script>

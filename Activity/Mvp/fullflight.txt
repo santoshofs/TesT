@@ -1,0 +1,246 @@
+CREATE TABLE Flights_DB (
+    flight_id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+    flight_name varchar(60) NOT NULL,
+	flight_depature_time varchar(30) NOT NULL,
+	flight_arrival_time varchar(30) NOT NULL,
+	flight_price varchar(30) NOT NULL,
+	flight_from varchar(30) NOT NULL,
+	flight_to varchar(30) NOT NULL,
+	destination_id int FOREIGN KEY REFERENCES destination(destination_id)	
+);
+
+,'MUMBAI','KOLKATA'
+
+,'KOLKATA','MUMBAI'
+
+select * from Flights_DB;
+
+chennai-delhi
+
+INSERT INTO Flights_DB VALUES 
+('IndiGo','01:00','03:30','3,500','CHENNAI','DELHI',1);
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','04:00','06:00','3,800','CHENNAI','DELHI',1);
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','07:00','09:00','4,000','CHENNAI','DELHI',1);
+INSERT INTO Flights_DB VALUES 
+('Air India','10:00','13:00','3,500','CHENNAI','DELHI',1);
+INSERT INTO Flights_DB VALUES 
+('GoAir','13:00','15:30','4,100','CHENNAI','DELHI',1);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','16:00','18:10','4,000','CHENNAI','DELHI',1);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','19:00','21:00','5,000','CHENNAI','DELHI',1);
+INSERT INTO Flights_DB VALUES 
+('Air Costa','22:00','23:55','5,500','CHENNAI','DELHI',1);
+
+chennai-mumbai
+
+INSERT INTO Flights_DB VALUES 
+('Air Costa','01:00','02:30','2,500','CHENNAI','MUMBAI',2);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','04:00','05:00','2,800','CHENNAI','MUMBAI',2);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','07:00','08:00','3,000','CHENNAI','MUMBAI',2);
+INSERT INTO Flights_DB VALUES 
+('GoAir','10:00','12:00','2,500','CHENNAI','MUMBAI',2);
+INSERT INTO Flights_DB VALUES 
+('Air India','13:00','14:30','4,100','CHENNAI','MUMBAI',2);
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','16:00','17:10','3,000','CHENNAI','MUMBAI',2);
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','19:00','20:00','4,000','CHENNAI','MUMBAI',2);
+INSERT INTO Flights_DB VALUES 
+('IndiGo','22:00','22:55','4,500','CHENNAI','MUMBAI',2);
+
+chennai-kolkata
+
+INSERT INTO Flights_DB VALUES 
+('Air India','01:00','02:40','2,500','CHENNAI','KOLKATA',3);
+INSERT INTO Flights_DB VALUES 
+('GoAir','04:00','05:10','2,800','CHENNAI','KOLKATA',3);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','07:00','08:10','3,000','CHENNAI','KOLKATA',3);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','10:00','12:10','2,500','CHENNAI','KOLKATA',3);
+INSERT INTO Flights_DB VALUES 
+('Air Costa','13:00','14:40','4,100','CHENNAI','KOLKATA',3);
+INSERT INTO Flights_DB VALUES 
+('IndiGo','16:00','17:20','3,000','CHENNAI','KOLKATA',3);
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','19:00','20:10','4,000','CHENNAI','KOLKATA',3);
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','22:00','23:10','4,500','CHENNAI','KOLKATA',3);
+
+delhi-chennai
+
+INSERT INTO Flights_DB VALUES 
+('IndiGo','01:00','03:30','3,500','DELHI','CHENNAI',4);
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','04:00','06:00','3,800','DELHI','CHENNAI',4);
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','07:00','09:00','4,000','DELHI','CHENNAI',4);
+INSERT INTO Flights_DB VALUES 
+('Air India','10:00','13:00','3,500','DELHI','CHENNAI',4);
+INSERT INTO Flights_DB VALUES 
+('GoAir','13:00','15:30','4,100','DELHI','CHENNAI',4);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','16:00','18:10','4,000','DELHI','CHENNAI',4);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','19:00','21:00','5,000','DELHI','CHENNAI',4);
+INSERT INTO Flights_DB VALUES 
+('Air Costa','22:00','23:55','5,500','DELHI','CHENNAI',4);
+
+delhi-mumbai
+
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','01:00','02:40','2,500','DELHI','MUMBAI',5);
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','04:00','05:10','2,800','DELHI','MUMBAI',5);
+INSERT INTO Flights_DB VALUES 
+('Air India','07:00','08:10','3,000','DELHI','MUMBAI',5);
+INSERT INTO Flights_DB VALUES 
+('GoAir','10:00','12:10','2,500','DELHI','MUMBAI',5);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','13:00','14:40','4,100','DELHI','MUMBAI',5);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','16:00','17:20','3,000','DELHI','MUMBAI',5);
+INSERT INTO Flights_DB VALUES 
+('Air Costa','19:00','20:10','4,000','DELHI','MUMBAI',5);
+INSERT INTO Flights_DB VALUES 
+('IndiGo','22:00','23:50','4,500','DELHI','MUMBAI',5);
+
+delhi-kolkata
+
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','01:00','02:40','2,300','DELHI','KOLKATA',6);
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','04:00','05:10','2,500','DELHI','KOLKATA',6);
+INSERT INTO Flights_DB VALUES 
+('IndiGo','07:00','08:10','3,000','DELHI','KOLKATA',6);
+INSERT INTO Flights_DB VALUES 
+('Air Costa','10:00','12:10','2,200','DELHI','KOLKATA',6);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','13:00','14:40','4,000','DELHI','KOLKATA',6);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','16:00','17:20','3,000','DELHI','KOLKATA',6);
+INSERT INTO Flights_DB VALUES 
+('GoAir','19:00','20:10','4,000','DELHI','KOLKATA',6);
+INSERT INTO Flights_DB VALUES 
+('Air India','22:00','23:10','4,300','DELHI','KOLKATA',6);
+
+kolkata-CHENNAI
+
+INSERT INTO Flights_DB VALUES 
+('Air India','01:00','02:40','2,500','KOLKATA','CHENNAI',7);
+INSERT INTO Flights_DB VALUES 
+('GoAir','04:00','05:10','2,800','KOLKATA','CHENNAI',7);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','07:00','08:10','3,000','KOLKATA','CHENNAI',7);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','10:00','12:10','2,500','KOLKATA','CHENNAI',7);
+INSERT INTO Flights_DB VALUES 
+('Air Costa','13:00','14:40','4,100','KOLKATA','CHENNAI',7);
+INSERT INTO Flights_DB VALUES 
+('IndiGo','16:00','17:20','3,000','KOLKATA','CHENNAI',7);
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','19:00','20:10','4,000','KOLKATA','CHENNAI',7);
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','22:00','23:10','4,500','KOLKATA','CHENNAI',7);
+
+KOLKATA-DELHI
+
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','01:00','02:40','2,300','KOLKATA','DELHI',8);
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','04:00','05:10','2,500','KOLKATA','DELHI',8);
+INSERT INTO Flights_DB VALUES 
+('IndiGo','07:00','08:10','3,000','KOLKATA','DELHI',8);
+INSERT INTO Flights_DB VALUES 
+('Air Costa','10:00','12:10','2,200','KOLKATA','DELHI',8);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','13:00','14:40','4,000','KOLKATA','DELHI',8);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','16:00','17:20','3,000','KOLKATA','DELHI',8);
+INSERT INTO Flights_DB VALUES 
+('GoAir','19:00','20:10','4,000','KOLKATA','DELHI',8);
+INSERT INTO Flights_DB VALUES 
+('Air India','22:00','23:10','4,300','KOLKATA','DELHI',8);
+
+kolkata-mumbai
+
+INSERT INTO Flights_DB VALUES 
+('IndiGo','01:00','03:40','3,500','KOLKATA','MUMBAI',9);
+INSERT INTO Flights_DB VALUES 
+('Air Costa','04:00','06:10','3,800','KOLKATA','MUMBAI',9);
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','07:00','09:10','4,000','KOLKATA','MUMBAI',9);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','10:00','13:10','3,500','KOLKATA','MUMBAI',9);
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','13:00','15:40','5,100','KOLKATA','MUMBAI',9);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','16:00','18:20','4,000','KOLKATA','MUMBAI',9);
+INSERT INTO Flights_DB VALUES 
+('Air India','19:00','21:10','5,000','KOLKATA','MUMBAI',9);
+INSERT INTO Flights_DB VALUES 
+('GoAir','22:00','24:10','5,500','KOLKATA','MUMBAI',9);
+
+mumbai-chennai
+
+INSERT INTO Flights_DB VALUES 
+('Air Costa','01:00','02:30','2,500','MUMBAI','CHENNAI',10);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','04:00','05:00','2,800','MUMBAI','CHENNAI',10);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','07:00','08:00','3,000','MUMBAI','CHENNAI',10);
+INSERT INTO Flights_DB VALUES 
+('GoAir','10:00','12:00','2,500','MUMBAI','CHENNAI',10);
+INSERT INTO Flights_DB VALUES 
+('Air India','13:00','14:30','4,100','MUMBAI','CHENNAI',10);
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','16:00','17:10','3,000','MUMBAI','CHENNAI',10);
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','19:00','20:00','4,000','MUMBAI','CHENNAI',10);
+INSERT INTO Flights_DB VALUES 
+('IndiGo','22:00','22:55','4,500','MUMBAI','CHENNAI',10);
+
+
+mumbai-delhi
+
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','01:00','02:40','2,500','MUMBAI','DELHI',11);
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','04:00','05:10','2,800','MUMBAI','DELHI',11);
+INSERT INTO Flights_DB VALUES 
+('Air India','07:00','08:10','3,000','MUMBAI','DELHI',11);
+INSERT INTO Flights_DB VALUES 
+('GoAir','10:00','12:10','2,500','MUMBAI','DELHI',11);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','13:00','14:40','4,100','MUMBAI','DELHI',11);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','16:00','17:20','3,000','MUMBAI','DELHI',11);
+INSERT INTO Flights_DB VALUES 
+('Air Costa','19:00','20:10','4,000','MUMBAI','DELHI',11);
+INSERT INTO Flights_DB VALUES 
+('IndiGo','22:00','23:50','4,500','MUMBAI','DELHI',11);
+
+
+MUMBAI-KOLKATA
+
+INSERT INTO Flights_DB VALUES 
+('IndiGo','01:00','03:40','3,500','MUMBAI','KOLKATA',12);
+INSERT INTO Flights_DB VALUES 
+('Air Costa','04:00','06:10','3,800','MUMBAI','KOLKATA',12);
+INSERT INTO Flights_DB VALUES 
+('SpiceJet','07:00','09:10','4,000','MUMBAI','KOLKATA',12);
+INSERT INTO Flights_DB VALUES 
+('JetKonnect','10:00','13:10','3,500','MUMBAI','KOLKATA',12);
+INSERT INTO Flights_DB VALUES 
+('Jet Airways','13:00','15:40','5,100','MUMBAI','KOLKATA',12);
+INSERT INTO Flights_DB VALUES 
+('Vistara Airlines','16:00','18:20','4,000','MUMBAI','KOLKATA',12);
+INSERT INTO Flights_DB VALUES 
+('Air India','19:00','21:10','5,000','MUMBAI','KOLKATA',12);
+INSERT INTO Flights_DB VALUES 
+('GoAir','22:00','24:10','5,500','MUMBAI','KOLKATA',12);
