@@ -35,7 +35,6 @@ public class UserDetailsDaoImplementer implements UserDetailsDao {
 			newDocument.append("name", user.getName());
 			newDocument.append("email", user.getEmail());
 			newDocument.append("phone", user.getPhone());
-//			newDocument.append("region", user.getRegion());
 			encryptPassword = service.Md5Encrypt(user.getPassword());
 			newDocument.append("password", encryptPassword );
 			newDocument.append("role", "user");
@@ -62,7 +61,6 @@ public class UserDetailsDaoImplementer implements UserDetailsDao {
 			gotUser.setName(holder.getString("name"));
 			gotUser.setPassword(holder.getString("password"));
 			gotUser.setPhone(holder.getString("phone"));
-//			gotUser.setRegion(holder.getString("region"));
 			gotUser.setRole(holder.getString("role"));
 		}
 		return gotUser;
