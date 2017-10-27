@@ -1,0 +1,125 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   	<script src = "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.js"></script>
+   	
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<div class="login-page" ng-app="myApp" ng-controller="formCtrl">
+  <div class="form" ng-show= "maindiv">
+    <!-- <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>-->
+ 
+    
+    <form class="login-form" ng-show="loginform">
+    
+
+<img src="img\logo.png" alt="logo" id="myimg" height="150px" width="150px">
+<br>
+
+      <input type="text" placeholder="email" ng-model="username"/>
+      <input type="password" placeholder="password" ng-model="passwords"/>
+      <button ng-click=login(username,passwords)>login</button>
+      
+      <p class="message">Not registered? <a href="saveUserForm.html">Create an account</a></p>
+	  <p class="message">{{Status}}</p>
+    </form>
+	</div>
+	<div class="welcomeUser" ng-show="welcomeForm">
+	<header>
+			<img src="img/1.jpg"  alt="profilePic" width="20px" height="20px"> <p> {{nameofUser}} </p>
+		</header>
+		
+		
+		
+		
+
+		
+		
+	<div id="searc">
+			<img src="img/MyLogo.png" id="imglogo"/>
+			<form name="google" action="#" method="POST"><br>
+				<input  type="text" ng-change="onedit()"  ng-model="selected" uib-typeahead="brand for brand in brands| filter:$viewValue | limitTo:8" class="search"><br>
+       
+	
+		
+				<input type="submit" class="button" name="submit" value="Lets Search">
+			</form>
+		</div>
+		
+	
+	
+</div>
+<script>
+var app = angular.module('myApp', ['ui.bootstrap']);
+app.controller('formCtrl', function($scope,$http) {
+    $scope.welcomeForm = false;
+	$scope.loginform =true;
+	$scope.maindiv = true;
+	
+	
+	
+	$scope.login = function(username,pwd){
+	//"http://localhost:8080/loginmodule/user/auth?email=k@k.com&pwd=xyz12"
+	var url = "http://localhost:14470/loginmodule/rest/user/auth?email="+username+"&pwd="+pwd;
+	console.log("##-----url--",url)
+	$http({
+	method: 'GET',
+	url: url
+		}).then(function successCallback(response) {
+			
+			var response=JSON.parse(response.data);
+			
+			
+			console.log('hello1',response.Status);
+		if(response.Status =='Success'){
+			console.log(response.name);
+		$scope.Status = 'Successfully logged in';
+		$scope.nameofUser = response.name;
+		$scope.loginform = false;
+		$scope.maindiv = false;
+		$scope.welcomeForm = true;
+		
+		
+		$scope.redirectIndex=function(){
+			window.location = "search.html";
+		}
+		
+		redirectIndex();
+		} else {
+			console.log('hello2');
+		$scope.Status = 'Invalid user';
+		}
+		console.log(response);
+		}, function errorCallback(response) {
+		$scope.Status = 'Invalid user';
+		});
+	}
+	
+	
+	$scope.selected="";
+    $scope.brands = ['Adidas', 'acer', 'Apple', 'Black forest', 
+    'Coal Barbeque', 'Dominos', 'Aasife Briyani', 'Maduarai Famous Jigardanta', 'Zaithoon', 
+    'OYO', 'Hawaii', 'nike', 'Rebook'];
+	
+	
+	});
+	</script>
+	<footer>
+	<center> COPY RIGHTS  © RAJKAMAL </center>
+		</footer>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.1/ui-bootstrap-tpls.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+
+<script>
+
+
+(function() {
+  angular.module('myApp', ['ngAnimate', 'ui.bootstrap'])
+    .controller('formCtrl', formCtrl);
+
+  formCtrl.$inject = ['$scope'];
+
+    function formCtrl($scope) {
+      $scope.countries = [
+         {
+            "country":"adidas"
+         },
+         {
+            "country":"acer"
+         },
+         {
+            "country":"apple"
+         },
+         {
+            "country":"bigbazzar"
+         },
+         {
+            "country":"Cafe coffee day"
+         },
+         {
+            "country":"casio"
+         },
+         {
+            "country":"coal Barbeque"
+         },
+         {
+            "country":"cream Store"
+         },
+         {
+            "country":"Diesel"
+         },
+         {
+            "country":"dominos"
+         },
+         {
+            "country":"fasttrack"
+         },
+         {
+            "country":"gadget Monster"
+         },
+         {
+            "country":"GRT"
+         }
+      ];
+    }
+})();
+
+
+</script>
+
+
+
+
+
+
+</head>
+
+<body>
+  <div ng-controller="formCtrl">
+  <div class="col-md-12">
+    <input type="text" ng-model="selected" uib-typeahead="c.country for c in countries | filter:$viewValue | limitTo:8" class="form-control">
+    <pre ng-bind-template="Model: {{selected | json}}"></pre>
+  </div>
+</div>
+</body>
+
+</html>

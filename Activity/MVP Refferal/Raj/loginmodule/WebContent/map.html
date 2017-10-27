@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+  <style>
+  #map-canvas{
+width:100%;
+height: 400px;
+  }
+  </style>
+
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABbQ_bxq1HEwhbOUOGUkeMBHBvbljT5eQ&sensor=false"></script>
+<script>
+
+// script.src='https://maps.googleapis.com/maps/api/js?key=AIzaSyABbQ_bxq1HEwhbOUOGUkeMBHBvbljT5eQ&sensor=false';
+function initialize() {
+  var center = new google.maps.LatLng(12.9814,80.2432);
+  var mapOptions = {
+      zoom: 11,
+      center: center,
+      mapTypeId: google.maps.MapTypeId.TERRAIN
+  };
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  loadMarkers(map);
+}
+
+
+
+function loadMarkers(map)
+{
+// https://api.myjson.com/bins/1126x3
+
+  $.ajax({
+      url: "http://localhost:8080/loginmodule/rest/location/getAllLocation",
+
+      cache: false,
+      dataType: "json",
+      success: function( data, textStatus, jqXHR ) {
+
+          $.each(data, function(key, item) {
+            console.log(item.latitude);
+              console.log(item.longitude);
+              var latLng = new google.maps.LatLng(item.latitude, item.longitude);
+              // Creating a marker and putting it on the map
+              var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                title: item.brand
+              });
+          });
+      }
+  });
+}
+
+
+google.maps.event.addDomListener(window, 'load', initialize);
+$(document).ready(function(){
+  initialize();
+
+
+
+  document.addEventListener("wheel", function(e) {
+    e.preventDefault(); // prevents default browser functionality
+  });
+
+  // will NOT throw violation
+  document.addEventListener("wheel", function(e) {
+    e.preventDefault(); // does nothing since the listener is passive
+  }, {
+    passive: true
+  });
+
+
+
+
+
+});
+
+
+</script>
+  </head>
+
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>

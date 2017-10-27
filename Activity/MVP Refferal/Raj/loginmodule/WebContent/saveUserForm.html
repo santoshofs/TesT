@@ -1,0 +1,393 @@
+<!-- <!-- <html>
+<head>
+<meta charset="ISO-8859-1">
+ <link href="WebContent/style.css" type="text/css" rel="stylesheet">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="responseControl">
+<h1>SignUp</h1>
+
+ 
+
+    <form action="http://localhost:14470/loginmodule/rest/user/add" method="post" enctype="multipart/form-data" >
+    <p>user Id: <input type="text" name="uid" size="50" /></p>
+   <p>User Name : <input type="text" name="name" size="50" /></p>  
+   <p>Password : <input type="password" name="password" size="50" /></p>
+   <p>Email Id: <input type="text" name="email" size="50" /></p>
+   
+				<input type="submit" value="save User" />
+
+    </form>
+
+ 
+ 
+ 
+
+
+ </head>
+<body ng-app="myApp" ng-controller="responseControl">
+<div class="login-page">
+  <h2> REGISTRATION FORM</h2>
+  <div class="form">
+  <form class="register-form" >
+	<table>
+	  <tr>
+		<td>Name</td>
+		<td><input type="text" name="name" ng-model="user" /></td>
+	  </tr>
+	  <tr>
+		<td>Email</td>
+		<td><input type="text" name="email" ng-model="email"/></td>
+	  </tr>
+	  <tr>
+		<td>Password</td>
+		<td><input type="password" name="password" ng-model="pwd" /></td>
+	  </tr>
+	  <tr>
+		<td colspan="2" align="center">
+		 <button ng-click=submit(user,email,pwd)>submit</button>
+		 <button ng-click=redirectIndex()>login</button></td>
+	  </tr>
+	</table>
+  </form>
+  </div>
+  </div>
+
+<script>
+			var response = angular.module('myApp', []);
+	
+			response.controller('responseControl',function($scope,$http) 
+			{
+								
+				/* $scope.submit=function(user,email,password)	{	
+				
+						//GET request 
+						var url = "http://localhost:8080/loginmodule/rest/user/save?name="+user+"&email="+email+"&password="+password;
+						
+					$http.get(url).then(
+							function(payload) {
+								console.log( payload.data);
+								
+							});
+					
+				} */
+				
+							
+				$scope.redirectIndex=function(){
+					window.location = "login.html";
+				}
+			});
+		</script>
+</body>
+</html>
+
+
+
+
+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+  <link href="WebContent/style.css" type="text/css" rel="stylesheet">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>SignUp</h1>
+
+ 
+
+    <form action="http://localhost:8080/loginmodule/rest/user/save" method="post" enctype="multipart/form-data" >
+    
+   <p>User Name : <input type="text" name="userName" size="50" /></p>  
+   <p>Password : <input type="password" name="password" size="50" /></p>
+   <p>Email Id: <input type="text" name="email" size="50" /></p>
+				<input type="submit" value="save User" />
+
+    </form>
+
+ 
+ 
+ 
+ <link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="responseControl">
+<div class="login-page">
+  <h2> REGISTRATION FORM</h2>
+  <div class="form">
+  <form class="register-form" >
+	<table>
+	  <tr>
+		<td>Name</td>
+		<td><input type="text" name="name" ng-model="user" /></td>
+	  </tr>
+	  <tr>
+		<td>Email</td>
+		<td><input type="text" name="email" ng-model="email"/></td>
+	  </tr>
+	  <tr>
+		<td>Password</td>
+		<td><input type="password" name="password" ng-model="pwd" /></td>
+	  </tr>
+	  <tr>
+		<td colspan="2" align="center">
+		 <button ng-click=submit(user,email,pwd)>submit</button>
+		 <button ng-click=redirectIndex()>login</button></td>
+	  </tr>
+	</table>
+  </form>
+  </div>
+  </div>
+<script>
+			var response = angular.module('myApp', []);
+	
+			response.controller('responseControl',function($scope,$http) 
+			{
+								
+				$scope.submit=function(user,email,password)	{	
+				
+						//GET request 
+						var url = "http://localhost:8080/loginmodule/rest/user/save?name="+user+"&email="+email+"&password="+password;
+						
+					$http.get(url).then(
+							function(payload) {
+								console.log( payload.data);
+								
+							});
+					
+				}
+				
+							
+				$scope.redirectIndex=function(){
+					window.location = "login.html";
+				}
+			});
+		</script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html >
+<head>
+  	<meta charset="UTF-8">
+  	<title>Login Form</title> 
+  	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+#loginform{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    border:1px solid red;
+}
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.welcomeUser{
+position: relative;
+  z-index: 1;
+  border-radius: 20%;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #fff, #fff);
+  background: -moz-linear-gradient(right, #fff, #fff);
+  background: -o-linear-gradient(right, #fff, #fff);
+  background: linear-gradient(to left, #fff, #fff);
+     box-shadow: 0 0 20px 0 #8BC34A, 0 5px 5px 0 #8BC34A;
+}
+.login {
+  position: relative;
+  z-index: 1;
+  border-radius: 20%;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.login input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.login button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.login button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.login .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.login .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.login .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #fff, #fff);
+  background: -moz-linear-gradient(right, #fff, #fff);
+  background: -o-linear-gradient(right, #fff, #fff);
+  background: linear-gradient(to left, #fff, #fff);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+</style>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+</head>
+
+<body ng-app="myApp" ng-controller="responseControl">
+	<div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			
+		</div>
+		<br>
+		<div class="login">
+			<form ng-show="myforms">
+			
+			<input type="text" placeholder="uid"  ng-model="uid" name="uid"><br>
+			<input type="text" placeholder="name"  ng-model="user" name="name"><br>
+			<input type="E-mail" placeholder="E-mail"  ng-model="email" name="email"><br>
+			<input type="password" placeholder="password"  ng-model="password" name="passeord"><br>
+						
+			
+			<button value="Submit" ng-click=submit(user,email,password)>Submit</button>
+			
+			<br></br>
+			
+			</form>
+			<button value="login" ng-click=redirectIndex()>Login</button>
+		</div>
+	
+	<script>
+			var response = angular.module('myApp', []);
+	
+			response.controller('responseControl',function($scope,$http) 
+			{
+						
+				$scope.myforms=true;
+				$scope.submit=function(user,email,pwd)	{	
+				
+						//GET request 
+					var url = "http://localhost:8080/loginmodule/rest/user/add?name="+user+"&email="+email+"&pwd="+pwd;
+						$scope.myforms=false;
+						/* window.location = "login.html"; */
+					$http.get(url).then(
+							function(payload) {
+								var payload=JSON.parse(payload.data);
+								console.log(payload.Status);
+						});
+					
+				}
+				
+							
+				$scope.redirectIndex=function(){
+					window.location = "login.html";
+				}
+			});
+		</script>
+  
+
+</body>
+</html>
+ -->
+ 
+ 
+ <html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="WebContent/style.css" type="text/css" rel="stylesheet">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>SignUp</h1>
+
+ 
+
+    <form action="http://localhost:14470/loginmodule/rest/user/add" method="post" enctype="multipart/form-data" >
+    
+   <p>ID: <input type="number" name="uid" size="50" /></p>  
+   <p>User Name : <input type="text" name="userName" size="50" /></p>  
+   <p>Password : <input type="password" name="password" size="50" /></p>
+   <p>Email Id: <input type="text" name="email" size="50" /></p>
+   
+				<input type="submit" value="Save User" />
+
+    </form>
+
+ 
+
+</body>
+</html>
