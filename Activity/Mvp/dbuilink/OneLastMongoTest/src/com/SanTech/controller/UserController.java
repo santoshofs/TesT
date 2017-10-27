@@ -76,6 +76,14 @@ public class UserController {
 		UserService userService = new UserServiceImplementer();
 		return userService.lossSession(req);
 	}
+	
+	@GET
+	@Produces("application/json")
+	@Path("/getAllFlights")
+	public ResponseWithFlightCollection getAllFlights() throws UnknownHostException{
+		flightService flightService = new flightServiceImplementer();
+		return flightService.getAllflightDetails();
+	}
 
 	/*
 	 * @POST
