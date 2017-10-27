@@ -1,0 +1,54 @@
+<html ng-app="response">
+<head>
+<title>response</title>
+<script src="js/angular.min.js"></script>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script>
+			var response = angular.module('response', []);
+	
+			response.controller('responseControl',function($scope,$http) 
+			{
+				$scope.res="";
+				$('#abc').hide();
+				$('#land').show();
+				$scope.login=function()	{			
+				
+						//GET request 
+						var url = "http://localhost:8080/loginmodule2/rest/user/auth?email=k@k.com&pwd=xyz123";
+						
+					$http.get(url).then(
+														
+							console.log("My Data is ****** :"+data.data);							
+							$scope.res=data.data;
+							$('#land').hide();
+							$('#abc').show();
+							
+							)};
+					
+				
+			});
+
+
+		</script>
+
+</head>
+
+<body>
+	<div id="main" ng-app="response" ng-controller="responseControl">
+
+		<div id="land">
+
+			<button ng-click="login()">sign In</button>
+			
+			
+		</div>
+
+		<div id="abc">{{res}}</div>
+
+
+	</div>
+
+
+
+</body>
+</html>
