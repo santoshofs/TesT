@@ -23,7 +23,10 @@ import javax.ws.rs.core.Response;
 //import com.carshop.model.ResponseWithCarCollection;
 //import com.carshop.model.ResponseWithCarData;
 import com.SanTech.model.UserResponse;
+import com.SanTech.model.ResponseWithFlightCollection;
 import com.SanTech.model.UserModel;
+import com.SanTech.service.FlightService;
+import com.SanTech.service.FlightServiceImplementer;
 //import com.carshop.service.CarService;
 //import com.carshop.service.CarServiceImplement;
 import com.SanTech.service.UserService;
@@ -77,13 +80,13 @@ public class UserController {
 		return userService.lossSession(req);
 	}
 	
-//	@GET
-//	@Produces("application/json")
-//	@Path("/getAllFlights")
-//	public ResponseWithFlightCollection getAllFlights() throws UnknownHostException{
-//		flightService flightService = new flightServiceImplementer();
-//		return flightService.getAllflightDetails();
-//	}
+	@GET
+	@Produces("application/json")
+	@Path("/getAllFlights")
+	public ResponseWithFlightCollection getAllFlights() throws UnknownHostException{
+		FlightService flightService = new FlightServiceImplementer();
+		return flightService.getAllFlightDetails();
+	}
 
 	/*
 	 * @POST

@@ -1,6 +1,6 @@
 package com.SanTech.model;
 
-public class FligthModel {
+public class FlightModel {
 	private String flight_id;
 	private String flight_name;
 	private String flight_arrival_time;
