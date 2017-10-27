@@ -77,13 +77,13 @@ public class UserController {
 		return userService.lossSession(req);
 	}
 	
-	@GET
-	@Produces("application/json")
-	@Path("/getAllFlights")
-	public ResponseWithFlightCollection getAllFlights() throws UnknownHostException{
-		flightService flightService = new flightServiceImplementer();
-		return flightService.getAllflightDetails();
-	}
+//	@GET
+//	@Produces("application/json")
+//	@Path("/getAllFlights")
+//	public ResponseWithFlightCollection getAllFlights() throws UnknownHostException{
+//		flightService flightService = new flightServiceImplementer();
+//		return flightService.getAllflightDetails();
+//	}
 
 	/*
 	 * @POST
