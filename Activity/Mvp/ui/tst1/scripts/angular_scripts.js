@@ -1,4 +1,10 @@
-SanTechApp.controller('signinCtrl', function($scope, $state, $rootScope, userServices) {
+SanTechApp.controller('account_tab_controller', function($rootScope) {
+    $rootScope.pre_signin_tab = true;
+    $rootScope.post_signin_tab = false;
+
+  })
+
+  .controller('signinCtrl', function($scope, $state, $rootScope, userServices) {
     $scope.email;
     $scope.pwd;
 

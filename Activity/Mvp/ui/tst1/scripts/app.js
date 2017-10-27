@@ -1,6 +1,7 @@
 //angularjs Part
 var SanTechApp = angular.module('SanTechApp', ["ui.router"]);
 
+
 // ui routing
 SanTechApp.config(function($stateProvider, $urlRouterProvider) {
 
@@ -24,6 +25,9 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
       url: "/about",
       templateUrl: 'views/about.html'
     });
+}).run(function($rootScope, $state, $stateParams) {
+  $rootScope.$state = $state;
+  $rootScope.$stateParams = $stateParams;
 });
 
 // SanTechApp.controller("RootController", function($scope,$http) {

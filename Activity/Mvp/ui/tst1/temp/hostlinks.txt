@@ -1,0 +1,4 @@
+mongo db
+http://localhost:8080/FinalMongoAttempt/SanService/control/getAllFlights
+mongodb myjson link
+https://api.myjson.com/bins/1gji9n

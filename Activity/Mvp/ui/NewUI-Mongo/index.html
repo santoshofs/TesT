@@ -17,7 +17,7 @@
 
 </head>
 
-<body ng-app="SanTechApp">
+<body ng-app="SanTechApp" >
   <div id="navigator">
     <nav class="navbar navbar-inverse col-md-12">
       <div class="container-fluid">
@@ -27,30 +27,19 @@
         </div>
 
         <ul class="nav navbar-nav col-md-4">
-          <li ng-class="{ active: $state.includes('home') }" id="hometag"><a class="customheadertags" ui-sref="home">HOME</a></li>
-          <li ng-class="{ active: $state.includes('about') }" ><a class="customheadertags" ui-sref="about">ABOUT</a></li>
-          <li ng-class="{ active: $state.includes('user') }"><a class="customheadertags" ui-sref="user">user</a></li>
-          <li ng-class="{ active: $state.includes('flight') }"><a class="customheadertags" ui-sref="flight">Flight</a></li>
+          <li id="hometag"><a class="customheadertags" ui-sref="home">HOME</a></li>
+          <li><a class="customheadertags" ui-sref="about">ABOUT</a></li>
+          <li><a class="customheadertags" ui-sref="user">user</a></li>
+          <li><a class="customheadertags" ui-sref="flight">Flight</a></li>
         </ul>
 
-        <div id="user_status" ng-controller="account_tab_controller">
-          <div class="dropdown" style="float:right;" id="pre_signin" ng-if="pre_signin_tab">
-            <button class="dropbtn" id="accountcheckin"><span class="glyphicon glyphicon-user"></span> Check-in</button>
-            <div class="dropdown-content">
-              <a id="logintab"><img src="styles/images/friends_group.png" alt=""id="customicons" /> LOGIN</a>
-              <a id="registertab"><img src="styles/images/edit.png" alt="" id="customicons"/> REGISTER</a>
-            </div>
-          </div>
-
-          <div class="dropdown" style="float:right;" id="post_signin" ng-if="post_signin_tab">
-            <button class="dropbtn" id="accountcheckin"><span class="glyphicon glyphicon-user"></span> {{user.name}}</button>
-            <div class="dropdown-content">
-              <a id="logintab"><img src="styles/images/friends_group.png" alt=""id="customicons" /> My Account</a>
-              <a id="registertab"><img src="styles/images/edit.png" alt="" id="customicons"/> Sign Off</a>
-            </div>
-          </div>
+        <div class="dropdown" style="float:right;">
+          <button class="dropbtn" id="accountcheckin"><span class="glyphicon glyphicon-user"></span> ACCOUNT</button>
+          <div class="dropdown-content">
+            <a id="logintab"><img src="styles/images/friends_group.png" alt=""id="customicons" /> LOGIN</a>
+            <a id="registertab"><img src="styles/images/edit.png" alt="" id="customicons"/> REGISTER</a>
+          </div>0
         </div>
-
 
 
         <div class="modal fade" id="usercheckinModal" role="dialog">
