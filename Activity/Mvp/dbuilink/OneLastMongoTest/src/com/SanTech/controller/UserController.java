@@ -23,6 +23,7 @@ import javax.ws.rs.core.Response;
 //import com.carshop.model.ResponseWithCarCollection;
 //import com.carshop.model.ResponseWithCarData;
 import com.SanTech.model.UserResponse;
+import com.SanTech.model.FlightModel;
 import com.SanTech.model.ResponseWithFlightCollection;
 import com.SanTech.model.UserModel;
 import com.SanTech.service.FlightService;
@@ -79,13 +80,27 @@ public class UserController {
 		UserService userService = new UserServiceImplementer();
 		return userService.lossSession(req);
 	}
-	
+
 	@GET
 	@Produces("application/json")
 	@Path("/getAllFlights")
-	public ResponseWithFlightCollection getAllFlights() throws UnknownHostException{
+	public ResponseWithFlightCollection getAllFlights() throws UnknownHostException {
 		FlightService flightService = new FlightServiceImplementer();
 		return flightService.getAllFlightDetails();
+	}
+	
+	@POST
+	@Path("/flightSearch")
+	@Produces("application/json")
+	public ResponseWithFlightCollection flightSearch(@FormParam("flight_from") String flight_from, @FormParam("flight_to") String flight_to,
+			@Context HttpServletRequest req)
+			throws UnknownHostException, NoSuchAlgorithmException, UnsupportedEncodingException, URISyntaxException {
+		FlightModel flight = new FlightModel();
+		FlightService FlightService = new FlightServiceImplementer();
+		flight.setFlight_from(flight_from);
+		flight.setFlight_to(flight_to);
+
+		return FlightService.flightSearchCheck(flight, req);
 	}
 
 	/*

@@ -16,45 +16,47 @@ import com.mongodb.MongoClient;
 
 public class UserDetailsDaoImplementer implements UserDetailsDao {
 	@Override
-	public DBCollection getUserDetailsCollection() throws UnknownHostException{
-		MongoClient mongo = new MongoClient("localhost",27017);
+	public DBCollection getUserDetailsCollection() throws UnknownHostException {
+		MongoClient mongo = new MongoClient("localhost", 27017);
 		DB mongoDB = mongo.getDB("SanTechLastMongoDB");
 		return mongoDB.getCollection("user_details");
 	}
+
 	@Override
-	public Boolean insertDataForSignUp(UserModel user) throws UnknownHostException, NoSuchAlgorithmException, UnsupportedEncodingException{
+	public Boolean insertDataForSignUp(UserModel user)
+			throws UnknownHostException, NoSuchAlgorithmException, UnsupportedEncodingException {
 		UserService service = new UserServiceImplementer();
 		Boolean status;
-		DBCollection collection = getUserDetailsCollection(); 
+		DBCollection collection = getUserDetailsCollection();
 		BasicDBObject existing = new BasicDBObject();
 		String encryptPassword = new String();
 		existing.put("email", user.getEmail());
 		DBCursor cursor = collection.find(existing);
-		if(!cursor.hasNext()){
+		if (!cursor.hasNext()) {
 			BasicDBObject newDocument = new BasicDBObject();
 			newDocument.append("name", user.getName());
 			newDocument.append("email", user.getEmail());
 			newDocument.append("phone", user.getPhone());
 			encryptPassword = service.Md5Encrypt(user.getPassword());
-			newDocument.append("password", encryptPassword );
+			newDocument.append("password", encryptPassword);
 			newDocument.append("role", "user");
 			collection.insert(newDocument);
 			status = true;
 			System.out.println("Data IN");
-		}
-		else{
+		} else {
 			status = false;
 		}
 		return status;
 	}
+
 	@Override
-	public UserModel fetchRowByEmail(UserModel user) throws UnknownHostException{
+	public UserModel fetchRowByEmail(UserModel user) throws UnknownHostException {
 		DBCollection collection = getUserDetailsCollection();
 		UserModel gotUser = new UserModel();
 		BasicDBObject query = new BasicDBObject();
 		query.put("email", user.getEmail());
 		DBCursor cursor = collection.find(query);
-		if(cursor.hasNext()){
+		if (cursor.hasNext()) {
 			BasicDBObject holder = (BasicDBObject) cursor.next();
 			gotUser.setEmail(holder.getString("email"));
 			gotUser.setId(holder.getString("_id"));
@@ -66,4 +68,3 @@ public class UserDetailsDaoImplementer implements UserDetailsDao {
 		return gotUser;
 	}
 }
-

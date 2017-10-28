@@ -7,10 +7,12 @@ import java.net.UnknownHostException;
 
 import com.SanTech.model.FlightModel;
 import com.SanTech.model.ResponseWithFlightCollection;
+import com.SanTech.model.UserModel;
 //import com.SanTech.model.ResponseWithFlightData;
 import com.mongodb.DBCollection;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 
 public interface FlightDetailsDao {
 	public ResponseWithFlightCollection fetchAllFlights() throws UnknownHostException;
+	public FlightModel fetchRowByDestinations(FlightModel flight) throws UnknownHostException;
 }
