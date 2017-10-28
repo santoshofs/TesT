@@ -1,16 +1,15 @@
 SanTechApp.controller('modal_controller', function($rootScope, $http) {
-  $rootScope.showsignINTab = function(){
-    angular.element('[data-target="#LoginForm"]').tab('show');
-  }
-  $rootScope.showsignUPTab = function(){
-    angular.element('[data-target="#registerForm"]').tab('show');
-  }
-
+    $rootScope.showsignINTab = function() {
+      angular.element('[data-target="#LoginForm"]').tab('show');
+    }
+    $rootScope.showsignUPTab = function() {
+      angular.element('[data-target="#registerForm"]').tab('show');
+    }
   })
+
   .controller('account_tab_controller', function($rootScope) {
     $rootScope.pre_signin_tab = true;
     $rootScope.post_signin_tab = false;
-
   })
 
   .controller('signinCtrl', function($scope, $state, $rootScope, userServices) {
@@ -21,7 +20,6 @@ SanTechApp.controller('modal_controller', function($rootScope, $http) {
       $('.modal').modal('hide');
       userServices.checkLogin($scope.email, $scope.pwd);
     }
-
   })
 
   .controller('signupCtrl', function($scope, userServices) {
@@ -50,5 +48,4 @@ SanTechApp.controller('modal_controller', function($rootScope, $http) {
     $scope.searchflight = function() {
       userServices.checkFlight($scope.flight_from, $scope.flight_to);
     }
-
   })
