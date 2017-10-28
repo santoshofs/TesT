@@ -12,8 +12,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
   <script src="scripts/custom_scripts.js"></script>
   <script src="scripts/app.js"></script>
+  <script src="scripts/angular_controllers.js"></script>
   <script src="scripts/angular_services.js"></script>
-  <script src="scripts/angular_scripts.js"></script>
 
 </head>
 
@@ -28,6 +28,7 @@
 
         <ul class="nav navbar-nav col-md-4">
           <li ng-class="{ active: $state.includes('home') }" id="hometag"><a class="customheadertags" ui-sref="home">HOME</a></li>
+          <li ng-class="{ active: $state.includes('flights') }"><a class="customheadertags" ui-sref="flights">FLIGHTS</a></li>
           <li ng-class="{ active: $state.includes('about') }" ><a class="customheadertags" ui-sref="about">ABOUT</a></li>
           <li ng-class="{ active: $state.includes('user') }"><a class="customheadertags" ui-sref="user">user</a></li>
           <li ng-class="{ active: $state.includes('flight') }"><a class="customheadertags" ui-sref="flight">Flight</a></li>
@@ -35,7 +36,7 @@
 
         <div id="user_status" ng-controller="account_tab_controller">
           <div class="dropdown" style="float:right;" id="pre_signin" ng-if="pre_signin_tab">
-            <button class="dropbtn" id="accountcheckin" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()"><span class="glyphicon glyphicon-user"></span> Check-in</button>
+            <button class="dropbtn" id="accountcheckin" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()"><span class="glyphicon glyphicon-user"></span> CHECK IN</button>
             <div class="dropdown-content">
               <a id="logintab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()"><img src="styles/images/friends_group.png" alt=""id="customicons" /> LOGIN</a>
               <a id="registertab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignUPTab()"><img src="styles/images/edit.png" alt="" id="customicons"/> REGISTER</a>
@@ -50,8 +51,6 @@
             </div>
           </div>
         </div>
-
-
 
         <div class="modal fade" id="usercheckinModal" role="dialog" ng-controller="modal_controller">
           <div class="modal-dialog">
@@ -72,10 +71,12 @@
                 <div class="tab-content">
 
                   <div class="tab-pane active" id="LoginForm">
+                    <div class="col-sm-12" id="loginmodaltext">
+                      Welcome Back..!
+                    </div>
 
                     <form role="form" class="form-horizontal" ng-submit="login()" ng-controller="signinCtrl">
                       <div class="form-group input-group col-sm-12">
-
                         <div class="col-sm-12" id="iconinherit">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                           <input type="email" class="form-control" id="email1" placeholder="Email" ng-model="email" />
@@ -92,7 +93,7 @@
                         <div class="col-sm-12">
                           <input type="submit" class="btn btn-primary btn-sm" value="Login">
                         </div>
-                        <a href="">Forgot your password?</a>
+                        <!-- <a href="">Forgot your password?</a> -->
                       </div>
                     </form>
                   </div>

@@ -14,11 +14,11 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
 
               $rootScope.pre_signin_tab = !$rootScope.pre_signin_tab;
               $rootScope.post_signin_tab = !$rootScope.post_signin_tab;
-              $state.go('user');
+              $state.go('flights');
             }
 
           } else {
-            alert("provided credentials are wrong!")
+            alert("Check User Credentials.!")
           }
         } else {
           alert("something went wrong - server error");
@@ -31,7 +31,7 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
       },
       function(data, status) {
         if (data != "success") {
-          $state.go('user');
+          $state.go('flights');
         }
       }
     );
@@ -50,12 +50,12 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
             $rootScope.sessionHolder = data.user.id;
             $rootScope.user = data.user;
             if ($rootScope.user.role == "user") {
-              $scope.pre_signin_tab = !$scope.pre_signin_tab;
-              $scope.post_signin_tab = !$scope.post_signin_tab;
-              $state.go('user');
+              $rootScope.pre_signin_tab = !$rootScope.pre_signin_tab;
+              $rootScope.post_signin_tab = !$rootScope.post_signin_tab;
+              $state.go('flights');
             }
           } else {
-            alert("Could not signup!")
+            alert("Already Registered.! or Invalid Data.! ")
           }
         } else {
           alert("something went wrong - server error");

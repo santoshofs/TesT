@@ -6,3 +6,24 @@
 #flight-total-div{
       padding-top: 6%;
 }
+
+/*flightsdiv responsive backgrnd full*/
+#flightsdiv {
+  height: 100vh;
+}
+
+#flightsdiv {
+  background-image: url(images/nightflight.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #222222;
+}
+
+/* home bg img For mobile devices */
+@media only screen and (max-width: 767px) {
+  #flightsdiv {
+    background-image: url(images/nightflight.jpg);
+  }
+}

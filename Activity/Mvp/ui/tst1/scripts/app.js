@@ -12,6 +12,10 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
       url: "/home",
       templateUrl: 'views/home.html'
     })
+    .state("flights", {
+      url: "/flights",
+      templateUrl: 'views/flights.html'
+    })
     .state("user", {
       url: "/user",
       templateUrl: 'views/userpage.html'
