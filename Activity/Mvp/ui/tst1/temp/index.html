@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/flightportal.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+  <script src="scripts/custom_scripts.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/angular_services.js"></script>
+  <script src="scripts/angular_scripts.js"></script>
+
+</head>
+
+<body ng-app="SanTechApp">
+  <div id="navigator">
+    <nav class="navbar navbar-inverse col-md-12">
+      <div class="container-fluid">
+
+        <div class="navbar-header ">
+          <a class="navbar-brand col-md-1 col-sm-1 " ui-sref="home" id="brandhear">SanTech</a>
+        </div>
+
+        <ul class="nav navbar-nav col-md-4">
+          <li ng-class="{ active: $state.includes('home') }" id="hometag"><a class="customheadertags" ui-sref="home">HOME</a></li>
+          <li ng-class="{ active: $state.includes('about') }" ><a class="customheadertags" ui-sref="about">ABOUT</a></li>
+          <li ng-class="{ active: $state.includes('user') }"><a class="customheadertags" ui-sref="user">user</a></li>
+          <li ng-class="{ active: $state.includes('flight') }"><a class="customheadertags" ui-sref="flight">Flight</a></li>
+        </ul>
+
+        <div id="user_status" ng-controller="account_tab_controller">
+          <div class="dropdown" style="float:right;" id="pre_signin" ng-if="pre_signin_tab">
+            <button class="dropbtn" id="accountcheckin"><span class="glyphicon glyphicon-user"></span> Check-in</button>
+            <div class="dropdown-content">
+              <a id="logintab"><img src="styles/images/friends_group.png" alt=""id="customicons" /> LOGIN</a>
+              <a id="registertab"><img src="styles/images/edit.png" alt="" id="customicons"/> REGISTER</a>
+            </div>
+          </div>
+
+          <div class="dropdown" style="float:right;" id="post_signin" ng-if="post_signin_tab">
+            <button class="dropbtn" id="accountcheckin"><span class="glyphicon glyphicon-user"></span> {{user.name}}</button>
+            <div class="dropdown-content">
+              <a id="logintab"><img src="styles/images/home.ico" alt=""id="customicons" /> My Account</a>
+              <a id="registertab"><img src="styles/images/logout.ico" alt="" id="customicons"/> Sign Off</a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="modal fade" id="usercheckinModal" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <ul class="nav nav-tabs">
+                  <li id="login-inner-nav"><a href="#LoginForm" data-toggle="tab">Login</a></li>
+                  <li id="register-inner-nav"><a href="#registerForm" data-toggle="tab">SignUp</a></li>
+                  <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </ul>
+              </div>
+
+              <div class="modal-body">
+                <div class="tab-content">
+
+                  <div class="tab-pane" id="LoginForm">
+
+                    <form role="form" class="form-horizontal" ng-submit="login()" ng-controller="signinCtrl">
+                      <div class="form-group input-group col-sm-12">
+
+                        <div class="col-sm-12" id="iconinherit">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                          <input type="email" class="form-control" id="email1" placeholder="Email" ng-model="email" />
+                        </div>
+                      </div>
+
+                      <div class="form-group input-group col-sm-12">
+                        <div class="col-sm-12 " id="iconinherit">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="pwd" />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <input type="submit" class="btn btn-primary btn-sm" value="Login">
+                        </div>
+                        <a href="">Forgot your password?</a>
+                      </div>
+                    </form>
+                  </div>
+
+                  <div class="tab-pane" id="registerForm">
+
+                    <form role="form" class="form-horizontal" ng-submit="signup()" ng-controller="signupCtrl">
+                      <div class="form-group input-group col-sm-12">
+                        <div class="col-sm-12" id="iconinherit">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                          <input type="text" class="form-control" placeholder="Name" ng-model="name" required/>
+                        </div>
+                      </div>
+
+                      <div class="form-group input-group col-sm-12">
+                        <div class="col-sm-12" id="iconinherit">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                          <input type="text" class="form-control" id="email" placeholder="Email" ng-model="email" required/>
+                        </div>
+                      </div>
+
+                      <div class="form-group input-group col-sm-12">
+                        <div class="col-sm-6" id="iconinherit">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                          <input type="password" class="form-control" id="password" placeholder="Password" ng-model="pwd" required/>
+                        </div>
+                        <div class="col-sm-6" id="iconinherit">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                          <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" required/>
+                        </div>
+                      </div>
+
+
+                      <div class="form-group input-group col-sm-12">
+                        <div class="col-sm-12" id="iconinherit">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                          <input type="number" class="form-control" id="mobile" placeholder="Mobile" ng-model="phone" required/>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <input type="submit" class="btn btn-success btn-sm" value="GET STARTED">
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+
+  </div>
+
+
+  <div data-ui-view="">
+    <!-- ui injector -->
+  </div>
+</body>
+
+</html>

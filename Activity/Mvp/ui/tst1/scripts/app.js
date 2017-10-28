@@ -1,7 +1,6 @@
 //angularjs Part
 var SanTechApp = angular.module('SanTechApp', ["ui.router"]);
 
-
 // ui routing
 SanTechApp.config(function($stateProvider, $urlRouterProvider) {
 

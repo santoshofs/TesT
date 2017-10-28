@@ -1,7 +1,7 @@
 /*Great Vibes font import*/
 
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes');
-
+@import url('https://fonts.googleapis.com/css?family=Courgette|Kaushan+Script');
 /*SantechHeader Styles*/
 
 #brandhear {
@@ -9,7 +9,6 @@
   font-size: xx-large;
   color: rgba(248, 182, 135, 1);
 }
-
 
 /*Nav bar border reduction*/
 
@@ -25,7 +24,6 @@
   font-family: Droid Sans, Lobster, Vollkorn;
   font-size: 20px;
 }
-
 
 /*Navigation account dropdown */
 
@@ -72,13 +70,11 @@
   background-color: black;
 }
 
-
 /*navigation user icons*/
 
 #customicons {
   width: 23px;
 }
-
 
 /*user credentials pane*/
 
@@ -140,14 +136,15 @@
   background-color: #222222;
 }
 
-
 /*homediv backgrnd full*/
+
 #homediv {
   height: 100vh;
 }
+
 #homediv {
   /* Location of the image */
-  background-image: url(images/nightflight.jpg);
+  background-image: url(images/img4.jpg);
   /* Image is centered vertically and horizontally at all times */
   background-position: center center;
   /* Image doesn't repeat */
@@ -157,7 +154,6 @@
   background-attachment: fixed;
   /* This is what makes the background image rescale based on its container's size */
   background-size: cover;
-
   background-color: #222222;
   /* SHORTHAND
    * background: url(background-photo.jpg) center center cover no-repeat fixed;
@@ -165,10 +161,39 @@
 }
 
 /* For mobile devices */
+
 @media only screen and (max-width: 767px) {
   #homediv {
     /* The file size of this background image is 93% smaller
      * to improve page load speed on mobile internet connections */
-    background-image: url(images/nightflight.jpg);
+    background-image: url(images/img4.jpg);
   }
+}
+
+#travelQuote {
+  background-color: rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-weight: 900;
+  font-family: 'Kaushan Script', cursive;
+  color: black;
+  font-size: -webkit-xxx-large;
+      margin-bottom: 5%;
+}
+
+#home_boardbtn {
+  text-align: center;
+}
+
+#board_now_btn {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 50px;
+  color: black;
+  background-color: rgba(245, 173, 19, 0.70);
+  font-weight: bold;
+  border-color: black;
+}
+
+#planeicon {
+  width: 52px;
 }

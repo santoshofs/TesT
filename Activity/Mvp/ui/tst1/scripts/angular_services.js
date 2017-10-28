@@ -10,7 +10,7 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
             $rootScope.sessionHolder = data.user.id;
             $rootScope.user = data.user;
             if ($rootScope.user.role == "user") {
-              alert("provided credentials are correct!");
+              alert("Welcome back!");
 
               $rootScope.pre_signin_tab = !$rootScope.pre_signin_tab;
               $rootScope.post_signin_tab = !$rootScope.post_signin_tab;

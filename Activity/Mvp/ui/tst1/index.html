@@ -35,32 +35,32 @@
 
         <div id="user_status" ng-controller="account_tab_controller">
           <div class="dropdown" style="float:right;" id="pre_signin" ng-if="pre_signin_tab">
-            <button class="dropbtn" id="accountcheckin"><span class="glyphicon glyphicon-user"></span> Check-in</button>
+            <button class="dropbtn" id="accountcheckin" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()"><span class="glyphicon glyphicon-user"></span> Check-in</button>
             <div class="dropdown-content">
-              <a id="logintab"><img src="styles/images/friends_group.png" alt=""id="customicons" /> LOGIN</a>
-              <a id="registertab"><img src="styles/images/edit.png" alt="" id="customicons"/> REGISTER</a>
+              <a id="logintab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()"><img src="styles/images/friends_group.png" alt=""id="customicons" /> LOGIN</a>
+              <a id="registertab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignUPTab()"><img src="styles/images/edit.png" alt="" id="customicons"/> REGISTER</a>
             </div>
           </div>
 
           <div class="dropdown" style="float:right;" id="post_signin" ng-if="post_signin_tab">
             <button class="dropbtn" id="accountcheckin"><span class="glyphicon glyphicon-user"></span> {{user.name}}</button>
             <div class="dropdown-content">
-              <a id="logintab"><img src="styles/images/friends_group.png" alt=""id="customicons" /> My Account</a>
-              <a id="registertab"><img src="styles/images/edit.png" alt="" id="customicons"/> Sign Off</a>
+              <a id="logintab"><img src="styles/images/home.ico" alt=""id="customicons" /> My Account</a>
+              <a id="registertab"><img src="styles/images/logout.ico" alt="" id="customicons"/> Sign Off</a>
             </div>
           </div>
         </div>
 
 
 
-        <div class="modal fade" id="usercheckinModal" role="dialog">
+        <div class="modal fade" id="usercheckinModal" role="dialog" ng-controller="modal_controller">
           <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
                 <ul class="nav nav-tabs">
-                  <li id="login-inner-nav"><a href="#LoginForm" data-toggle="tab">Login</a></li>
-                  <li id="register-inner-nav"><a href="#registerForm" data-toggle="tab">SignUp</a></li>
+                  <li id="login-inner-nav" class="active"><a href="" data-target="#LoginForm" data-toggle="tab">Login</a></li>
+                  <li id="register-inner-nav"><a href="" data-target="#registerForm" data-toggle="tab">SignUp</a></li>
                   <button type="button" class="close" aria-label="Close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -68,9 +68,10 @@
               </div>
 
               <div class="modal-body">
+                <div class="tabbable">
                 <div class="tab-content">
 
-                  <div class="tab-pane" id="LoginForm">
+                  <div class="tab-pane active" id="LoginForm">
 
                     <form role="form" class="form-horizontal" ng-submit="login()" ng-controller="signinCtrl">
                       <div class="form-group input-group col-sm-12">
@@ -141,6 +142,7 @@
 
                   </div>
 
+                </div>
                 </div>
               </div>
 
