@@ -71,4 +71,28 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
     $state.go('home');
     alert("SignOut Successfull!");
   }
+
+  this.checkFlight = function(flight_from, flight_to) {
+    $.post("http://localhost:8080/FinalMongoAttempt/SanService/control/flightSearch", {
+        flight_from: flight_from,
+        flight_to: flight_to
+      },
+      function(data, status) {
+        if (status == "success") {
+          if (data.status == "success") {
+            $rootScope.sessionHolder = data.flight.flight_id;
+            $rootScope.flight = data.flight;
+            {
+              alert("flight fetch success!");
+
+            }
+
+          } else {
+            alert("provided credentials are wrong!")
+          }
+        } else {
+          alert("something went wrong - server error");
+        }
+      });
+  }
 })

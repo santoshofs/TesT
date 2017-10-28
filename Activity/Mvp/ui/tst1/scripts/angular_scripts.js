@@ -31,3 +31,13 @@ SanTechApp.controller('account_tab_controller', function($rootScope) {
       userServices.signingOut();
     }
   })
+
+  .controller('flightsearchCtrl', function($scope, $state, $rootScope, userServices) {
+    $scope.flight_from;
+    $scope.flight_to;
+
+    $scope.searchflight = function() {
+      userServices.checkFlight($scope.flight_from, $scope.flight_to);
+    }
+
+  })
