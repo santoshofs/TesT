@@ -40,8 +40,10 @@ SanTechApp.controller('modal_controller', function($rootScope, $http) {
       userServices.signingOut();
     }
   })
-
-  .controller('flightsearchCtrl', function($scope, $state, $rootScope, userServices) {
+  .controller('flightsearchCtrl', function($scope) {
+    $scope.travellocation = ["CHENNAI", "DELHI", "MUMBAI", "KOLKATA"];
+  })
+  .controller('flightsearchCtrl2', function($scope, $state, $rootScope, userServices) {
     $scope.flight_from;
     $scope.flight_to;
 
