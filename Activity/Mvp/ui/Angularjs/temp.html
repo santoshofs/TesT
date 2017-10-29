@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+<table>
+  <tr ng-repeat="flight in flights">
+    <td>{{ flight.emp_name }}</td>
+    <td>{{ flight.emp_dept }}</td>
+  </tr>
+</table>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("https://api.myjson.com/bins/12704r")
+    .then(function (response) {$scope.flights = response.data.flights;});
+});
+</script>
+
+</body>
+</html>

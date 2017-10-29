@@ -1,0 +1,29 @@
+.container {
+  padding-right: 1%;
+  padding-left: 1%;
+  margin-right: 0;
+  margin-left: 0;
+  width: 100%;
+  margin-top: -2%;
+}
+
+.form-inline {
+  padding-bottom: 2%;
+  text-align: right;
+}
+
+#customtable {
+  border: 2px solid #908a8a;
+}
+
+#customtable th, td, tr {
+  text-align: center;
+}
+
+th {
+  width: 20%;
+}
+
+.table>thead>tr>th {
+  border-bottom: 2px solid #908a8a;
+}

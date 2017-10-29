@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-US" ng-app="App">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="lib/angular.js"></script>
+  <title>Users</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      border: 1px solid #999;
+    }
+  </style>
+</head>
+
+<body>
+
+  <table ng-controller="UsersCtrl">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat-start="user in users" ng-click="selUser(user)">
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+      </tr>
+      <tr ng-repeat-end ng-if="isSelected(user)">
+        <td colspan="2">{{user.desc}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    angular.module('App', [])
+      .factory('Users', function() {
+        return {
+          query: function() {
+            return [{
+                name: 'John',
+                age: 25,
+                desc: 'Software Developer at MacroSoft LLC'
+              },
+              {
+                name: 'Jonatan',
+                age: 26,
+                desc: 'Professor at University of Tashkent'
+              },
+              {
+                name: 'Nataly',
+                age: 27,
+                desc: 'Nurse at central hospital'
+              },
+              {
+                name: 'Lucy',
+                age: 28,
+                desc: 'Teacher at district school'
+              }
+            ];
+          }
+        }
+      })
+      .controller('UsersCtrl', function($scope, Users) {
+        $scope.users = Users.query();
+        $scope.selUser = function(user) {
+          $scope.selected_user = user;
+        }
+        $scope.isSelected = function(user) {
+          return $scope.selected_user === user;
+        }
+      });
+  </script>
+</body>
+
+</html>
