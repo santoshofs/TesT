@@ -52,34 +52,53 @@
             </thead>
 
             <tbody>
-              <tr ng-repeat="flight in flights|orderBy:sortKey:reverse|filter:search" >
-                <!-- dir-paginate="flight in flights|orderBy:sortKey:reverse|filter:search|itemsPerPage:8" -->
+              <tr ng-repeat-start="flight in flights|orderBy:sortKey:reverse|filter:search" id="rowstyle">
+                <!-- dir-paginate="flight in flights|orderBy:sortKey:reverse|filter:search|itemsPerPage:8"
                 <td>{{flight.flight_name}}</td>
                 <td>{{flight.flight_from}}</td>
                 <td>{{flight.flight_to}}</td>
                 <td>{{flight.flight_depature_time}}</td>
                 <td>{{flight.flight_arrival_time}}</td>
                 <td>{{flight.flight_price}}</td>
-                <td><button>Book</button></td>
+                <td><button>Book</button></td> -->
 
-                <!-- <tr>
-                  <td rowspan="2" id="temp">{{flight.flight_name}}</td>
-                  <td>{{flight.flight_from}}</td>
 
-                  <td rowspan="2">-</td>
+                <td rowspan="2" id="temp">{{flight.flight_name}}</td>
+                <td>{{flight.flight_from}}</td>
+                <td rowspan="2">-</td>
+                <td>{{flight.flight_to}}</td>
 
-                  <td>{{flight.flight_to}}</td>
+                <td rowspan="2">{{flight.flight_price}}<br /><button>Book</button></td>
 
-                  <td>{{flight.flight_price}}</td>
-                </tr>
-                <tr>
-                  <td>{{flight.flight_depature_time}}</td>
-                  <td>{{flight.flight_arrival_time}}</td>
-                  <td><button>Book</button></td>
-                </tr> -->
-
+              <tr ng-repeat-end id="rowstyle">
+                <td>{{flight.flight_depature_time}}</td>
+                <td>{{flight.flight_arrival_time}}</td>
+              </tr>
 
               </tr>
+
+              <!-- <tr ng-repeat-start="flight in flights|orderBy:sortKey:reverse|filter:search" id="rowstyle">
+                <!-- dir-paginate="flight in flights|orderBy:sortKey:reverse|filter:search|itemsPerPage:8" -->
+                <!-- <td>{{flight.flight_name}}</td>
+                <td>{{flight.flight_from}}</td>
+                <td>{{flight.flight_to}}</td>
+                <td>{{flight.flight_depature_time}}</td>
+                <td>{{flight.flight_arrival_time}}</td>
+                <td>{{flight.flight_price}}</td>
+                <td><button>Book</button></td> -->
+
+
+                <td rowspan="2" id="temp">{{flight.flight_name}}</td>
+                <td rowspan="2">{{flight.flight_from}}<br />{{flight.flight_depature_time}}</td>
+                <td rowspan="2">-</td>
+                <td rowspan="2">{{flight.flight_to}}<br />{{flight.flight_arrival_time}}</td>
+
+                <td rowspan="2">{{flight.flight_price}}<br /><button>Book</button></td>
+
+              </tr> -->
+
+
+
             </tbody>
           </table>
           <!-- <dir-pagination-controls direction-links="true" boundary-links="true">
