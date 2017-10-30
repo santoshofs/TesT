@@ -83,7 +83,7 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
             $rootScope.sessionHolder = data.flights.flight_id;
             $rootScope.availableFlights = data.flights; {
               alert(data.flights[0].flight_from);
-              $state.go('flight.list');
+              $state.go('flights.list');
             }
 
           } else {

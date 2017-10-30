@@ -1,8 +1,8 @@
 <div>
-  <table ng-controller="flightsearchCtrl2" id="full_table">
+  <table class="table-hover" ng-controller="flightsearchCtrl2" id="full_table">
     <thead id="flight_headers">
       <tr>
-        <th class="flight_name_col" id="flight_name_head">FLIGHT NAME
+        <th class="flight_name_col" id="flight_name_head" ng-click="sort('flight_name')">FLIGHT NAME
           <span class="glyphicon sort-icon" ng-show="sortKey=='flight_name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
         </th>
         <th class="flight_from_col" id="flight_from_head">FROM
@@ -34,11 +34,11 @@
         <td class="flight_name_col">{{flight.flight_name}}</td>
         <td class="flight_from_col">{{flight.flight_from}}</td>
         <td class="flight_dt_col">{{flight.flight_depature_time}}</td>
-        <td class="flight_arrow_col">-</td>
+        <td class="flight_arrow_col"><img src="styles/images/arrow.ico" alt="" id="arrowicon" /></td>
         <td class="flight_at_col">{{flight.flight_arrival_time}}</td>
         <td class="flight_to_col">{{flight.flight_to}}</td>
         <td class="flight_price_col">₹ {{flight.flight_price}}</td>
-        <td class="flight_book_col"><button class="btn btn-success" id="flight_book">Book</button></td>
+        <td class="flight_book_col"><button class="btn btn-success" id="flight_book"><span><img src="styles/images/passport.png" alt="" id="passporticon" /></span>Book</button></td>
       </tr>
     </tbody>
 

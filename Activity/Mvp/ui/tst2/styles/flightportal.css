@@ -76,7 +76,9 @@
   font-size: large;
   font-weight: 700;
 }
-
+.table-hover tbody tr:hover td {
+    background: black;
+}
 .flight_name_col {
   font-size: xx-large;
   padding-top: 10px;
@@ -158,6 +160,21 @@
 .flight_book_col{
   padding-left: 10px;
   padding-right: 10px;
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
-#flight_book {}
+#arrowicon{
+  width: 35px;
+padding-top: 14px;
+}
+#flight_book {
+  color: black;
+border-color: black;
+font-size: inherit;
+border-radius: 10px;
+font-weight: 600;
+background-color: lightgoldenrodyellow;
+}
+#passporticon{
+  width: 29px;
+}
