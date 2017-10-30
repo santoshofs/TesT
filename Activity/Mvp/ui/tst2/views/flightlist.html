@@ -30,7 +30,7 @@
       </tr>
     </thead>
     <tbody id="flight_table">
-      <tr ng-repeat="flight in availableFlights" id="flightrow">
+      <tr ng-repeat="flight in availableFlights|orderBy:sortKey:reverse" id="flightrow">
         <td class="flight_name_col">{{flight.flight_name}}</td>
         <td class="flight_from_col">{{flight.flight_from}}</td>
         <td class="flight_dt_col">{{flight.flight_depature_time}}</td>
