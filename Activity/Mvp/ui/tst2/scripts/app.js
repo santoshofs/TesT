@@ -24,6 +24,10 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
       url: "/flight",
       templateUrl: 'views/flightportal.html'
     })
+    .state("flight.list", {
+      url: "/flight/list",
+      templateUrl: 'views/flightlist.html'
+    })
     .state("about", {
       url: "/about",
       templateUrl: 'views/about.html'

@@ -1,33 +1,43 @@
 /*from tab name size reducer*/
-#flight_icons{
+
+#flight_icons {
   width: 35px;
 }
-#flight_ico_span{
+
+#flight_ico_span {
   padding-right: 10px;
 }
-#flight_search_ico{
+
+#flight_search_ico {
   width: 21px;
 }
+
+
 /*total div lowering */
-#flight-total-div{
-      padding-top: 6%;
+
+#flight-total-div {
+  padding-top: 6%;
 }
 
-#flight_inherit{
+#flight_inherit {
   display: inline-flex;
 }
-#flight_search{
+
+#flight_search {
   text-align: center;
 }
-#flight_search_btn{
+
+#flight_search_btn {
   background-color: rgb(0, 0, 0);
-    color: rgb(248, 182, 135);
-    font-weight: 500;
-    border-radius: 50px;
-    font-size: 18px;
+  color: rgb(248, 182, 135);
+  font-weight: 500;
+  border-radius: 50px;
+  font-size: 18px;
 }
 
+
 /*flightsdiv responsive backgrnd full*/
+
 #flightsdiv {
   height: 100vh;
 }
@@ -41,13 +51,113 @@
   background-color: #222222;
 }
 
+
 /* home bg img For mobile devices */
+
 @media only screen and (max-width: 767px) {
   #flightsdiv {
     background-image: url(images/nightflight.jpg);
   }
 }
 
-#from_city,#to_city,#travel_date{
+#from_city, #to_city, #travel_date {
   border-radius: 50px;
 }
+
+#full_table {
+  width: 100%;
+}
+
+#flight_table {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.80);
+  font-size: large;
+  font-weight: 700;
+}
+
+.flight_name_col {
+  font-size: xx-large;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#flight_name_head {
+  font-size: large;
+  text-align: center;
+  font-family: 'Chelsea Market', cursive;
+  /*border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;*/
+}
+
+.flight_from_col {
+  font-size: medium;
+}
+
+#flight_from_head {
+  font-size: large;
+  text-align: center;
+  font-family: 'Chelsea Market', cursive;
+}
+
+.flight_dt_col {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: xx-large;
+}
+
+#flight_dt_head {
+  font-size: large;
+  text-align: center;
+  font-family: 'Chelsea Market', cursive;
+}
+
+.flight_at_col {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: xx-large;
+}
+
+#flight_at_head {
+  font-size: large;
+  text-align: center;
+  font-family: 'Chelsea Market', cursive;
+}
+
+.flight_to_col {
+  font-size: medium;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#flight_to_head {
+  font-size: large;
+  text-align: center;
+  font-family: 'Chelsea Market', cursive;
+}
+
+.flight_price_col {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: x-large;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#flight_price_head {
+  font-size: large;
+  text-align: center;
+  font-family: 'Chelsea Market', cursive;
+}
+
+#flight_headers {
+  background-color: rgb(0, 0, 0);
+  color: #f8b684;
+}
+
+.flight_book_col{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#flight_book {}

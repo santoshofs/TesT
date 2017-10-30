@@ -1,4 +1,4 @@
-<div ng-controller="userController">
+<div >
   <div class="dropdown">
     <button class="dropbtn">Welcome {{user.name}}</button>
     <div class="dropdown-content">
@@ -7,3 +7,10 @@
     </div>
   </div>
 </div>
+<table ng-controller="flightsearchCtrl2">
+  <tr ng-repeat="flight in availableFlights">
+    <td>
+      {{flight.flight_from}}
+    </td>
+  </tr>
+</table>

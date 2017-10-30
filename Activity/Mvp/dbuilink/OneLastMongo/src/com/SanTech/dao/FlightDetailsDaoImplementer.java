@@ -79,23 +79,40 @@ public class FlightDetailsDaoImplementer implements FlightDetailsDao {
 	}
 	
 	@Override
-	public FlightModel fetchRowByDestinations(FlightModel flight) throws UnknownHostException {
+	public ResponseWithFlightCollection fetchRowByDestinations(FlightModel flight) throws UnknownHostException {
 		DBCollection collection = getFlightDetailsCollection();
-		FlightModel gotFlight = new FlightModel();
+		BasicDBObject search = new BasicDBObject();
+		ResponseWithFlightCollection response = new ResponseWithFlightCollection();
 		BasicDBObject query = new BasicDBObject();
-		query.put("flight_from", flight.getFlight_from());
+		List<BasicDBObject> searchArguments = new ArrayList<BasicDBObject>();
+		   searchArguments.add(new BasicDBObject("flight_from", flight.getFlight_from()));
+		   searchArguments.add(new BasicDBObject("flight_to", flight.getFlight_to()));
+		query.put("$and", searchArguments);
 		DBCursor cursor = collection.find(query);
-		if (cursor.hasNext()) {
-			BasicDBObject holder = (BasicDBObject) cursor.next();
-			gotFlight.setFlight_id(holder.getString("flight_id"));
-			gotFlight.setFlight_name(holder.getString("flight_name"));
-			gotFlight.setFlight_arrival_time(holder.getString("flight_arrival_time"));
-			gotFlight.setFlight_depature_time(holder.getString("flight_depature_time"));
-			gotFlight.setFlight_from(holder.getString("flight_from"));
-			gotFlight.setFlight_to(holder.getString("flight_to"));
-			gotFlight.setFlight_price(holder.getString("flight_price"));
-			gotFlight.setDestination_id(holder.getString("destination_id"));
+		int count = collection.find(query).count();
+		FlightModel[] flights = new FlightModel[count];
+//		if (cursor.hasNext()) {
+//			BasicDBObject holder = (BasicDBObject) cursor.next();
+//			gotFlight.setFlight_id(holder.getString("flight_id"));
+//			gotFlight.setFlight_name(holder.getString("flight_name"));
+//			gotFlight.setFlight_arrival_time(holder.getString("flight_arrival_time"));
+//			gotFlight.setFlight_depature_time(holder.getString("flight_depature_time"));
+//			gotFlight.setFlight_from(holder.getString("flight_from"));
+//			gotFlight.setFlight_to(holder.getString("flight_to"));
+//			gotFlight.setFlight_price(holder.getString("flight_price"));
+//			gotFlight.setDestination_id(holder.getString("destination_id"));
+//		}
+		int i = 0;
+		while (cursor.hasNext()) {
+			BasicDBObject handler = (BasicDBObject) cursor.next();
+			flights[i] = new FlightModel();
+			flights[i] = allDataSetter(handler);
+			i++;
 		}
-		return gotFlight;
+		response.status = "success";
+		response.flights = flights;
+		response.rows = count;
+		return response;
+//		return gotFlight;
 	}
 }

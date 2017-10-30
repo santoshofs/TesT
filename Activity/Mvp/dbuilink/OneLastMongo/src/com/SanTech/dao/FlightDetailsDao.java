@@ -14,5 +14,5 @@ import com.sun.jersey.core.header.FormDataContentDisposition;
 
 public interface FlightDetailsDao {
 	public ResponseWithFlightCollection fetchAllFlights() throws UnknownHostException;
-	public FlightModel fetchRowByDestinations(FlightModel flight) throws UnknownHostException;
+	public ResponseWithFlightCollection fetchRowByDestinations(FlightModel flight) throws UnknownHostException;
 }

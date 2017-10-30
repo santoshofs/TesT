@@ -33,18 +33,10 @@ public class FlightServiceImplementer implements FlightService {
 	@Override
 	public ResponseWithFlightCollection flightSearchCheck(FlightModel flight, HttpServletRequest req)
 			throws UnknownHostException, NoSuchAlgorithmException, UnsupportedEncodingException, URISyntaxException {
-		FlightModel gotFlight = new FlightModel();
+		ResponseWithFlightCollection gotFlight = new ResponseWithFlightCollection();
 		gotFlight = flightDetailsDao.fetchRowByDestinations(flight);
-		String checkFlight = (flight.getFlight_to());
-		ResponseWithFlightCollection returnFlight = new ResponseWithFlightCollection();
-		if (checkFlight.equals(gotFlight.getFlight_to())) {
-			returnFlight.status = "success";
-			returnFlight.flight = gotFlight;
-			setFlightSession(req, gotFlight);
-		} else {
-			returnFlight.status = "failed";
-		}
-		return returnFlight;
+		
+		return gotFlight;
 
 	}
 	@Override

@@ -80,9 +80,10 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
       function(data, status) {
         if (status == "success") {
           if (data.status == "success") {
-            $rootScope.sessionHolder = data.flight.flight_id;
-            $rootScope.flight = data.flight; {
-              alert("flight fetch success!");
+            $rootScope.sessionHolder = data.flights.flight_id;
+            $rootScope.availableFlights = data.flights; {
+              alert(data.flights[0].flight_from);
+              $state.go('flight.list');
             }
 
           } else {
