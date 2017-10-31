@@ -1,3 +1,28 @@
+/*flightsdiv responsive backgrnd full*/
+
+#flightsdiv {
+  height: 100vh;
+}
+
+#flightsdiv {
+  background-image: url(images/nightflight.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #222222;
+}
+
+
+/* home bg img For mobile devices */
+
+@media only screen and (max-width: 767px) {
+  #flightsdiv {
+    background-image: url(images/nightflight.jpg);
+  }
+}
+
+
 /*from tab name size reducer*/
 
 #flight_icons {
@@ -35,31 +60,6 @@
   font-size: 18px;
 }
 
-
-/*flightsdiv responsive backgrnd full*/
-
-#flightsdiv {
-  height: 100vh;
-}
-
-#flightsdiv {
-  background-image: url(images/nightflight.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #222222;
-}
-
-
-/* home bg img For mobile devices */
-
-@media only screen and (max-width: 767px) {
-  #flightsdiv {
-    background-image: url(images/nightflight.jpg);
-  }
-}
-
 #from_city, #to_city, #travel_date {
   border-radius: 50px;
 }
@@ -76,9 +76,11 @@
   font-size: large;
   font-weight: 700;
 }
+
 .table-hover tbody tr:hover td {
-    background: black;
+  background: black;
 }
+
 .flight_name_col {
   font-size: xx-large;
   padding-top: 10px;
@@ -157,24 +159,26 @@
   color: #f8b684;
 }
 
-.flight_book_col{
+.flight_book_col {
   padding-left: 10px;
   padding-right: 10px;
   background-color: rgba(0, 0, 0, 0.08);
 }
 
-#arrowicon{
+#arrowicon {
   width: 35px;
-padding-top: 14px;
+  padding-top: 14px;
 }
+
 #flight_book {
   color: black;
-border-color: black;
-font-size: inherit;
-border-radius: 10px;
-font-weight: 600;
-background-color: lightgoldenrodyellow;
+  border-color: black;
+  font-size: inherit;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: #fbb95b;
 }
-#passporticon{
+
+#passporticon {
   width: 29px;
 }

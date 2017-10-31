@@ -20,6 +20,10 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
       url: "/list",
       templateUrl: 'views/flightlist.html'
     })
+    .state("hotels", {
+      url: "/hotels",
+      templateUrl: 'views/hotels.html'
+    })
     .state("user", {
       url: "/user",
       templateUrl: 'views/userpage.html'
@@ -28,10 +32,6 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
       url: "/flight",
       templateUrl: 'views/flightportal.html'
     })
-    // .state("flight.list", {
-    //   url: "/list",
-    //   templateUrl: 'views/flightlist.html'
-    // })
     .state("about", {
       url: "/about",
       templateUrl: 'views/about.html'
@@ -40,9 +40,3 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
 });
-
-// SanTechApp.controller("RootController", function($scope,$http) {
-//   $scope.loginfunction = function (){
-//     alert("asdf");
-//   }
-// });

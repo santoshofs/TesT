@@ -1,7 +1,7 @@
 /*font imports*/
 
-@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Merienda+One|Lily+Script+One|Montez|Rokkitt|Alegreya+Sans+SC|Berkshire+Swash|Chelsea+Market');
-@import url('https://fonts.googleapis.com/css?family=Courgette|Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Merienda+One|Lily+Script+One|Montez|Rokkitt|Alegreya+Sans+SC|Berkshire+Swash|Chelsea+Market|Courgette|Kaushan+Script');
+
 /*Santech Brand*/
 
 #brandhear {
@@ -9,6 +9,7 @@
   font-size: xx-large;
   color: rgba(248, 182, 135, 1);
 }
+
 
 /*Nav bar border reduction*/
 
@@ -24,6 +25,7 @@
   font-family: Droid Sans, Lobster, Vollkorn;
   font-size: 20px;
 }
+
 
 /*Navigation account dropdown */
 
@@ -70,11 +72,13 @@
   background-color: black;
 }
 
+
 /*navigation user icons*/
 
 #customicons {
   width: 23px;
 }
+
 
 /*user credentials pane*/
 
@@ -85,6 +89,7 @@
 #iconinherit {
   display: inherit;
 }
+
 
 /*modal form properties*/
 
@@ -138,6 +143,7 @@
   background-color: #222222;
 }
 
+
 /*login page welcome txt*/
 
 #loginmodaltext {
@@ -151,57 +157,4 @@
 #registercmnt {
   border-color: rgba(0, 0, 0, 0);
   background-color: rgba(0, 0, 0, 0);
-}
-
-/*homediv responsive backgrnd full*/
-
-#homediv {
-  height: 100vh;
-}
-
-#homediv {
-  background-image: url(images/img4.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #222222;
-}
-
-/* home bg img For mobile devices */
-
-@media only screen and (max-width: 767px) {
-  #homediv {
-    background-image: url(images/img4.jpg);
-  }
-}
-
-/*home page travelQuote*/
-
-#travelQuote {
-  background-color: rgba(255, 255, 255, 0.08);
-  text-align: center;
-  font-family: 'Lily Script One', cursive;
-  color: black;
-  font-size: -webkit-xxx-large;
-  margin-bottom: 5%;
-}
-
-/*home page book now btn*/
-
-#home_boardbtn {
-  text-align: center;
-}
-
-#board_now_btn {
-  padding-top: 0px;
-  padding-bottom: 0px;
-  border-radius: 50px;
-  color: #f8b687;
-  background-color: black;
-  border-color: #f8b687;
-}
-
-#planeicon {
-  width: 52px;
 }

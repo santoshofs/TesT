@@ -6,14 +6,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="styles/style.css" />
-  <link rel="stylesheet" href="styles/flightportal.css" />
+  <link rel="stylesheet" href="styles/homestyles.css" />
+  <link rel="stylesheet" href="styles/flightstyles.css" />
+  <link rel="stylesheet" href="styles/hotelstyles.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
-  <script src="scripts/custom_scripts.js"></script>
   <script src="scripts/app.js"></script>
-  <script src="scripts/angular_controllers.js"></script>
-  <script src="scripts/angular_services.js"></script>
+  <script src="scripts/user_controller.js"></script>
+  <script src="scripts/user_services.js"></script>
+  <script src="scripts/flight_controller.js"></script>
+  <script src="scripts/flight_services.js"></script>
 
 </head>
 
@@ -29,6 +32,7 @@
         <ul class="nav navbar-nav">
           <li ng-class="{ active: $state.includes('home') }" id="hometag"><a class="customheadertags" ui-sref="home">HOME</a></li>
           <li ng-class="{ active: $state.includes('flights') }"><a class="customheadertags" ui-sref="flights">FLIGHTS</a></li>
+          <li ng-class="{ active: $state.includes('hotels') }"><a class="customheadertags" ui-sref="hotels">HOTELS</a></li>
           <li ng-class="{ active: $state.includes('about') }"><a class="customheadertags" ui-sref="about">ABOUT</a></li>
           <li ng-class="{ active: $state.includes('user') }"><a class="customheadertags" ui-sref="user">user</a></li>
           <li ng-class="{ active: $state.includes('flight') }"><a class="customheadertags" ui-sref="flight">Flight</a></li>
