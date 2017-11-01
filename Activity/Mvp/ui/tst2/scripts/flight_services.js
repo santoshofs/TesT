@@ -27,7 +27,7 @@ SanTechApp.service('flightServices', function($rootScope, $state, $http) {
       $('.modal').modal('show');
     }
     else {
-      // alert(travel_date);
+      alert($rootScope.travelDate);
       $rootScope.f_name=flight.flight_name;
       $rootScope.f_from=flight.flight_from;
       $rootScope.f_depature_time=flight.flight_depature_time;
