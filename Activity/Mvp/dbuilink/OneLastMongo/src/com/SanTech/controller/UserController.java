@@ -67,19 +67,19 @@ public class UserController {
 		return userService.userLoginCheck(user, req);
 	}
 
-	@POST
-	@Path("/checkSession")
-	public String checkSession(@FormParam("session") String availedSession, @Context HttpServletRequest req) {
-		UserService userService = new UserServiceImplementer();
-		return userService.checkUserSession(availedSession, req);
-	}
+//	@POST
+//	@Path("/checkSession")
+//	public String checkSession(@FormParam("session") String availedSession, @Context HttpServletRequest req) {
+//		UserService userService = new UserServiceImplementer();
+//		return userService.checkUserSession(availedSession, req);
+//	}
 
-	@Path("/getRidOfSession")
-	@GET
-	public Response signOutUser(@Context HttpServletRequest req) {
-		UserService userService = new UserServiceImplementer();
-		return userService.lossSession(req);
-	}
+//	@Path("/getRidOfSession")
+//	@GET
+//	public Response signOutUser(@Context HttpServletRequest req) {
+//		UserService userService = new UserServiceImplementer();
+//		return userService.lossSession(req);
+//	}
 
 	@GET
 	@Produces("application/json")
@@ -102,87 +102,24 @@ public class UserController {
 
 		return FlightService.flightSearchCheck(flight, req);
 	}
+	
+	@POST
+	@Path("/checkSession")
+	public String checkSession(
+			@FormParam("session") String availedSession,
+			@Context HttpServletRequest req
+			){
+		UserService userService = new UserServiceImplementer();
+		return userService.checkUserSession(availedSession,req);
+	}
 
-	/*
-	 * @POST
-	 * 
-	 * @Path("/newUsedCar")
-	 * 
-	 * @Consumes(MediaType.MULTIPART_FORM_DATA)
-	 * 
-	 * @Produces("application/json") public ResponseWithCarData uploadFile(
-	 * 
-	 * @FormDataParam("file") InputStream fileInputStream,
-	 * 
-	 * @FormDataParam("file") FormDataContentDisposition fileInputDetails,
-	 * 
-	 * @FormDataParam("name") String name,
-	 * 
-	 * @FormDataParam("model") String model,
-	 * 
-	 * @FormDataParam("year") String year,
-	 * 
-	 * @FormDataParam("gear") String gear,
-	 * 
-	 * @FormDataParam("seat") String seat,
-	 * 
-	 * @FormDataParam("color") String color,
-	 * 
-	 * @FormDataParam("owner") String owner,
-	 * 
-	 * @FormDataParam("fuelType") String fuel,
-	 * 
-	 * @FormDataParam("milage") String milage,
-	 * 
-	 * @FormDataParam("cc") String cc,
-	 * 
-	 * @FormDataParam("address") String address,
-	 * 
-	 * @FormDataParam("brand") String brand,
-	 * 
-	 * @FormDataParam("type") String type,
-	 * 
-	 * @FormDataParam("price") String price,
-	 * 
-	 * @Context HttpServletRequest req ) throws UnknownHostException {
-	 * 
-	 * System.out.println(" File name is :"+fileInputDetails.getFileName());
-	 * 
-	 * CarService carService = new CarServiceImplement(); CarModel carModel = new
-	 * CarModel(); carModel.setBrand(brand); carModel.setType(type);
-	 * carModel.setName(name); carModel.setModel(model); carModel.setYear(year);
-	 * carModel.setGear(gear); carModel.setSeat(seat); carModel.setColor(color);
-	 * carModel.setOwner(owner); carModel.setFuel(fuel); carModel.setMilage(milage);
-	 * carModel.setCc(cc); carModel.setAddress(address); carModel.setPrice(price);
-	 * return carService.addNewUsedCar(carModel, fileInputStream,
-	 * fileInputDetails,req); }
-	 * 
-	 * @GET
-	 * 
-	 * @Produces("video/mp4")
-	 * 
-	 * @Path("/media/{id}") public Response streamMedia(@HeaderParam("Range") String
-	 * range,
-	 * 
-	 * @PathParam ("id") String id ) throws Exception{ CarService carService = new
-	 * CarServiceImplement(); return carService.getCarMedia(id, range); }
-	 * 
-	 * @GET
-	 * 
-	 * @Produces("application/json")
-	 * 
-	 * @Path("/getAllCars") public ResponseWithCarCollection getAllCars() throws
-	 * UnknownHostException{ CarService carService = new CarServiceImplement();
-	 * return carService.getAllCarDetails(); }
-	 * 
-	 * @POST
-	 * 
-	 * @Produces("application/json")
-	 * 
-	 * @Path("/getCarDetails") public ResponseWithCarData getCarDetails(
-	 * 
-	 * @FormParam("car") String id ) throws UnknownHostException{ CarService
-	 * carService = new CarServiceImplement(); return carService.getCarData(id); }
-	 */
-
+	@Path("/getRidOfSession")
+	@GET
+	public Response signOutUser(
+			@Context HttpServletRequest req
+			){
+		UserService userService = new UserServiceImplementer();
+		return userService.lossSession(req);
+	}
+	
 }

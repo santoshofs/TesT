@@ -38,7 +38,7 @@
         <td class="flight_at_col">{{flight.flight_arrival_time}}</td>
         <td class="flight_to_col">{{flight.flight_to}}</td>
         <td class="flight_price_col">₹ {{flight.flight_price}}</td>
-        <td class="flight_book_col"><button class="btn btn-success" id="flight_book"><span><img src="styles/images/passport.png" alt="" id="passporticon" /></span>Book</button></td>
+        <td class="flight_book_col"><button class="btn btn-success" id="flight_book" ng-click="bookFlight(flight)"><span><img src="styles/images/passport.png" alt="" id="passporticon" /></span>Book</button></td>
       </tr>
     </tbody>
 

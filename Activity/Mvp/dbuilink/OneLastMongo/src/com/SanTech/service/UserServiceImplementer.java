@@ -64,32 +64,64 @@ public class UserServiceImplementer implements UserService {
 
 	}
 
+//	@Override
+//	public void setUserSession(HttpServletRequest req, UserModel user) {
+//		HttpSession session = req.getSession();
+//		session.setAttribute("user", user.getId());
+//	}
+
+//	@Override
+//	public String checkUserSession(String availedSession, HttpServletRequest req) {
+//		HttpSession session = req.getSession();
+//		String serverSession = (String) session.getAttribute("user");
+//		if (availedSession != null) {
+//
+//			if (serverSession.equals(availedSession)) {
+//				return "success";
+//			} else {
+//				return "failed";
+//			}
+//		} else {
+//			return "failed";
+//		}
+//	}
+
 	@Override
-	public void setUserSession(HttpServletRequest req, UserModel user) {
+	public void setUserSession(HttpServletRequest req,UserModel user){
 		HttpSession session = req.getSession();
 		session.setAttribute("user", user.getId());
 	}
-
+	
 	@Override
-	public String checkUserSession(String availedSession, HttpServletRequest req) {
+	public String checkUserSession(String availedSession, HttpServletRequest req){
 		HttpSession session = req.getSession();
 		String serverSession = (String) session.getAttribute("user");
-		if (availedSession != null) {
+		if(availedSession != null) {
 
-			if (serverSession.equals(availedSession)) {
+			if(serverSession.equals(availedSession)){
 				return "success";
-			} else {
+			}
+			else{
 				return "failed";
 			}
-		} else {
+		}
+		else {
 			return "failed";
 		}
 	}
-
+	
 	@Override
 	public Response lossSession(HttpServletRequest req) {
 		HttpSession session = req.getSession();
-		session.setAttribute("user", "");
+		session.setAttribute("user","");
 		return null;
 	}
+
+	
+//	@Override
+//	public Response lossSession(HttpServletRequest req) {
+//		HttpSession session = req.getSession();
+//		session.setAttribute("user", "");
+//		return null;
+//	}
 }

@@ -27,3 +27,5 @@ navclass adder https://embed.plnkr.co/plunk/aWqli3
 http://techidiocy.com/logical-querying-mongodb-java-example/
 
 https://www.google.co.in/imgres?imgurl=http%3A%2F%2Fmiriadna.com%2Fdesctopwalls%2Fimages%2Fmax%2FNight-London.jpg&imgrefurl=http%3A%2F%2Fmiriadna.com%2Fpreview%2Fnight-london&docid=L2YO-fS2WaGNiM&tbnid=NqxKBOiALVa4fM%3A&vet=10ahUKEwiJq4GM0ZDXAhVMNI8KHeAgAIk4ZBAzCBIoEDAQ..i&w=2560&h=1600&bih=588&biw=1366&q=travel%20night%20photography&ved=0ahUKEwiJq4GM0ZDXAhVMNI8KHeAgAIk4ZBAzCBIoEDAQ&iact=mrc&uact=8
+
+http://www.angulartutorial.net/2014/04/date-filtering-and-formatting-in.html

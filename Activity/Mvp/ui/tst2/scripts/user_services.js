@@ -18,7 +18,7 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
             }
 
           } else {
-            alert("Check User Credentials.!")
+            alert("Check User Credentials.!");
           }
         } else {
           alert("something went wrong - server error");
@@ -62,14 +62,17 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
         }
       });
   }
-
-  this.signingOut = function() {
-    $.ajax({
-      type: 'GET',
-      url: "http://localhost:8080/FinalMongoAttempt/SanService/control/getRidOfSession",
-    });
-    $state.go('home');
-    alert("SignOut Successfull!");
-  }  
+  this.userAccountdetails = function(){
+    $state.go('user');
+	}
+  this.signingOut = function(){
+		$.ajax({
+			  type: 'GET',
+			  url: "http://localhost:8080/FinalMongoAttempt/SanService/control/getRidOfSession",
+			  });
+        $rootScope.pre_signin_tab = !$rootScope.pre_signin_tab;
+        $rootScope.post_signin_tab = !$rootScope.post_signin_tab;
+    alert("We Miss You..!");
+	}
 
 })

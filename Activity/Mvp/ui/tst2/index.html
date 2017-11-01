@@ -49,9 +49,9 @@
 
           <div class="dropdown" style="float:right;" id="post_signin" ng-if="post_signin_tab">
             <button class="dropbtn" id="accountcheckin"><span class="glyphicon glyphicon-user"></span> {{user.name}}</button>
-            <div class="dropdown-content">
-              <a id="logintab"><img src="styles/images/home.ico" alt=""id="customicons" /> My Account</a>
-              <a id="registertab"><img src="styles/images/logout.ico" alt="" id="customicons"/> Sign Off</a>
+            <div class="dropdown-content" ng-controller="userdetail_tab_cntrl">
+              <a id="logintab" ng-click="userAccount()"><img src="styles/images/home.ico" alt=""id="customicons" /> My Account</a>
+              <a id="registertab" ng-click="signOut()"><img src="styles/images/logout.ico" alt="" id="customicons" /> Sign Off</a>
             </div>
           </div>
         </div>

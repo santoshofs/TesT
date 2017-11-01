@@ -7,9 +7,15 @@ SanTechApp.controller('modal_controller', function($rootScope, $http) {
     }
   })
 
-  .controller('account_tab_controller', function($rootScope) {
+  .controller('account_tab_controller', function($scope, $rootScope, userServices) {
     $rootScope.pre_signin_tab = true;
     $rootScope.post_signin_tab = false;
+
+  })
+
+  .controller('userdetail_tab_cntrl', function($scope, $rootScope, userServices) {
+    $scope.userAccount = function(){userServices.userAccountdetails();}
+    $scope.signOut = function(){userServices.signingOut();}
   })
 
   .controller('signinCtrl', function($scope, $state, $rootScope, userServices) {
@@ -33,10 +39,10 @@ SanTechApp.controller('modal_controller', function($rootScope, $http) {
     }
   })
 
-  .controller('userController', function($scope, userServices) {
-    userServices.checkSession();
-    $scope.signOut = function() {
-      alert("SignOut ??");
-      userServices.signingOut();
-    }
-  })
+  // .controller('userController', function($scope, userServices) {
+  //   userServices.checkSession();
+  //   $scope.signOut = function() {
+  //     alert("SignOut ??");
+  //     userServices.signingOut();
+  //   }
+  // })

@@ -21,4 +21,23 @@ SanTechApp.service('flightServices', function($rootScope, $state, $http) {
         }
       });
   }
+  this.bookTicket = function(flight) {
+    if ($rootScope.pre_signin_tab == true){
+      alert("Please Login.!");
+      $('.modal').modal('show');
+    }
+    else {
+      // alert(travel_date);
+      $rootScope.f_name=flight.flight_name;
+      $rootScope.f_from=flight.flight_from;
+      $rootScope.f_depature_time=flight.flight_depature_time;
+      $rootScope.f_arrival_time=flight.flight_arrival_time;
+      $rootScope.f_to=flight.flight_to;
+      $rootScope.f_price=flight.flight_price;
+
+      $state.go('booking');
+    }
+
+
+  }
 })

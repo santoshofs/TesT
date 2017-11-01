@@ -22,6 +22,7 @@ public interface UserService {
 			throws UnknownHostException, NoSuchAlgorithmException, UnsupportedEncodingException, URISyntaxException;
 
 	public void setUserSession(HttpServletRequest req, UserModel user);
+	
 
 	public String checkUserSession(String availedSession, HttpServletRequest req);
 
