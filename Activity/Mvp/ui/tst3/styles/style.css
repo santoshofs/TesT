@@ -1,0 +1,160 @@
+/*font imports*/
+
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Merienda+One|Lily+Script+One|Montez|Rokkitt|Alegreya+Sans+SC|Berkshire+Swash|Chelsea+Market|Courgette|Kaushan+Script');
+
+/*Santech Brand*/
+
+#brandhear {
+  font-family: 'Great Vibes', cursive;
+  font-size: xx-large;
+  color: rgba(248, 182, 135, 1);
+}
+
+
+/*Nav bar border reduction*/
+
+.navbar-inverse {
+  border-radius: 0px;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.customheadertags {
+  font-family: Droid Sans, Lobster, Vollkorn;
+  font-size: 20px;
+}
+
+
+/*Navigation account dropdown */
+
+.dropbtn {
+  background-color: transparent;
+  color: rgba(248, 182, 135, 1);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #222222;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+
+/*navigation user icons*/
+
+#customicons {
+  width: 23px;
+}
+
+
+/*user credentials pane*/
+
+#LoginForm, #registerForm {
+  padding-top: 2%;
+}
+
+#iconinherit {
+  display: inherit;
+}
+
+
+/*modal form properties*/
+
+.close {
+  color: red;
+  opacity: 1;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.modal-body {
+  text-align: -webkit-center;
+  border-radius: inherit;
+}
+
+.nav-tabs {
+  border: 0px;
+  margin-left: 3%;
+}
+
+.modal-header {
+  background-color: #222222;
+  padding: 0px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.nav-tabs>li>a {
+  color: white;
+}
+
+.nav-tabs>li>a:hover {
+  background-color: #222222;
+}
+
+
+/*login page welcome txt*/
+
+#loginmodaltext {
+  padding-bottom: 14px;
+  text-align: center;
+  font-family: 'Merienda One', cursive;
+  font-size: x-large;
+  color: rgba(58, 58, 58, 0.92);
+}
+
+#registercmnt {
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}

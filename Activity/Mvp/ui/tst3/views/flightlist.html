@@ -1,0 +1,47 @@
+<div>
+  <table class="table-hover" ng-controller="flightsearchCtrl2" id="full_table">
+    <thead id="flight_headers">
+      <tr>
+        <th class="flight_name_col" id="flight_name_head" ng-click="sort('flight_name')">FLIGHT NAME
+          <span class="glyphicon sort-icon" ng-show="sortKey=='flight_name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+        </th>
+        <th class="flight_from_col" id="flight_from_head">FROM
+          <span class="glyphicon sort-icon" ng-show="sortKey=='flight_from'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+        </th>
+        <th class="flight_dt_col" id="flight_dt_head" ng-click="sort('flight_depature_time')">DEPARTURE TIME
+          <span class="glyphicon sort-icon" ng-show="sortKey=='flight_depature_time'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+        </th>
+        <th>
+
+        </th>
+        <th class="flight_at_col" id="flight_at_head" ng-click="sort('flight_arrival_time')">ARRIVAL TIME
+          <span class="glyphicon sort-icon" ng-show="sortKey=='flight_arrival_time'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+        </th>
+        <th class="flight_to_col" id="flight_to_head">TO
+          <span class="glyphicon sort-icon" ng-show="sortKey=='flight_to'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+        </th>
+        <th class="flight_price_col" id="flight_price_head" ng-click="sort('flight_price')">PRICE
+          <span class="glyphicon sort-icon" ng-show="sortKey=='flight_price'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+        </th>
+        <th id="flight_empty_head">
+
+        </th>
+
+      </tr>
+    </thead>
+    <tbody id="flight_table">
+      <tr ng-repeat="flight in availableFlights|orderBy:sortKey:reverse" id="flightrow">
+        <td class="flight_name_col">{{flight.flight_name}}</td>
+        <td class="flight_from_col">{{flight.flight_from}}</td>
+        <td class="flight_dt_col">{{flight.flight_depature_time}}</td>
+        <td class="flight_arrow_col"><img src="styles/images/arrow.ico" alt="" id="arrowicon" /></td>
+        <td class="flight_at_col">{{flight.flight_arrival_time}}</td>
+        <td class="flight_to_col">{{flight.flight_to}}</td>
+        <td class="flight_price_col">₹ {{flight.flight_price}}</td>
+        <td class="flight_book_col"><button class="btn btn-success" id="flight_book" ng-click="bookFlight(flight)"><span><img src="styles/images/passport.png" alt="" id="passporticon" /></span>Book</button></td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
