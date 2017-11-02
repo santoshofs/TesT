@@ -1,4 +1,40 @@
-<div>
-  {{f_name}}
-  {{travelDate| date: "dd-MM-yyyy"}}
+<div class="container-fluid" id="bookingdiv">
+  <div div class="row col-md-12" id="booking-total-div">
+    <table id="booking_table">
+      <tr>
+        <th colspan="2" id="booking_flight_name">{{f_name}}</th>
+      </tr>
+      <tr>
+        <th class="booking_table_headers">FROM</th>
+        <td class="booking_table_data">{{f_from}} ( {{f_depature_time}} )</td>
+      </tr>
+      <tr>
+        <th class="booking_table_headers">TO</th>
+        <td class="booking_table_data">{{f_to}} ( {{f_arrival_time}} )</td>
+      </tr>
+      <tr>
+        <th class="booking_table_headers">Date of journey</th>
+        <td class="booking_table_data">{{travelDate| date: "dd-MM-yyyy"}}</td>
+      </tr>
+      <tr>
+        <th class="booking_table_headers">Amount</th>
+        <td class="booking_table_data" id="price_color">₹ {{f_price}}</td>
+      </tr>
+    </table>
+    <p id="passenger_note">Enter Passenger Details : </p>
+    <form role="form" class="form-horizontal" ng-submit="book()" ng-controller="bookingCtrl">
+      <div class="form-group input-group col-sm-12">
+        <div class="col-sm-6" id="iconinherit">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input type="text" class="form-control" placeholder="Name" ng-model="passenger_name" required/>
+        </div>
+        <div class="col-sm-6" id="iconinherit">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+          <input type="number" class="form-control" id="passenger_age" placeholder="Age" ng-model="passenger_age" required/>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success btn-sm" id="Booking_page_paybtn"><img src="styles/images/coins.png" alt="" id="coinsicon"/> PayNow</button>
+
+    </form>
+  </div>
 </div>
