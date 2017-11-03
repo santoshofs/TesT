@@ -2,3 +2,11 @@ mongo db
 http://localhost:8080/FinalMongoAttempt/SanService/control/getAllFlights
 mongodb myjson link
 https://api.myjson.com/bins/1gji9n
+
+name="country_code" pattern="[A-Za-z]{3,20}" title="Three letter country code" required>
+
+pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+
+name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,5}$" required
+
+pattern="[0-9]{10}" title="Phone Number must contain 10 numerals " 

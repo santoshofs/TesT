@@ -81,6 +81,9 @@
   background: black;
 }
 
+#flightrow{
+  border-bottom-style: double;
+}
 .flight_name_col {
   font-size: xx-large;
   padding-top: 10px;

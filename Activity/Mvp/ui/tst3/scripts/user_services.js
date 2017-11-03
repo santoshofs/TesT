@@ -10,10 +10,9 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
             $rootScope.sessionHolder = data.user.id;
             $rootScope.user = data.user;
             if ($rootScope.user.role == "user") {
+              $rootScope.post_signin_tab = true;
+              $rootScope.pre_signin_tab = false;
               alert("Welcome back!");
-              $rootScope.pre_signin_tab = !$rootScope.pre_signin_tab;
-              $rootScope.post_signin_tab = !$rootScope.post_signin_tab;
-              // $state.go('flights');
             }
 
           } else {
@@ -49,8 +48,8 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
             $rootScope.sessionHolder = data.user.id;
             $rootScope.user = data.user;
             if ($rootScope.user.role == "user") {
-              $rootScope.pre_signin_tab = !$rootScope.pre_signin_tab;
-              $rootScope.post_signin_tab = !$rootScope.post_signin_tab;
+              $rootScope.pre_signin_tab = false;
+              $rootScope.post_signin_tab = true;
               // $state.go('flights');
             }
           } else {

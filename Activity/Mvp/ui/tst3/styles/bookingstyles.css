@@ -35,7 +35,9 @@
 #price_color {
   color: #2ffb22;
 }
-
+#reschedule{
+      margin-top: 5%;
+}
 #passenger_note {
   font-family: 'Satisfy', cursive;
   padding-top: 5%;
@@ -48,11 +50,17 @@
 #passenger_age {
   width: 85px;
 }
+#passenger_age_div{
+      display: inherit;
+      padding-top: 2%;
+}
+#passenger_name{
+  width: 50%;
 
+}
 #Booking_page_paybtn {
   background-color: #58f1a3;
-  margin-right: 7%;
-  margin-top: 7%;
+  margin-top: 15%;
   border-radius: 50px;
   border-color: black;
   font-weight: 600;
@@ -65,7 +73,16 @@
   width: 30px;
 }
 
+#WarningMsg{
 
+  margin: 0px;
+
+font-weight: 700;
+font-family: inherit;
+padding: 0px;
+font-size: large;
+    color: brown;
+}
 /*flightsdiv responsive backgrnd full*/
 
 #bookingdiv {

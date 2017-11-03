@@ -1,0 +1,3 @@
+SanTechApp.controller('bookingCtrl', function() {
+
+})

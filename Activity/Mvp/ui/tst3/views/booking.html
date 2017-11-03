@@ -21,20 +21,23 @@
         <td class="booking_table_data" id="price_color">₹ {{f_price}}</td>
       </tr>
     </table>
+
+    <a ui-sref="santech.flights">
+      <button class="btn btn-danger btn-sm" id="reschedule">Re-Schedule</button>
+    </a>
     <p id="passenger_note">Enter Passenger Details : </p>
     <form role="form" class="form-horizontal" ng-submit="book()" ng-controller="bookingCtrl">
-      <div class="form-group input-group col-sm-12">
+      <div class="form-group input-group col-sm-12" >
         <div class="col-sm-6" id="iconinherit">
           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-          <input type="text" class="form-control" placeholder="Name" ng-model="passenger_name" required/>
+          <input type="text" class="form-control" placeholder="Name" ng-model="passenger_name" pattern="[A-Za-z]{3,20}" title="Passenger name must contain Min-3 to Max-20 Alphabets" required/>
         </div>
-        <div class="col-sm-6" id="iconinherit">
+        <div class="col-sm-12" id="passenger_age_div" >
           <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-          <input type="number" class="form-control" id="passenger_age" placeholder="Age" ng-model="passenger_age" required/>
+          <input type="number" class="form-control" id="passenger_age" placeholder="Age" min="1" ng-model="passenger_age" required/>
         </div>
       </div>
       <button type="submit" class="btn btn-success btn-sm" id="Booking_page_paybtn"><img src="styles/images/coins.png" alt="" id="coinsicon"/> PayNow</button>
-
     </form>
   </div>
 </div>

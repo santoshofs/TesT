@@ -2,6 +2,9 @@ SanTechApp.controller('flightsearchCtrl2', function($scope, $state, $rootScope, 
   $scope.travellocation = ["CHENNAI", "DELHI", "MUMBAI", "KOLKATA"];
   $scope.flight_from;
   $scope.flight_to;
+  $scope.today = {
+         currentDate: new Date()
+       };
   $rootScope.travelDate;
 
   $scope.searchflight = function() {
