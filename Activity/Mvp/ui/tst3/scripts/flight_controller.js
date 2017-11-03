@@ -3,8 +3,8 @@ SanTechApp.controller('flightsearchCtrl2', function($scope, $state, $rootScope, 
   $scope.flight_from;
   $scope.flight_to;
   $scope.today = {
-         currentDate: new Date()
-       };
+    currentDate: new Date()
+  };
   $rootScope.travelDate;
 
   $scope.searchflight = function() {
