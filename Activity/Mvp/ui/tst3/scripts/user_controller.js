@@ -38,11 +38,3 @@ SanTechApp.controller('modal_controller', function($rootScope, $http) {
       userServices.userSignUp($scope.email, $scope.name, $scope.pwd, $scope.phone);
     }
   })
-
-  // .controller('userController', function($scope, userServices) {
-  //   userServices.checkSession();
-  //   $scope.signOut = function() {
-  //     alert("SignOut ??");
-  //     userServices.signingOut();
-  //   }
-  // })
