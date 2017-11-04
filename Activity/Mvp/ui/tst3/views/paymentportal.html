@@ -28,8 +28,8 @@
         </tr>
       </table>
     </div>
-    <div id="pymntbtndiv">
-      <button type="submit" id="paymentBtn">Pay</button>
+    <div id="pymntbtndiv" ng-controller="paymentcntrl">
+      <button type="submit" ng-click="paynow()" id="paymentBtn" >Pay</button>
     </div>
   </div>
   <div class="col-md-3 col-sm-1"></div>
