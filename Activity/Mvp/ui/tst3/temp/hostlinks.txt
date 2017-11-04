@@ -9,4 +9,29 @@ pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one n
 
 name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,5}$" required
 
-pattern="[0-9]{10}" title="Phone Number must contain 10 numerals " 
+pattern="[0-9]{10}" title="Phone Number must contain 10 numerals "
+
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<div ng-repeat-start="x in records"></div>
+<div>{{x}}</div>
+<div ng-repeat-end=""></div>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+  $scope.records = [
+    "Alfreds Futterkiste",
+    "Berglunds snabbköp",
+    "Centro comercial Moctezuma",
+    "Ernst Handel",
+  ]
+});
+</script>
+
+</body>
+</html>

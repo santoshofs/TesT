@@ -12,7 +12,7 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
             $rootScope.sessionHolder = data.user.id;
             $rootScope.user = data.user;
             if ($rootScope.user.role == "user") {
-
+              $state.go('santech.flights');
               alert("Welcome back!");
             }
 
