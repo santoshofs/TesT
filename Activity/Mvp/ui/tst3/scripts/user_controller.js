@@ -10,12 +10,15 @@ SanTechApp.controller('modal_controller', function($rootScope, $http) {
   .controller('account_tab_controller', function($scope, $rootScope, userServices) {
     $rootScope.pre_signin_tab = true;
     $rootScope.post_signin_tab = false;
-
   })
 
   .controller('userdetail_tab_cntrl', function($scope, $rootScope, userServices) {
-    $scope.userAccount = function(){userServices.userAccountdetails();}
-    $scope.signOut = function(){userServices.signingOut();}
+    $scope.userAccount = function() {
+      userServices.userAccountdetails();
+    }
+    $scope.signOut = function() {
+      userServices.signingOut();
+    }
   })
 
   .controller('signinCtrl', function($scope, $state, $rootScope, userServices) {
@@ -36,5 +39,13 @@ SanTechApp.controller('modal_controller', function($rootScope, $http) {
     $scope.signup = function() {
       $('.modal').modal('hide');
       userServices.userSignUp($scope.email, $scope.name, $scope.pwd, $scope.phone);
+    }
+  })
+
+  .controller('userController', function($scope, $rootScope, userServices) {
+    $scope.bookinglist = function() {
+      $rootScope.user.name;
+      $rootScope.user.email;
+      userServices.bookinghistory($rootScope.user.name, $rootScope.user.email);
     }
   })

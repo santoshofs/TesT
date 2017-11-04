@@ -6,12 +6,13 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
       },
       function(data, status) {
         if (status == "success") {
+          $rootScope.post_signin_tab = !$rootScope.post_signin_tab;
+          $rootScope.pre_signin_tab = !$rootScope.pre_signin_tab;
           if (data.status == "success") {
             $rootScope.sessionHolder = data.user.id;
             $rootScope.user = data.user;
             if ($rootScope.user.role == "user") {
-              $rootScope.post_signin_tab = true;
-              $rootScope.pre_signin_tab = false;
+
               alert("Welcome back!");
             }
 
@@ -75,5 +76,30 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
       $state.go('santech.home');
     }
 	}
+  this.bookinghistory = function(u_name, u_mail) {
+    // alert(u_name);
+    // alert(u_mail);
+    $.post("http://localhost:8080/FinalMongoAttempt/SanService/control/bookingSearch", {
+        u_name: u_name,
+        u_mail: u_mail
+      },
+      function(data, status) {
+        if (status == "success") {
+          if (data.status == "success") {
+            alert("fetch success")
+            // $rootScope.sessionHolder = data.flights.flight_id;
+            // $rootScope.availableFlights = data.flights; {
+            //   // alert(data.flights[0].flight_from);
+            //   $state.go('santech.flights.list');
+            // }
+
+          } else {
+            alert("provided credentials are wrong!")
+          }
+        } else {
+          alert("something went wrong - server error");
+        }
+      });
+  }
 
 })

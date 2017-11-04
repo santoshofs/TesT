@@ -17,16 +17,16 @@
         </ul>
 
         <div id="user_status" ng-controller="account_tab_controller">
-          <div class="dropdown" style="float:right;" id="pre_signin" ng-if="pre_signin_tab">
-            <button class="dropbtn" id="accountcheckin" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()"><span class="glyphicon glyphicon-user"></span> CHECK IN</button>
+          <div class="dropdown" style="float:right;" id="pre_signin" >
+            <button class="dropbtn" id="accountcheckin" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()" ng-if="pre_signin_tab"><span class="glyphicon glyphicon-user" ></span> CHECK IN</button>
             <div class="dropdown-content">
               <a id="logintab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()"><img src="styles/images/friends_group.png" alt=""id="customicons" /> LOGIN</a>
               <a id="registertab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignUPTab()"><img src="styles/images/edit.png" alt="" id="customicons"/> REGISTER</a>
             </div>
           </div>
 
-          <div class="dropdown" style="float:right;" id="post_signin" ng-if="post_signin_tab">
-            <button class="dropbtn" id="accountcheckin"><span class="glyphicon glyphicon-user"></span> {{user.name}}</button>
+          <div class="dropdown" style="float:right;" id="post_signin" >
+            <button class="dropbtn" id="accountcheckin" ng-if="post_signin_tab"><span class="glyphicon glyphicon-user"></span> {{user.name}}</button>
             <div class="dropdown-content" ng-controller="userdetail_tab_cntrl">
               <a id="logintab" ng-click="userAccount()"><img src="styles/images/home.ico" alt=""id="customicons" /> My Account</a>
               <a id="registertab" ng-click="signOut()"><img src="styles/images/logout.ico" alt="" id="customicons" /> Sign Off</a>

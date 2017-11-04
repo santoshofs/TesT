@@ -7,7 +7,6 @@ SanTechApp.controller('bookingCtrl', function($scope, $state, $rootScope, $filte
   })
   .controller('paymentcntrl', function($scope, $state, $rootScope, $filter, bookingServices) {
     $scope.paynow = function(){
-      // alert("Payment Success.!");
       $rootScope.user.name;
       $rootScope.user.email;
       $rootScope.p_name;

@@ -5,6 +5,9 @@ import java.net.UnknownHostException;
 import java.security.NoSuchAlgorithmException;
 
 import com.SanTech.model.BookingModel;
+import com.SanTech.model.BookingResponse;
+import com.SanTech.model.FlightModel;
+import com.SanTech.model.ResponseWithFlightCollection;
 import com.mongodb.DBCollection;
 
 public interface BookingDetailsDao {
@@ -12,6 +15,7 @@ public interface BookingDetailsDao {
 
 	public Boolean insertDataForBooking(BookingModel booking)
 			throws UnknownHostException, NoSuchAlgorithmException, UnsupportedEncodingException;
+	public BookingResponse fetchRowByUserMail(BookingModel booking) throws UnknownHostException;
 
-//	public BookingModel fetchRowByEmail(BookingModel user) throws UnknownHostException;
+
 }

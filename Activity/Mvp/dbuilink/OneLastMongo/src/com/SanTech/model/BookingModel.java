@@ -12,7 +12,14 @@ public class BookingModel {
 	private String f_departure_time;
 	private String f_arrival_time;
 	private String f_price;
+	private String t_id;
 	
+	public String getT_id() {
+		return t_id;
+	}
+	public void setT_id(String t_id) {
+		this.t_id = t_id;
+	}
 	public String getU_name() {
 		return u_name;
 	}

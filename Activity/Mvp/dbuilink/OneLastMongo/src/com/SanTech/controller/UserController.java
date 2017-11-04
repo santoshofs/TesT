@@ -112,9 +112,10 @@ public class UserController {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces("application/json")
 	public BookingResponse addingNewBooking(@FormParam("u_name") String u_name, @FormParam("u_mail") String u_mail,
-			@FormParam("p_name") String p_name, @FormParam("p_age") String p_age, @FormParam("t_date") String t_date, @FormParam("f_name") String f_name,
-			@FormParam("f_from") String f_from, @FormParam("f_to") String f_to, @FormParam("f_departure_time") String f_departure_time,
-			@FormParam("f_arrival_time") String f_arrival_time, @FormParam("f_price") String f_price, @Context HttpServletRequest req)
+			@FormParam("p_name") String p_name, @FormParam("p_age") String p_age, @FormParam("t_date") String t_date,
+			@FormParam("f_name") String f_name, @FormParam("f_from") String f_from, @FormParam("f_to") String f_to,
+			@FormParam("f_departure_time") String f_departure_time, @FormParam("f_arrival_time") String f_arrival_time,
+			@FormParam("f_price") String f_price, @Context HttpServletRequest req)
 			throws UnknownHostException, UnsupportedEncodingException, NoSuchAlgorithmException, URISyntaxException {
 		BookingService bookingService = new BookingServiceImplementer();
 		BookingModel bookingModel = new BookingModel();
@@ -129,8 +130,22 @@ public class UserController {
 		bookingModel.setF_departure_time(f_departure_time);
 		bookingModel.setF_arrival_time(f_arrival_time);
 		bookingModel.setF_price(f_price);
-		
+
 		return bookingService.addingNewBooking(bookingModel, req);
+	}
+
+	@POST
+	@Path("/bookingSearch")
+	@Produces("application/json")
+	public BookingResponse bookingSearch(@FormParam("u_name") String u_name, @FormParam("u_mail") String u_mail,
+			@Context HttpServletRequest req)
+			throws UnknownHostException, NoSuchAlgorithmException, UnsupportedEncodingException, URISyntaxException {
+		BookingModel booking = new BookingModel();
+		BookingService BookingService = new BookingServiceImplementer();
+		booking.setU_name(u_name);
+		booking.setU_mail(u_mail);
+
+		return BookingService.bookingSearchCheck(booking, req);
 	}
 
 }

@@ -15,6 +15,8 @@ import com.SanTech.dao.BookingDetailsDaoImplementer;
 
 import com.SanTech.model.BookingModel;
 import com.SanTech.model.BookingResponse;
+import com.SanTech.model.FlightModel;
+import com.SanTech.model.ResponseWithFlightCollection;
 
 
 public class BookingServiceImplementer implements BookingService {
@@ -35,5 +37,15 @@ public class BookingServiceImplementer implements BookingService {
 			resp.status = "failed";
 		}
 		return resp;
+	}
+	
+	@Override
+	public BookingResponse bookingSearchCheck(BookingModel booking, HttpServletRequest req)
+			throws UnknownHostException, NoSuchAlgorithmException, UnsupportedEncodingException, URISyntaxException {
+		BookingResponse gotBooking = new BookingResponse();
+		gotBooking = bookingDetails.fetchRowByUserMail(booking);
+		
+		return gotBooking;
+
 	}
 }
