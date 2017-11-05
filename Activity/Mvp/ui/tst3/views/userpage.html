@@ -1,7 +1,7 @@
-<div ng-controller="userController">
-    <p>Welcome {{user.name}}</p>
-    <a>
-      <button class="btn btn-danger btn-sm" ng-click="bookinglist()">My Bookings</button>
-    </a>
-
+<div ng-controller="userController" id="userdiv">
+  <div id="userDetailDiv">
+    <div id="welcomenote">Welcome {{user.name}}</div>
+    <button class="btn btn-danger btn-sm" ng-click="bookinglist()" id="myBookingBtn">View Tickets</button>
+  </div>
+  <div data-ui-view=""></div>
 </div>

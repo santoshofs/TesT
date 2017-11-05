@@ -39,9 +39,9 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
       url: "/user",
       templateUrl: 'views/userpage.html'
     })
-    .state("santech.flight", {
-      url: "/flight",
-      templateUrl: 'views/flightportal.html'
+    .state("santech.user.bookinghistory", {
+      url: "/bookinghistory",
+      templateUrl: 'views/bookinghistory.html'
     })
     .state("santech.about", {
       url: "/about",
@@ -51,3 +51,12 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
 });
+SanTechApp.filter('customDate', ['$filter', function($filter) {
+  return function(input, limit) {
+    if (!input) return;
+    if (input.length <= limit) {
+      return input;
+    }
+    return $filter('limitTo')(input, limit) + '';
+  };
+}]);

@@ -9,7 +9,7 @@ SanTechApp.service('flightServices', function($rootScope, $state, $http) {
           if (data.status == "success") {
             $rootScope.sessionHolder = data.flights.flight_id;
             $rootScope.availableFlights = data.flights; {
-              // alert(data.flights[0].flight_from);
+              // alert(travelDate);
               $state.go('santech.flights.list');
             }
 
