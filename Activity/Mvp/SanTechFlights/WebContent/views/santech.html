@@ -1,0 +1,136 @@
+<div>
+  <div id="navigator">
+    <nav class="navbar navbar-inverse col-md-12">
+      <div class="container-fluid">
+
+        <div class="navbar-header ">
+          <a class="navbar-brand col-md-1 col-sm-1 " ui-sref="santech.home" id="brandhear">SanTech</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li ng-class="{ active: $state.includes('home') }" id="hometag"><a class="customheadertags" ui-sref="santech.home">HOME</a></li>
+          <li ng-class="{ active: $state.includes('flights') }"><a class="customheadertags" ui-sref="santech.flights">FLIGHTS</a></li>
+          <li ng-class="{ active: $state.includes('hotels') }"><a class="customheadertags" ui-sref="santech.hotels">HOTELS</a></li>
+        </ul>
+
+        <div id="user_status" ng-controller="account_tab_controller">
+          <div class="dropdown" style="float:right;" id="pre_signin">
+            <button class="dropbtn" id="accountcheckin" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()" ng-if="pre_signin_tab"><span class="glyphicon glyphicon-user" ></span> CHECK IN</button>
+            <div class="dropdown-content">
+              <a id="logintab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()"><img src="styles/images/friends_group.png" alt=""id="customicons" /> LOGIN</a>
+              <a id="registertab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignUPTab()"><img src="styles/images/edit.png" alt="" id="customicons"/> REGISTER</a>
+            </div>
+          </div>
+
+          <div class="dropdown" style="float:right;" id="post_signin">
+            <button class="dropbtn" id="accountcheckin" ng-if="post_signin_tab"><span class="glyphicon glyphicon-user"></span> {{user.name}}</button>
+            <div class="dropdown-content" ng-controller="userdetail_tab_cntrl">
+              <a id="logintab" ng-click="userAccount()"><img src="styles/images/home.ico" alt=""id="customicons" /> My Account</a>
+              <a id="registertab" ng-click="signOut()"><img src="styles/images/logout.ico" alt="" id="customicons" /> Sign Off</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="usercheckinModal" role="dialog" ng-controller="modal_controller">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <ul class="nav nav-tabs">
+                  <li id="login-inner-nav" class="active"><a href="" data-target="#LoginForm" data-toggle="tab">Login</a></li>
+                  <li id="register-inner-nav"><a href="" data-target="#registerForm" data-toggle="tab">SignUp</a></li>
+                  <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </ul>
+              </div>
+
+              <div class="modal-body">
+                <div class="tabbable">
+                  <div class="tab-content">
+
+                    <div class="tab-pane active" id="LoginForm">
+                      <div class="col-sm-12" id="loginmodaltext">
+                        Welcome Back..!
+                      </div>
+
+                      <form role="form" class="form-horizontal" ng-submit="login()" ng-controller="signinCtrl">
+                        <div class="form-group input-group col-sm-12">
+                          <div class="col-sm-12" id="iconinherit">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input type="email" class="form-control" id="email1" placeholder="Email" ng-model="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="Enter a valid Mail-id example:('santech@san.in')" required />
+                          </div>
+                        </div>
+
+                        <div class="form-group input-group col-sm-12">
+                          <div class="col-sm-12 " id="iconinherit">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="pwd" required />
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <input type="submit" class="btn btn-primary btn-sm" value="Login">
+                          </div>
+                        </div>
+                      </form>
+                      <hr />
+                      <div>
+                        Not Registered yet.? <button id="registercmnt"><a data-toggle="modal" ng-click="showsignUPTab()">Register Now</a></button>
+                      </div>
+                    </div>
+
+                    <div class="tab-pane" id="registerForm">
+
+                      <form role="form" class="form-horizontal" ng-submit="signup()" ng-controller="signupCtrl">
+                        <div class="form-group input-group col-sm-12">
+                          <div class="col-sm-12" id="iconinherit">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" class="form-control" placeholder="Name" ng-model="name" pattern="[A-Za-z\s]{3,20}" title="Name must contain Min-3 to Max-20 Alphabets" required/>
+                          </div>
+                        </div>
+
+                        <div class="form-group input-group col-sm-12">
+                          <div class="col-sm-12" id="iconinherit">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input type="text" class="form-control" id="email" placeholder="Email" ng-model="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="Enter a valid Mail-id example:('santech@san.in')" required/>
+                          </div>
+                        </div>
+
+                        <div class="form-group input-group col-sm-12">
+                          <div class="col-sm-12" id="iconinherit">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" class="form-control" id="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters" ng-model="pwd"
+                              required/>
+                          </div>
+                        </div>
+
+                        <div class="form-group input-group col-sm-12">
+                          <div class="col-sm-12" id="iconinherit">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                            <input type="text" class="form-control" id="mobile" placeholder="Mobile" ng-model="phone" pattern="[0-9]{10}" title="Phone Number must contain 10 numerals " required/>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <input type="submit" class="btn btn-success btn-sm" value="GET STARTED">
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div data-ui-view="">
+    <!-- ui injector -->
+  </div>
+</div>

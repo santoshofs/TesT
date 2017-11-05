@@ -1,0 +1,110 @@
+#booking-total-div {
+  text-align: center;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+#booking_table {
+  width: 100%;
+}
+
+#booking_flight_name {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+  font-size: -webkit-xxx-large;
+  font-family: 'Courgette', cursive;
+  color: rgb(255, 167, 73);
+}
+
+.booking_table_headers {
+  font-family: cursive;
+  text-align: right;
+  color: #35e4ef;
+  font-size: large;
+  padding-right: 5%;
+}
+
+.booking_table_data {
+  font-family: cursive;
+  color: ghostwhite;
+  font-size: large;
+  text-align: left;
+}
+
+#price_color {
+  color: #2ffb22;
+}
+
+#reschedule {
+  margin-top: 5%;
+}
+
+#passenger_note {
+  font-family: 'Satisfy', cursive;
+  padding-top: 5%;
+  padding-bottom: 3%;
+  text-align: left;
+  font-size: x-large;
+  color: #ffa749;
+}
+
+#passenger_age {
+  width: 85px;
+}
+
+#passenger_age_div {
+  display: inherit;
+  padding-top: 2%;
+}
+
+#passenger_name {
+  width: 50%;
+}
+
+#Booking_page_paybtn {
+  background-color: #58f1a3;
+  margin-top: 15%;
+  border-radius: 50px;
+  border-color: black;
+  font-weight: 600;
+  font-family: serif;
+  font-size: large;
+  color: black;
+}
+
+#coinsicon {
+  width: 30px;
+}
+
+#WarningMsg {
+  margin: 0px;
+  font-weight: 700;
+  font-family: inherit;
+  padding: 0px;
+  font-size: large;
+  color: brown;
+}
+
+/*booking responsive backgrnd full*/
+
+#bookingdiv {
+  height: 100vh;
+}
+
+#bookingdiv {
+  background-image: url(images/blckblue.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #222222;
+}
+
+/* book bg img For mobile devices */
+
+@media only screen and (max-width: 767px) {
+  #bookingdiv {
+    background-image: url(images/blckblue.jpg);
+  }
+}
