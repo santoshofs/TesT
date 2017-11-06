@@ -1,35 +1,38 @@
 <div id="bookingHistorytotal">
   <div ng-repeat-start="booking in BookingHistory"></div>
-  <div id="ticketdiv">
+  <div id="ticketdiv" class="row">
     <div class="col-md-12" id="ticketHead"> <i class="fa fa-plane"></i> BOARDING PASS</div>
     <div class="col-md-12">
       <div class="col-md-6" id="airlinesName">{{booking.f_name}}</div>
       <div class="col-md-6" id="ticketID">{{booking.t_id}}</div>
     </div>
     <div class="col-md-12 ticketData">
-      <div class="col-md-4">
+      <div class="col-md-4 col-lg-4">
         <div id="DetailHead">FROM</div>
         <div>{{booking.f_from}}</div>
         <div>{{booking.f_departure_time}}</div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-lg-4">
         <div id="DetailHead">TO</div>
         <div>{{booking.f_to}}</div>
         <div>{{booking.f_arrival_time}}</div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-lg-4">
         <div id="DetailHead">BOARDING DATE</div>
         <div>{{booking.t_date | customDate:16}}</div>
         <div id="emptyspace"></div>
       </div>
-      <div class="col-md-4">
-        <div id="DetailHead">PASSENGER NAME</div>
-        <div>{{booking.p_name}}</div>
+      <div class="col-md-12" id="internaltcktdiv">
+        <div class="col-md-4 ">
+          <div id="DetailHead">PASSENGER NAME</div>
+          <div>{{booking.p_name}}</div>
+        </div>
+        <div class="col-md-4">
+          <div id="DetailHead">PASSENGER AGE</div>
+          <div>{{booking.p_age}}</div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <div id="DetailHead">PASSENGER AGE</div>
-        <div>{{booking.p_age}}</div>
-      </div>
+
     </div>
   </div>
   <div ng-repeat-end=""></div>

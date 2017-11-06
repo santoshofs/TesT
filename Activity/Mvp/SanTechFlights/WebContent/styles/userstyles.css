@@ -1,5 +1,9 @@
+html, body {
+  height: 100%;
+}
+
 #userdiv {
-  height: 100vh;
+  height: -webkit-fill-available;
   background-color: black;
 }
 
@@ -29,14 +33,15 @@
   font-weight: 700;
 }
 
+
 /*bookingHistory*/
 
 #ticketdiv {
   margin-top: 1.5%;
-  height: 30vh;
-  width: 65%;
-  margin-left: 17.5%;
-  margin-right: 17.5%;
+  height: 335PX;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-bottom: 1.5%;
   border-radius: 50px;
   border-style: dotted;
@@ -45,7 +50,7 @@
 
 #ticketHead {
   font-family: 'Merienda One', cursive;
-  height: 6vh;
+  height: 60px;
   background-color: #75edff;
   border-top-left-radius: 48px;
   border-top-right-radius: 48px;
@@ -66,9 +71,17 @@
 }
 
 #emptyspace {
-  height: 4vh;
+  /*height: 10vh;*/
 }
 
+#internaltcktdiv {
+  padding-top: 2%;
+}
+#bottom_filler{
+  height: 30px;
+    background-color: black;
+    margin-top: -27px;
+}
 #DetailHead {
   font-family: initial;
   font-size: small;

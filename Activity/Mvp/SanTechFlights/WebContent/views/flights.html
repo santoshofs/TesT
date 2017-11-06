@@ -7,7 +7,7 @@
 
           <div class="col-sm-12 col-md-12" id="flight_inherit">
             <span id="flight_ico_span"><img src="styles/images/takeoffblck.png" alt="" id="flight_icons" /></span>
-            <select class="form-control" id="from_city" ng-model="flight_from" ng-options="x for x in travellocation">
+            <select class="form-control" id="from_city" ng-model="flight_from" ng-options="x for x in travellocation" required>
               <option value="" label="FROM" disabled selected="selected"></option>
             </select>
           </div>
@@ -16,7 +16,7 @@
         <div class="form-group input-group col-sm-12">
           <div class="col-sm-12 col-md-12 " id="flight_inherit">
             <span id="flight_ico_span"><img src="styles/images/landingblack.png" alt="" id="flight_icons" /></span>
-            <select class="form-control" id="to_city" ng-model="flight_to" ng-options="x for x in travellocation">
+            <select class="form-control" id="to_city" ng-model="flight_to" ng-options="x for x in travellocation" required>
               <option value="" label="TO" disabled selected="selected"></option>
             </select>
           </div>
