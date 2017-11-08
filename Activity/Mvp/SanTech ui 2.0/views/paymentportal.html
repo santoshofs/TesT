@@ -1,0 +1,36 @@
+<div class="container-fluid" id="paymentdiv">
+  <div class="col-md-3 col-sm-1"></div>
+  <div class="col-md-6 col-sm-10" id="axisdiv">
+    <div class="col-sm-12" id="axis_head">
+      <img src="styles/images/axisimg.png" id="axisLogo" />
+    </div>
+    <div>
+      <table id="payment_table">
+        <tr>
+          <th class="paymentTableHead">Account Holder</th>
+          <td class="paymentTableData">{{user.name}}</td>
+        </tr>
+        <tr>
+          <th class="paymentTableHead">Account Number</th>
+          <td class="paymentTableData">SB00003112017</td>
+        </tr>
+        <tr>
+          <th class="paymentTableHead">Account Balance</th>
+          <td class="paymentTableData">₹ 2,75,000</td>
+        </tr>
+        <tr>
+          <th class="paymentTableHead">Payee Detail</th>
+          <td class="paymentTableData">SanTech Corp.</td>
+        </tr>
+        <tr>
+          <th class="paymentTableHead">Amount to be Paid</th>
+          <td class="paymentTableData">₹ {{f_price}}</td>
+        </tr>
+      </table>
+    </div>
+    <div id="pymntbtndiv" ng-controller="paymentcntrl">
+      <button type="submit" ng-click="paynow()" id="paymentBtn">Pay</button>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-1"></div>
+</div>

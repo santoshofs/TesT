@@ -1,0 +1,47 @@
+/*paymentdiv responsive backgrnd full*/
+
+#paymentdiv {
+  height: 100vh;
+  background-color: rgb(174, 40, 93);
+}
+
+#axisdiv {
+  margin-top: 1%;
+  height: 95vh;
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+#axis_head {
+  height: 10vh;
+  border-bottom-style: solid;
+  border-bottom-width: 1.5px;
+  border-bottom-color: #655e5e;
+  margin-bottom: 10%;
+}
+
+#axisLogo {
+  padding-top: 2%;
+  width: 23vh;
+}
+
+#payment_table {
+  width: 100%;
+}
+
+.paymentTableHead {
+  text-align: inherit;
+  padding-left: 14%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.paymentTableData {
+  padding-right: 20%;
+}
+
+#pymntbtndiv {
+  text-align: center;
+  padding-top: 7%;
+}
+
+#paymentBtn {}
