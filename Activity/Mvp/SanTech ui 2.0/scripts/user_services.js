@@ -1,4 +1,4 @@
-SanTechApp.service('userServices', function($rootScope, $state, $http) {
+SanTechApp.service('userServices', function($rootScope, $state, $http, $translate) {
   this.checkLogin = function(email, pwd) {
     $.post("http://localhost:8080/SanTechFlights/SanService/control/userLogin", {
         mail: email,
@@ -12,7 +12,7 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
             $rootScope.sessionHolder = data.user.id;
             $rootScope.user = data.user;
             if ($rootScope.user.role == "user") {
-              alert("Welcome back!");
+              alert($translate.instant("Register_Now"));
             }
           } else {
             alert("Check User Credentials.!");
@@ -66,7 +66,7 @@ SanTechApp.service('userServices', function($rootScope, $state, $http) {
     });
     $rootScope.pre_signin_tab = !$rootScope.pre_signin_tab;
     $rootScope.post_signin_tab = !$rootScope.post_signin_tab;
-    alert("We Miss You..!");
+    alert($translate.instant("We_Miss_You"));
     if (window.location.hash == '#!/santech/user') {
       $state.go('santech.home');
     }
