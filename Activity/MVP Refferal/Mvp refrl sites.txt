@@ -35,3 +35,5 @@ https://docs.angularjs.org/api/ng/input/input%5Bdate%5D
 https://angular-translate.github.io/docs/#/guide/02_getting-started
 
 https://www.w3schools.com/tags/att_input_min.asp
+
+https://jsfiddle.net/damithz/Lo7kznLu/
