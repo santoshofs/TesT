@@ -1,0 +1,22 @@
+{
+  "SANTECH": "SanTech",
+  "HOME": "HOME",
+  "FLIGHTS": "FLIGHTS",
+  "HOTELS": "HOTELS",
+  "CHECK_IN": " CHECK IN",
+  "LOGIN": "LOGIN",
+  "REGISTER": "REGISTER",
+  "My_Account": "My Account",
+  "Sign_Off": "Sign Off",
+  "Login": "Login",
+  "SignUp": "SignUp",
+  "Welcome_Back": "Welcome Back..!",
+  "LOGIN": "LOGIN",
+  "LOGIN": "LOGIN",
+  "LOGIN": "LOGIN",
+
+  "BUTTON_LANG_DE": "German",
+  "BUTTON_LANG_EN": "English"
+}
+
+{{ 'HOT' | translate }}

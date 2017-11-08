@@ -1,5 +1,5 @@
 //angularjs Part
-var SanTechApp = angular.module('SanTechApp', ["ui.router"]);
+var SanTechApp = angular.module('SanTechApp', ["ui.router", 'pascalprecht.translate']);
 
 // ui routing
 SanTechApp.config(function($stateProvider, $urlRouterProvider) {
@@ -54,5 +54,20 @@ SanTechApp.filter('customDate', ['$filter', function($filter) {
       return input;
     }
     return $filter('limitTo')(input, limit) + '';
+  };
+}]);
+SanTechApp.config(['$translateProvider', function ($translateProvider) {
+  // configures staticFilesLoader
+  $translateProvider.useStaticFilesLoader({
+    prefix: 'lang/locale-',
+    suffix: '.json'
+  });
+  // load 'en' table on startup
+  $translateProvider.preferredLanguage('en');
+}]);
+
+SanTechApp.controller('langCntrl', ['$translate', '$scope', function ($translate, $scope) {
+  $scope.changeLanguage = function (langKey) {
+    $translate.use(langKey);
   };
 }]);

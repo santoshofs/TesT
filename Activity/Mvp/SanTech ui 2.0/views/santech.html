@@ -4,29 +4,29 @@
       <div class="container-fluid">
 
         <div class="navbar-header ">
-          <a class="navbar-brand col-md-1 col-sm-1 " ui-sref="santech.home" id="brandhear">SanTech</a>
+          <a class="navbar-brand col-md-1 col-sm-1 " ui-sref="santech.home" id="brandhear">{{ 'SANTECH' | translate }}</a>
         </div>
 
         <ul class="nav navbar-nav">
-          <li ng-class="{ active: $state.includes('home') }" id="hometag"><a class="customheadertags" ui-sref="santech.home">HOME</a></li>
-          <li ng-class="{ active: $state.includes('flights') }"><a class="customheadertags" ui-sref="santech.flights">FLIGHTS</a></li>
-          <li ng-class="{ active: $state.includes('hotels') }"><a class="customheadertags" ui-sref="santech.hotels">HOTELS</a></li>
+          <li ng-class="{ active: $state.includes('home') }" id="hometag"><a class="customheadertags" ui-sref="santech.home">{{ 'HOME' | translate }}</a></li>
+          <li ng-class="{ active: $state.includes('flights') }"><a class="customheadertags" ui-sref="santech.flights">{{ 'FLIGHTS' | translate }}</a></li>
+          <li ng-class="{ active: $state.includes('hotels') }"><a class="customheadertags" ui-sref="santech.hotels">{{ 'HOTELS' | translate }}</a></li>
         </ul>
 
         <div id="user_status" ng-controller="account_tab_controller">
           <div class="dropdown" style="float:right;" id="pre_signin">
-            <button class="dropbtn" id="accountcheckin" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()" ng-if="pre_signin_tab"><span class="glyphicon glyphicon-user" ></span> CHECK IN</button>
+            <button class="dropbtn" id="accountcheckin" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()" ng-if="pre_signin_tab"><span class="glyphicon glyphicon-user" ></span>{{ 'CHECK_IN' | translate }}</button>
             <div class="dropdown-content">
-              <a id="logintab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()"><img src="styles/images/friends_group.png" alt=""id="customicons" /> LOGIN</a>
-              <a id="registertab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignUPTab()"><img src="styles/images/edit.png" alt="" id="customicons"/> REGISTER</a>
+              <a id="logintab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()"><img src="styles/images/friends_group.png" alt=""id="customicons" /> {{ 'LOGIN' | translate }}</a>
+              <a id="registertab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignUPTab()"><img src="styles/images/edit.png" alt="" id="customicons"/> {{ 'REGISTER' | translate }}</a>
             </div>
           </div>
 
           <div class="dropdown" style="float:right;" id="post_signin">
             <button class="dropbtn" id="accountcheckin" ng-if="post_signin_tab"><span class="glyphicon glyphicon-user"></span> {{user.name}}</button>
             <div class="dropdown-content" ng-controller="userdetail_tab_cntrl">
-              <a id="logintab" ng-click="userAccount()"><img src="styles/images/home.ico" alt=""id="customicons" /> My Account</a>
-              <a id="registertab" ng-click="signOut()"><img src="styles/images/logout.ico" alt="" id="customicons" /> Sign Off</a>
+              <a id="logintab" ng-click="userAccount()"><img src="styles/images/home.ico" alt=""id="customicons" /> {{ 'My_Account' | translate }}</a>
+              <a id="registertab" ng-click="signOut()"><img src="styles/images/logout.ico" alt="" id="customicons" /> {{ 'Sign_Off' | translate }}</a>
             </div>
           </div>
         </div>
@@ -37,8 +37,8 @@
             <div class="modal-content">
               <div class="modal-header">
                 <ul class="nav nav-tabs">
-                  <li id="login-inner-nav" class="active"><a href="" data-target="#LoginForm" data-toggle="tab">Login</a></li>
-                  <li id="register-inner-nav"><a href="" data-target="#registerForm" data-toggle="tab">SignUp</a></li>
+                  <li id="login-inner-nav" class="active"><a href="" data-target="#LoginForm" data-toggle="tab">{{ 'Login' | translate }}</a></li>
+                  <li id="register-inner-nav"><a href="" data-target="#registerForm" data-toggle="tab">{{ 'SignUp' | translate }}</a></li>
                   <button type="button" class="close" aria-label="Close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -51,7 +51,7 @@
 
                     <div class="tab-pane active" id="LoginForm">
                       <div class="col-sm-12" id="loginmodaltext">
-                        Welcome Back..!
+                        {{ 'Welcome_Back' | translate }}
                       </div>
 
                       <form role="form" class="form-horizontal" ng-submit="login()" ng-controller="signinCtrl">
@@ -132,5 +132,10 @@
 
   <div data-ui-view="">
     <!-- ui injector -->
+  </div>
+
+  <div class="footer" ng-controller="langCntrl">
+    <button ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE"></button>
+    <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
   </div>
 </div>

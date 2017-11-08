@@ -1,13 +1,16 @@
 /*font imports*/
 
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes|Merienda+One|Lily+Script+One|Montez|Rokkitt|Alegreya+Sans+SC|Berkshire+Swash|Chelsea+Market|Courgette|Kaushan+Script|Satisfy|Libre+Barcode+128+Text|Merienda+One|Bree+Serif|Patua+One');
+
 /*Santech Brand*/
 
 #brandhear {
+  margin-top: 2%;
   font-family: 'Great Vibes', cursive;
   font-size: xx-large;
   color: rgba(248, 182, 135, 1);
 }
+
 
 /*Nav bar border reduction*/
 
@@ -23,6 +26,7 @@
   font-family: Droid Sans, Lobster, Vollkorn;
   font-size: 20px;
 }
+
 
 /*Navigation account dropdown */
 
@@ -69,11 +73,13 @@
   background-color: black;
 }
 
+
 /*navigation user icons*/
 
 #customicons {
   width: 23px;
 }
+
 
 /*user credentials pane*/
 
@@ -84,6 +90,7 @@
 #iconinherit {
   display: inherit;
 }
+
 
 /*modal form properties*/
 
@@ -137,6 +144,7 @@
   background-color: #222222;
 }
 
+
 /*login page welcome txt*/
 
 #loginmodaltext {
@@ -150,4 +158,14 @@
 #registercmnt {
   border-color: rgba(0, 0, 0, 0);
   background-color: rgba(0, 0, 0, 0);
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
 }
