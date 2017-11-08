@@ -8,7 +8,7 @@
           <div class="col-sm-12 col-md-12" id="flight_inherit">
             <span id="flight_ico_span"><img src="styles/images/takeoffblck.png" alt="" id="flight_icons" /></span>
             <select class="form-control" id="from_city" ng-model="flight_from" ng-options="x for x in travellocation" required>
-              <option value="" label="FROM" disabled selected="selected"></option>
+              <option value="" label="{{ 'FROM' | translate }}" disabled selected="selected"></option>
             </select>
           </div>
         </div>
@@ -17,7 +17,7 @@
           <div class="col-sm-12 col-md-12 " id="flight_inherit">
             <span id="flight_ico_span"><img src="styles/images/landingblack.png" alt="" id="flight_icons" /></span>
             <select class="form-control" id="to_city" ng-model="flight_to" ng-options="x for x in travellocation" required>
-              <option value="" label="TO" disabled selected="selected"></option>
+              <option value="" label="{{ 'TO' | translate }}" disabled selected="selected"></option>
             </select>
           </div>
         </div>
@@ -32,7 +32,7 @@
         <div class="row">
           <div class="col-sm-12 col-md-12">
             <span id="flight_ico_span"></span>
-            <button type="submit" class="btn btn-sm" id="flight_search_btn"><img src="styles/images/search.ico" alt="" id="flight_search_ico" />Search</button>
+            <button type="submit" class="btn btn-sm" id="flight_search_btn"><img src="styles/images/search.ico" alt="" id="flight_search_ico" />{{ 'Search' | translate }}</button>
           </div>
         </div>
       </form>

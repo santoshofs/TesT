@@ -15,7 +15,7 @@
 
         <div id="user_status" ng-controller="account_tab_controller">
           <div class="dropdown" style="float:right;" id="pre_signin">
-            <button class="dropbtn" id="accountcheckin" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()" ng-if="pre_signin_tab"><span class="glyphicon glyphicon-user" ></span>{{ 'CHECK_IN' | translate }}</button>
+            <button class="dropbtn" id="accountcheckin" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()" ng-if="pre_signin_tab"><span class="glyphicon glyphicon-user" ></span> {{ 'CHECK_IN' | translate }}</button>
             <div class="dropdown-content">
               <a id="logintab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignINTab()"><img src="styles/images/friends_group.png" alt=""id="customicons" /> {{ 'LOGIN' | translate }}</a>
               <a id="registertab" data-toggle="modal" data-target="#usercheckinModal" ng-click="showsignUPTab()"><img src="styles/images/edit.png" alt="" id="customicons"/> {{ 'REGISTER' | translate }}</a>
@@ -58,26 +58,26 @@
                         <div class="form-group input-group col-sm-12">
                           <div class="col-sm-12" id="iconinherit">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input type="email" class="form-control" id="email1" placeholder="Email" ng-model="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="Enter a valid Mail-id example:('santech@san.in')" required />
+                            <input type="email" class="form-control" id="email1" placeholder="{{ 'Email' | translate }}" ng-model="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required />
                           </div>
                         </div>
 
                         <div class="form-group input-group col-sm-12">
                           <div class="col-sm-12 " id="iconinherit">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="pwd" required />
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="{{ 'Password' | translate }}" ng-model="pwd" required />
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="col-sm-12">
-                            <input type="submit" class="btn btn-primary btn-sm" value="Login">
+                            <input type="submit" class="btn btn-primary btn-sm" value="{{ 'Login' | translate }}">
                           </div>
                         </div>
                       </form>
                       <hr />
                       <div>
-                        Not Registered yet.? <button id="registercmnt"><a data-toggle="modal" ng-click="showsignUPTab()">Register Now</a></button>
+                        {{ 'Not_reg_yet' | translate }} <button id="registercmnt"><a data-toggle="modal" ng-click="showsignUPTab()">Register Now</a></button>
                       </div>
                     </div>
 
@@ -87,21 +87,21 @@
                         <div class="form-group input-group col-sm-12">
                           <div class="col-sm-12" id="iconinherit">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" class="form-control" placeholder="Name" ng-model="name" pattern="[A-Za-z\s]{3,20}" title="Name must contain Min-3 to Max-20 Alphabets" required/>
+                            <input type="text" class="form-control" placeholder="{{ 'Name' | translate }}" ng-model="name" pattern="[A-Za-z\s]{3,20}" title="{{ 'name_validator_msg' | translate }}" required/>
                           </div>
                         </div>
 
                         <div class="form-group input-group col-sm-12">
                           <div class="col-sm-12" id="iconinherit">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input type="text" class="form-control" id="email" placeholder="Email" ng-model="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="Enter a valid Mail-id example:('santech@san.in')" required/>
+                            <input type="text" class="form-control" id="email" placeholder="{{ 'Email' | translate }}" ng-model="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required/>
                           </div>
                         </div>
 
                         <div class="form-group input-group col-sm-12">
                           <div class="col-sm-12" id="iconinherit">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input type="password" class="form-control" id="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters" ng-model="pwd"
+                            <input type="password" class="form-control" id="password" placeholder="{{ 'Password' | translate }}" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="{{ 'Pwd_validator_msg' | translate }}" ng-model="pwd"
                               required/>
                           </div>
                         </div>
@@ -109,13 +109,13 @@
                         <div class="form-group input-group col-sm-12">
                           <div class="col-sm-12" id="iconinherit">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-                            <input type="text" class="form-control" id="mobile" placeholder="Mobile" ng-model="phone" pattern="[0-9]{10}" title="Phone Number must contain 10 numerals " required/>
+                            <input type="text" class="form-control" id="mobile" placeholder="{{ 'Mobile' | translate }}" ng-model="phone" pattern="[0-9]{10}" title="{{ 'phone_validator_msg' | translate }}" required/>
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="col-sm-12">
-                            <input type="submit" class="btn btn-success btn-sm" value="GET STARTED">
+                            <input type="submit" class="btn btn-success btn-sm" value="{{ 'GET_STARTED' | translate }}">
                           </div>
                         </div>
                       </form>
@@ -135,7 +135,7 @@
   </div>
 
   <div class="footer" ng-controller="langCntrl">
-    <button ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE"></button>
-    <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
+    <button ng-click="changeLanguage('tamil')" translate="BUTTON_LANG_TAMIL" id="LangBtn"></button>
+    <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN" id="LangBtn"></button>
   </div>
 </div>
