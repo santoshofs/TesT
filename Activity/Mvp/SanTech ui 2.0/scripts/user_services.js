@@ -12,7 +12,7 @@ SanTechApp.service('userServices', function($rootScope, $state, $http, $translat
             $rootScope.sessionHolder = data.user.id;
             $rootScope.user = data.user;
             if ($rootScope.user.role == "user") {
-              alert($translate.instant("Register_Now"));
+              alert($translate.instant("Welcome_Back"));
             }
           } else {
             alert("Check User Credentials.!");
