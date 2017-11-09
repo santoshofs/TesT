@@ -11,6 +11,9 @@ SanTechApp.service('userServices', function($rootScope, $state, $http, $translat
             $rootScope.pre_signin_tab = !$rootScope.pre_signin_tab;
             $rootScope.sessionHolder = data.user.id;
             $rootScope.user = data.user;
+            sessionStorage.setItem('userData', JSON.stringify($rootScope.user));
+            $rootScope.UserSessionData = JSON.parse(sessionStorage.getItem('userData'));
+            alert($rootScope.UserSessionData.email);
             if ($rootScope.user.role == "user") {
               alert($translate.instant("Welcome_Back"));
             }
@@ -66,6 +69,7 @@ SanTechApp.service('userServices', function($rootScope, $state, $http, $translat
     });
     $rootScope.pre_signin_tab = !$rootScope.pre_signin_tab;
     $rootScope.post_signin_tab = !$rootScope.post_signin_tab;
+    sessionStorage.clear();
     alert($translate.instant("We_Miss_You"));
     if (window.location.hash == '#!/santech/user') {
       $state.go('santech.home');
