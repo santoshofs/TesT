@@ -13,7 +13,7 @@ SanTechApp.service('userServices', function($rootScope, $state, $http, $translat
             $rootScope.user = data.user;
             sessionStorage.setItem('userData', JSON.stringify($rootScope.user));
             $rootScope.UserSessionData = JSON.parse(sessionStorage.getItem('userData'));
-            alert($rootScope.UserSessionData.email);
+            // alert($rootScope.UserSessionData.email);
             if ($rootScope.user.role == "user") {
               alert($translate.instant("Welcome_Back"));
             }
