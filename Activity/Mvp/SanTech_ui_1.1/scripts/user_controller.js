@@ -1,8 +1,8 @@
-SanTechApp.controller('modal_controller', function($rootScope, $http) {
-    $rootScope.showsignINTab = function() {
+SanTechApp.controller('modal_controller', function($scope, $http) {
+    $scope.showsignINTab = function() {
       angular.element('[data-target="#LoginForm"]').tab('show');
     }
-    $rootScope.showsignUPTab = function() {
+    $scope.showsignUPTab = function() {
       angular.element('[data-target="#registerForm"]').tab('show');
     }
   })
@@ -24,7 +24,6 @@ SanTechApp.controller('modal_controller', function($rootScope, $http) {
   .controller('signinCtrl', function($scope, $state, $rootScope, userServices) {
     $scope.email;
     $scope.pwd;
-
     $scope.login = function() {
       $('.modal').modal('hide');
       userServices.checkLogin($scope.email, $scope.pwd);
