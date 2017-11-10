@@ -2,9 +2,6 @@
 
 #homediv {
   height: 100vh;
-}
-
-#homediv {
   background-image: url(images/img5.jpg);
   background-position: center center;
   background-repeat: no-repeat;

@@ -47,6 +47,7 @@ SanTechApp.config(function($stateProvider, $urlRouterProvider) {
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
 });
+//custom date limit filter
 SanTechApp.filter('customDate', ['$filter', function($filter) {
   return function(input, limit) {
     if (!input) return;
@@ -56,7 +57,7 @@ SanTechApp.filter('customDate', ['$filter', function($filter) {
     return $filter('limitTo')(input, limit) + '';
   };
 }]);
-SanTechApp.config(['$translateProvider', function ($translateProvider) {
+SanTechApp.config(['$translateProvider', function($translateProvider) {
   // configures staticFilesLoader
   $translateProvider.useStaticFilesLoader({
     prefix: 'lang/locale-',
@@ -65,9 +66,9 @@ SanTechApp.config(['$translateProvider', function ($translateProvider) {
   // load 'en' table on startup
   $translateProvider.preferredLanguage('en');
 }]);
-
-SanTechApp.controller('langCntrl', ['$translate', '$scope', function ($translate, $scope) {
-  $scope.changeLanguage = function (langKey) {
+// Language Switcher
+SanTechApp.controller('langCntrl', ['$translate', '$scope', function($translate, $scope) {
+  $scope.changeLanguage = function(langKey) {
     $translate.use(langKey);
   };
 }]);

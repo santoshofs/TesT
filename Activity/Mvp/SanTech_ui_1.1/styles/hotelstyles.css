@@ -2,9 +2,6 @@
 
 #hotelsdiv {
   height: 100vh;
-}
-
-#hotelsdiv {
   background-image: url(images/hotel2.jpg);
   background-position: center center;
   background-repeat: no-repeat;

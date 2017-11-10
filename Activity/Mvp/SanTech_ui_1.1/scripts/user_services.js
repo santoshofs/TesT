@@ -50,7 +50,9 @@ SanTechApp.service('userServices', function($rootScope, $state, $http, $translat
             $rootScope.user = data.user;
             $rootScope.pre_signin_tab = false;
             $rootScope.post_signin_tab = true;
-            if ($rootScope.user.role == "user") {}
+            if ($rootScope.user.role == "user") {
+              //user specific content space
+            }
           } else {
             alert("Already Registered.! or Invalid Data.! ")
           }
