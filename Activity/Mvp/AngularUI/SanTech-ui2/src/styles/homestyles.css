@@ -1,0 +1,49 @@
+/*homediv responsive backgrnd full*/
+
+#homediv {
+  height: 100vh;
+  background-image: url(images/img5.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #222222;
+}
+
+/* home bg img For mobile devices */
+
+@media only screen and (max-width: 767px) {
+  #homediv {
+    background-image: url(images/img5.jpg);
+  }
+}
+
+/*home page travelQuote*/
+
+#travelQuote {
+  background-color: rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-family: 'Lily Script One', cursive;
+  color: black;
+  font-size: -webkit-xxx-large;
+  margin-bottom: 5%;
+}
+
+/*home page book now btn*/
+
+#home_boardbtn {
+  text-align: center;
+}
+
+#board_now_btn {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 50px;
+  color: #f8b687;
+  background-color: black;
+  border-color: #f8b687;
+}
+
+#planeicon {
+  width: 52px;
+}

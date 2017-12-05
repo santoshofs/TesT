@@ -1,0 +1,27 @@
+/*hoteldiv responsive backgrnd full*/
+
+#hotelsdiv {
+  height: 100vh;
+  background-image: url(images/hotel2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #222222;
+}
+
+/* hotel bg img For mobile devices */
+
+@media only screen and (max-width: 767px) {
+  #hotelsdiv {
+    background-image: url(images/hotel2.jpg);
+  }
+}
+
+#hotel_content {
+  padding-top: 13%;
+  color: rgb(255, 173, 44);
+  text-align: center;
+  font-size: -webkit-xxx-large;
+  font-family: 'Kaushan Script', cursive;
+}
