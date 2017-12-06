@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { appRouting } from './app.routing';
+import { HttpModule, Http } from "@angular/http";
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from "ng2-translate";
 
 import { AppComponent } from './app.component';
 import { SanTechComponent } from './san-tech/san-tech.component';
@@ -11,6 +13,7 @@ import { UserComponent } from './user/user.component';
 import { BookingHistoryComponent } from './booking-history/booking-history.component';
 import { BookingPortalComponent } from './booking-portal/booking-portal.component';
 import { PaymentPortalComponent } from './payment-portal/payment-portal.component';
+
 
 @NgModule({
   declarations: [
@@ -26,15 +29,13 @@ import { PaymentPortalComponent } from './payment-portal/payment-portal.componen
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {path: '', component: SanTechComponent},
-      {path: 'SanTech', component: SanTechComponent,
-        children: [
-          {path: 'home', component: HomeComponent}
-        ]
-    },
-      {path: 'booking', component: BookingPortalComponent,pathMatch: 'full'}
-    ])
+    appRouting,
+    HttpModule,
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang/', '.json'),
+      deps: [Http]
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

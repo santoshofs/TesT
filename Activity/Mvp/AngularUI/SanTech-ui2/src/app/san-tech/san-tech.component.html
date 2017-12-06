@@ -1,3 +1,26 @@
-<p>
-  san-tech works!
-</p>
+<div>
+  <div id="navigator">
+    <nav class="navbar navbar-inverse col-md-12">
+      <div class="container-fluid">
+
+        <div class="navbar-header ">
+          <a class="navbar-brand col-md-1 col-sm-1 " id="brandhear" [routerLink]="['/santech/home']">{{ 'SANTECH' | translate }}</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li id="hometag"><a class="customheadertags" [routerLink]="['/santech/home']" [routerLinkActive]="['active']">{{ 'HOME' | translate }}</a></li>
+          <li><a class="customheadertags" [routerLink]="['/santech/flight/list']" [routerLinkActive]="['active']">{{ 'FLIGHTS' | translate }}</a></li>
+          <li><a class="customheadertags" [routerLink]="['/santech/home']" [routerLinkActive]="['active']">{{ 'HOTELS' | translate }}</a></li>
+        </ul>
+
+      </div>
+    </nav>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<div class="footer">
+    <!-- <button (click)="translate.use('tamil')" id="LangBtn">{{'BUTTON_LANG_TAMIL' | translate }}</button>
+    <button (click)="translate.use('en')" id="LangBtn">{{'BUTTON_LANG_EN' | translate }}</button> -->
+    <input type="button" (click)="translate.use('en')" value="english">
+    <input type="button" (click)="translate.use('tamil')" value="tamil">
+</div>
