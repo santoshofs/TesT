@@ -4,8 +4,8 @@
       {{ 'travel_quote' | translate }}
     </div>
     <div id="home_boardbtn">
-      <a ui-sref="santech.flights">
-        <button class="btn btn-lg" id="board_now_btn"><img src="../../assets/tyles/images/falcon.ico" alt="" id="planeicon"/> {{ 'BOOK_NOW' | translate }}</button>
+      <a [routerLink]="['/santech/flight/search']">
+        <button class="btn btn-lg" id="board_now_btn"><img src="../../assets/images/falcon.ico" alt="" id="planeicon"/> {{ 'BOOK_NOW' | translate }}</button>
       </a>
     </div>
   </div>

@@ -19,6 +19,7 @@ const appRoutes: Routes = [
       {
         path: 'flight', component: FlightsComponent,
         children: [
+          { path: 'search', component: PaymentPortalComponent },
           { path: 'list', component: FlightsListComponent }
         ]
       },

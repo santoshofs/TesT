@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from 'ng2-translate';
 
 @Component({
   selector: 'app-san-tech',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SanTechComponent implements OnInit {
 
-  constructor() { }
+  constructor(private translate: TranslateService){
+    translate.addLangs(["en", "tamil"]);
+    translate.setDefaultLang('en');
+
+    let browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|tamil/) ? browserLang : 'en');
+  }
 
   ngOnInit() {
   }

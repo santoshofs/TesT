@@ -9,7 +9,7 @@
 
         <ul class="nav navbar-nav">
           <li id="hometag"><a class="customheadertags" [routerLink]="['/santech/home']" [routerLinkActive]="['active']">{{ 'HOME' | translate }}</a></li>
-          <li><a class="customheadertags" [routerLink]="['/santech/flight/list']" [routerLinkActive]="['active']">{{ 'FLIGHTS' | translate }}</a></li>
+          <li><a class="customheadertags" [routerLink]="['/santech/flight/search']" [routerLinkActive]="['active']">{{ 'FLIGHTS' | translate }}</a></li>
           <li><a class="customheadertags" [routerLink]="['/santech/home']" [routerLinkActive]="['active']">{{ 'HOTELS' | translate }}</a></li>
         </ul>
 
@@ -19,8 +19,8 @@
 </div>
 <router-outlet></router-outlet>
 <div class="footer">
-    <!-- <button (click)="translate.use('tamil')" id="LangBtn">{{'BUTTON_LANG_TAMIL' | translate }}</button>
-    <button (click)="translate.use('en')" id="LangBtn">{{'BUTTON_LANG_EN' | translate }}</button> -->
-    <input type="button" (click)="translate.use('en')" value="english">
-    <input type="button" (click)="translate.use('tamil')" value="tamil">
+    <button (click)="translate.use('tamil')" id="LangBtn">{{'BUTTON_LANG_TAMIL' | translate }}</button>
+    <button (click)="translate.use('en')" id="LangBtn">{{'BUTTON_LANG_EN' | translate }}</button>
+    <!-- <input type="button" (click)="translate.use('en')" value="english">
+    <input type="button" (click)="translate.use('tamil')" value="tamil"> -->
 </div>
