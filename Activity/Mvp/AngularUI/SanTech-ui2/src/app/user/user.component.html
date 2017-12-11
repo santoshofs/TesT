@@ -1,4 +1,8 @@
-<p>
-  user works!
-</p>
-<router-outlet></router-outlet>
+<div id="userdiv">
+  <div id="userDetailDiv">
+    <div id="welcomenote">Welcome {{user.name}}</div>
+    <button class="btn btn-danger btn-sm" ng-click="bookinglist()" id="myBookingBtn">View Tickets</button>
+  </div>
+  <router-outlet></router-outlet>
+  <div id="bottom_filler"></div>
+</div>

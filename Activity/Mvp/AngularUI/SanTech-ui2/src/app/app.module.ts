@@ -13,6 +13,7 @@ import { UserComponent } from './user/user.component';
 import { BookingHistoryComponent } from './booking-history/booking-history.component';
 import { BookingPortalComponent } from './booking-portal/booking-portal.component';
 import { PaymentPortalComponent } from './payment-portal/payment-portal.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PaymentPortalComponent } from './payment-portal/payment-portal.componen
     UserComponent,
     BookingHistoryComponent,
     BookingPortalComponent,
-    PaymentPortalComponent
+    PaymentPortalComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

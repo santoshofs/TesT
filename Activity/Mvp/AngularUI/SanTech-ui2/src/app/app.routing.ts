@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SanTechComponent } from './san-tech/san-tech.component';
 import { HomeComponent } from './home/home.component';
 import { FlightsComponent } from './flights/flights.component';
+import { SearchComponent } from './search/search.component';
 import { FlightsListComponent } from './flights-list/flights-list.component';
 import { UserComponent } from './user/user.component';
 import { BookingHistoryComponent } from './booking-history/booking-history.component';
@@ -19,13 +20,14 @@ const appRoutes: Routes = [
       {
         path: 'flight', component: FlightsComponent,
         children: [
-          { path: 'search', component: PaymentPortalComponent },
+          { path: 'search', component: SearchComponent },
           { path: 'list', component: FlightsListComponent }
         ]
       },
       {
         path: 'user', component: UserComponent,
         children: [
+          { path: 'search', component: SearchComponent },
           { path: 'history', component: BookingHistoryComponent }
         ]
       }
