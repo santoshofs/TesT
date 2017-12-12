@@ -9,10 +9,11 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 export class FlightsComponent implements OnInit {
   flight_to : any;
+  flight_from: any;
   cities = ['CHENNAI', 'DELHI', 'MUMBAI', 'KOLKATA'];
   // console.log(flight_to);
   constructor() {
-
+    this.flight_from = "-1";
   }
 
   ngOnInit() {

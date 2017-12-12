@@ -2,13 +2,15 @@
   <div class="row" id="flight-total-div">
     <div class="col-sm-3 col-md-3" id="flight_search">
 
-      <form role="form" class="form-horizontal col-sm-12 col-md-12" ng-submit="searchflight()" ng-controller="flightsearchCtrl2">
+      <form role="form" class="form-horizontal col-sm-12 col-md-12" ng-submit="searchflight(#flightSearchForm.value)" ng-controller="flightsearchCtrl2" #flightSearchForm>
+
         <div class="form-group input-group col-sm-12">
           <div class="col-sm-12 col-md-12" id="flight_inherit">
             <span id="flight_ico_span"><img src="../../assets/images/takeoffblck.png" alt="" id="flight_icons" /></span>
-            <select class="form-control" id="from_city" ng-model="flight_from" ng-options="x for x in travellocation" required>
-              <option value="" label="{{ 'FROM' | translate }}" disabled selected="selected"></option>
-              <option *ngFor="let city of cities" value= {{city}}>
+            <select class="form-control" id="from_city" [(ngModel)]="flight_from" name="fromCity" required>
+              <!-- <option value="" label="{{ 'FROM' | translate }}" disabled selected="selected"></option> -->
+              <option value="-1" disabled>FROM</option>
+              <option *ngFor="let city of cities">
                 {{city}}
               </option>
             </select>
@@ -18,11 +20,21 @@
         <div class="form-group input-group col-sm-12">
           <div class="col-sm-12 col-md-12 " id="flight_inherit">
             <span id="flight_ico_span"><img src="../../assets/images/landingblack.png" alt="" id="flight_icons" /></span>
-            <select class="form-control" id="to_city" [(ngModel)]="flight_to" required name="flight_to" >
-              <!-- <option value="" label="{{ 'TO' | translate }}" disabled selected="selected"></option> -->
-              <!-- <ng-container *ngFor="let city in cities">
+            <select id="to_city" class="form-control" [(ngModel)]="flight_to" name="toCity" required>
+              <option value="" disabled="true" [selected]="!flight_to">TO</option>
+              <option *ngFor="let city of cities">{{city}}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- <div class="form-group input-group col-sm-12">
+          <div class="col-sm-12 col-md-12 " id="flight_inherit">
+            <span id="flight_ico_span"><img src="../../assets/images/landingblack.png" alt="" id="flight_icons" /></span>
+            <select class="form-control" id="to_city" [(ngModel)]="flight_to" required name="flight_to">
+              <option value="" label="{{ 'TO' | translate }}" disabled selected="selected"></option>
+              <ng-container *ngFor="let city in cities">
                 <option *ngIf="tmpLanguage.id!=languages.id"  [ngValue]="tmpLanguage.id" >{{tmpLanguage.identificatie}}</option>
-              </ng-container> -->
+              </ng-container>
               <option value="" disabled="true" [selected]="!flight_to">{{ 'TO' | translate }}</option>
               <ng-container *ngFor="let city of cities">
                 <option>
@@ -31,22 +43,14 @@
               </ng-container>
             </select>
           </div>
-        </div>
+        </div> -->
 
         <div class="form-group input-group col-sm-12">
           <div class="col-sm-12 col-md-12 " id="flight_inherit">
             <span id="flight_ico_span"><img src="../../assets/images/calendar.ico" alt="" id="flight_icons" /></span>
-            <input type="date" class="form-control" id="travel_date" placeholder="yyyy-MM-dd" max="2018-05-01" required/>
+            <input type="date" class="form-control" id="travel_date" placeholder="yyyy-MM-dd" max="2018-05-01"/>
           </div>
         </div>
-
-        <div class="form-group">
-  <label >metrics type</label>
-  <select id="metricsType" class="form-control" required [(ngModel)] ="flight_to2">
-     <option value="" disabled="true" [selected]="!flight_to2">--please select--</option>
-     <option *ngFor="let city of cities">{{city}}</option>
-  </select>
- </div>
 
         <div class="row">
           <div class="col-sm-12 col-md-12">
@@ -54,6 +58,7 @@
             <button type="submit" class="btn btn-sm" id="flight_search_btn"><img src="../../assets/images/search.ico" alt="" id="flight_search_ico" />{{ 'Search' | translate }}</button>
           </div>
         </div>
+
       </form>
     </div>
     <div class="col-sm-9 col-md-9">
