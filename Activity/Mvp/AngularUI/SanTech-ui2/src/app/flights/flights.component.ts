@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-flights',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flights.component.css']
 })
 export class FlightsComponent implements OnInit {
+  flight_to : any;
+  cities = ['CHENNAI', 'DELHI', 'MUMBAI', 'KOLKATA'];
+  // console.log(flight_to);
+  constructor() {
 
-  constructor() { }
+  }
 
   ngOnInit() {
+    console.log(this.flight_to);
   }
 
 }

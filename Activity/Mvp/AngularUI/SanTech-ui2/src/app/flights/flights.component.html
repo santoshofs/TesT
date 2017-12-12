@@ -4,11 +4,13 @@
 
       <form role="form" class="form-horizontal col-sm-12 col-md-12" ng-submit="searchflight()" ng-controller="flightsearchCtrl2">
         <div class="form-group input-group col-sm-12">
-
           <div class="col-sm-12 col-md-12" id="flight_inherit">
             <span id="flight_ico_span"><img src="../../assets/images/takeoffblck.png" alt="" id="flight_icons" /></span>
             <select class="form-control" id="from_city" ng-model="flight_from" ng-options="x for x in travellocation" required>
               <option value="" label="{{ 'FROM' | translate }}" disabled selected="selected"></option>
+              <option *ngFor="let city of cities" value= {{city}}>
+                {{city}}
+              </option>
             </select>
           </div>
         </div>
@@ -16,8 +18,17 @@
         <div class="form-group input-group col-sm-12">
           <div class="col-sm-12 col-md-12 " id="flight_inherit">
             <span id="flight_ico_span"><img src="../../assets/images/landingblack.png" alt="" id="flight_icons" /></span>
-            <select class="form-control" id="to_city" ng-model="flight_to" ng-options="x for x in travellocation" required>
-              <option value="" label="{{ 'TO' | translate }}" disabled selected="selected"></option>
+            <select class="form-control" id="to_city" [(ngModel)]="flight_to" required name="flight_to" >
+              <!-- <option value="" label="{{ 'TO' | translate }}" disabled selected="selected"></option> -->
+              <!-- <ng-container *ngFor="let city in cities">
+                <option *ngIf="tmpLanguage.id!=languages.id"  [ngValue]="tmpLanguage.id" >{{tmpLanguage.identificatie}}</option>
+              </ng-container> -->
+              <option value="" disabled="true" [selected]="!flight_to">{{ 'TO' | translate }}</option>
+              <ng-container *ngFor="let city of cities">
+                <option>
+                  {{city}}
+                </option>
+              </ng-container>
             </select>
           </div>
         </div>
@@ -29,6 +40,14 @@
           </div>
         </div>
 
+        <div class="form-group">
+  <label >metrics type</label>
+  <select id="metricsType" class="form-control" required [(ngModel)] ="flight_to2">
+     <option value="" disabled="true" [selected]="!flight_to2">--please select--</option>
+     <option *ngFor="let city of cities">{{city}}</option>
+  </select>
+ </div>
+
         <div class="row">
           <div class="col-sm-12 col-md-12">
             <span id="flight_ico_span"></span>
@@ -37,6 +56,8 @@
         </div>
       </form>
     </div>
-    <div class="col-sm-9 col-md-9"><router-outlet></router-outlet></div>
+    <div class="col-sm-9 col-md-9">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

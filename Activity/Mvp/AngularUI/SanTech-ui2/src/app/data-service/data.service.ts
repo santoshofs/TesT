@@ -25,5 +25,4 @@ export class DataService {
   set travelDate(value: string){
     this._travelDate = value;
   }
-
 }

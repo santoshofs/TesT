@@ -14,6 +14,10 @@ import { BookingHistoryComponent } from './booking-history/booking-history.compo
 import { BookingPortalComponent } from './booking-portal/booking-portal.component';
 import { PaymentPortalComponent } from './payment-portal/payment-portal.component';
 import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
+
+import { DataService } from './data-service/data.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -27,19 +31,21 @@ import { SearchComponent } from './search/search.component';
     BookingHistoryComponent,
     BookingPortalComponent,
     PaymentPortalComponent,
-    SearchComponent
+    SearchComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     appRouting,
     HttpModule,
+    FormsModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
       useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang/', '.json'),
       deps: [Http]
     })
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
