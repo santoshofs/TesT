@@ -13,14 +13,138 @@
           <li><a class="customheadertags" [routerLink]="['/santech/home']" [routerLinkActive]="['active']">{{ 'HOTELS' | translate }}</a></li>
         </ul>
 
+        <div id="user_status">
+
+          <div class="dropdown" style="float:right;" id="pre_signin">
+            <button class="dropbtn" id="accountcheckin" data-toggle="modal" data-target="#usercheckinModal" (click)="loginModal.open()"><span class="glyphicon glyphicon-user" ></span> {{ 'CHECK_IN' | translate }}</button>
+            <div class="dropdown-content">
+              <a id="logintab" data-toggle="modal" data-target="#usercheckinModal" (click)="loginModal.open()"><img src="../../assets/images/friends_group.png" alt=""id="customicons" /> {{ 'LOGIN' | translate }}</a>
+              <a id="registertab" data-toggle="modal" data-target="#usercheckinModal" (click)="signupModal.open()"><img src="../../assets/images/edit.png" alt="" id="customicons"/> {{ 'REGISTER' | translate }}</a>
+            </div>
+          </div>
+
+          <div class="dropdown" style="float:right;" id="post_signin">
+            <button class="dropbtn" id="accountcheckin"><span class="glyphicon glyphicon-user"></span>
+              <!-- {{user.name}} --> user
+            </button>
+            <div class="dropdown-content" ng-controller="userdetail_tab_cntrl">
+              <a id="logintab" ng-click="userAccount()"><img src="../../assets/images/home.ico" alt=""id="customicons" /> {{ 'My_Account' | translate }}</a>
+              <a id="registertab" ng-click="signOut()"><img src="../../assets/images/logout.ico" alt="" id="customicons" /> {{ 'Sign_Off' | translate }}</a>
+            </div>
+          </div>
+
+          <modal #loginModal [hideCloseButton]="true">
+            <modal-header>
+              <div class="col-sm-12" id="loginmodaltext">
+                {{ 'Welcome_Back' | translate }}
+                <button type="button" class="close" aria-label="Close" (click)="loginModal.close()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </modal-header>
+
+            <modal-content>
+              <div class="modal-body">
+                <div id="LoginForm">
+                  <form role="form" class="form-horizontal" #loginForm="ngForm" (ngSubmit)="login(loginCredentials);loginModal.close()" ngNativeValidate>
+                    <div class="form-group input-group col-sm-12">
+                      <div class="col-sm-12" id="iconinherit">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input type="email" class="form-control" id="email1" #loginEmail="ngModel" name="email" [(ngModel)]="loginCredentials.email" placeholder="{{ 'Email' | translate }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required />
+                      </div>
+                    </div>
+
+                    <div class="form-group input-group col-sm-12">
+                      <div class="col-sm-12 " id="iconinherit">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" class="form-control" id="exampleInputPassword1" #loginPassword="ngModel" name="password" [(ngModel)]="loginCredentials.password" placeholder="{{ 'Password' | translate }}" required />
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <input type="submit" class="btn btn-primary btn-sm" value="{{ 'Login' | translate }}">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </modal-content>
+
+            <modal-footer>
+              <div id="footerModal">
+                {{ 'Not_reg_yet' | translate }} <button id="registercmnt"><a (click)="loginModal.close();signupModal.open()">{{ 'Register_Now' | translate }}</a></button>
+              </div>
+            </modal-footer>
+          </modal>
+
+          <modal #signupModal [hideCloseButton]="true">
+            <modal-header>
+              <div class="col-sm-12" id="loginmodaltext">
+                {{ 'Welcome' | translate }}
+                <button type="button" class="close" aria-label="Close" (click)="signupModal.close()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </modal-header>
+            <modal-content>
+              <div class="modal-body">
+                <div id="registerForm">
+                  <form role="form" class="form-horizontal" ngNativeValidate>
+                    <div class="form-group input-group col-sm-12">
+                      <div class="col-sm-12" id="iconinherit">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control" placeholder="{{ 'Name' | translate }}" pattern="[A-Za-z\s]{3,20}" title="{{ 'name_validator_msg' | translate }}" required/>
+                      </div>
+                    </div>
+
+                    <div class="form-group input-group col-sm-12">
+                      <div class="col-sm-12" id="iconinherit">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input type="text" class="form-control" id="email" placeholder="{{ 'Email' | translate }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required/>
+                      </div>
+                    </div>
+
+                    <div class="form-group input-group col-sm-12">
+                      <div class="col-sm-12" id="iconinherit">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" class="form-control" id="password" placeholder="{{ 'Password' | translate }}" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="{{ 'Pwd_validator_msg' | translate }}" required/>
+                      </div>
+                    </div>
+
+                    <div class="form-group input-group col-sm-12">
+                      <div class="col-sm-12" id="iconinherit">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                        <input type="text" class="form-control" id="mobile" placeholder="{{ 'Mobile' | translate }}" pattern="[0-9]{10}" title="{{ 'phone_validator_msg' | translate }}" required/>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <input type="submit" class="btn btn-success btn-sm" value="{{ 'GET_STARTED' | translate }}">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </modal-content>
+
+            <modal-footer>
+              <div id="footerModal">
+                {{ 'Already_reg' | translate }} <button id="registercmnt"><a (click)="signupModal.close();loginModal.open()" >{{ 'SignIn_Now' | translate }}</a></button>
+              </div>
+            </modal-footer>
+          </modal>
+
+        </div>
       </div>
     </nav>
   </div>
 </div>
 <router-outlet></router-outlet>
 <div class="footer">
-    <button (click)="translate.use('tamil')" id="LangBtn">{{'BUTTON_LANG_TAMIL' | translate }}</button>
-    <button (click)="translate.use('en')" id="LangBtn">{{'BUTTON_LANG_EN' | translate }}</button>
-    <!-- <input type="button" (click)="translate.use('en')" value="english">
+  <button (click)="translate.use('tamil')" id="LangBtn">{{'BUTTON_LANG_TAMIL' | translate }}</button>
+  <button (click)="translate.use('en')" id="LangBtn">{{'BUTTON_LANG_EN' | translate }}</button>
+  <!-- <input type="button" (click)="translate.use('en')" value="english">
     <input type="button" (click)="translate.use('tamil')" value="tamil"> -->
 </div>

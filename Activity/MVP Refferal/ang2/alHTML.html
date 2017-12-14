@@ -1,0 +1,46 @@
+<div class="row">
+<div class="col-md-3">
+</div>
+  <div class="col-md-6">
+    <h2>FormControl</h2> 
+       <form #userForm="ngForm" (ngSubmit)="loginSubmit(credentials)">
+             <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" #emailTag="ngModel" minlength="4" class="form-control" name="email" [(ngModel)]="credentials.email" required>
+                  <!--<b>{{nameTag.className}}</b>-->
+                  <div [hidden]="emailTag.valid|| emailTag.pristine" class="alert alert-danger">
+                      Please Enter a valid email and name must contain minimum of 4 letters
+                  </div>
+                </div>
+              
+              <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" #passwordTag="ngModel" minlength="5" maxlength="9" class="form-control" name="password " [(ngModel)]="credentials.password" required>
+                      <div *ngIf="passwordTag.errors && (passwordTag.dirty || passwordTag.touched)" class="alert alert-danger">
+                          <div [hidden]="!passwordTag.errors.required">
+                                Please enter your password
+                          </div>
+                           <div [hidden]="!passwordTag.errors.minlength">
+                                password must have minimum of 5 characters 
+                          </div>
+                          
+                      </div>
+              </div>
+              
+              <a ><button [disabled]="!userForm.form.valid" type="submit" class="btn btn-primary">Submit</button></a>
+       </form>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	

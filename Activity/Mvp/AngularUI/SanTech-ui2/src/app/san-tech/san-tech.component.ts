@@ -8,12 +8,18 @@ import { TranslateService } from 'ng2-translate';
 })
 export class SanTechComponent implements OnInit {
 
+  loginCredentials = { email : '', password : ''};
+
   constructor(private translate: TranslateService){
     translate.addLangs(["en", "tamil"]);
     translate.setDefaultLang('en');
 
     let browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|tamil/) ? browserLang : 'en');
+  }
+
+  login(x){
+    console.log(x.email);
   }
 
   ngOnInit() {

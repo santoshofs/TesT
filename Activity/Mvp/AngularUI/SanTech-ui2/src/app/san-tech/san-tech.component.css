@@ -130,6 +130,9 @@
   padding-right: 10px;
 }
 
+#footerModal {
+  text-align: center;
+}
 .nav-tabs>li>a {
   color: white;
 }
@@ -141,7 +144,6 @@
 /*login page welcome txt*/
 
 #loginmodaltext {
-  padding-bottom: 14px;
   text-align: center;
   font-family: 'Merienda One', cursive;
   font-size: x-large;
