@@ -38,9 +38,10 @@ export class SanTechComponent implements OnInit {
         if (response['status'] == 'success') {
           console.log("success");
           console.log(response);
-          this.user_Details = response;
+          this.user_Details = JSON.stringify(response);
           console.log(this.user_Details, "awesome");
-          window.sessionStorage.setItem('user_details', this.user_Details);
+          // window.sessionStorage.setItem('user_details', (response['user']));
+          sessionStorage.setItem('user_details', this.user_Details);
         }
 
 
