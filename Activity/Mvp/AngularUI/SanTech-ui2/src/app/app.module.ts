@@ -4,6 +4,7 @@ import { appRouting } from './app.routing';
 import { HttpModule, Http } from "@angular/http";
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from "ng2-translate";
 import { ModalModule } from 'ngx-modal';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SanTechComponent } from './san-tech/san-tech.component';
@@ -41,6 +42,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpModule,
     FormsModule,
     ModalModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
       useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang/', '.json'),
