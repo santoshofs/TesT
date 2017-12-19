@@ -10,9 +10,16 @@ import { Routes, Router } from '@angular/router';
   providers: [UserService]
 })
 export class SanTechComponent implements OnInit {
-
+  preSignin: boolean = true;
+  postSignin: boolean = false;
   loginCredentials = { email: '', password: '' };
-  user_Details: any;
+  signupCredentials = { name: '', email: '', password: '', phone: '' };
+  user_Name: any;
+  user_Mail: any;
+  user_Id: any;
+  user_Phone: any;
+
+
   constructor(private translate: TranslateService, private _userService: UserService, private route: Router) {
     translate.addLangs(["en", "tamil"]);
     translate.setDefaultLang('en');
@@ -25,35 +32,60 @@ export class SanTechComponent implements OnInit {
     console.log(loginCredentials.email);
     this._userService.login(loginCredentials).subscribe(
       response => {
-        // console.log("success");
-        // this.user_Details=UserService.userDetails;
-        // console.log(this.user_Details,"awesome");
-        // window.sessionStorage.setItem('user_details',this.user_Details);
-        //
-        //
-        //
-        //        //this.user_details = JSON.parse(window.sessionStorage.getItem('userdetails'));
-        //
-        //        this.route.navigate(['/booking']);
         if (response['status'] == 'success') {
+          this.preSignin = !this.preSignin;
+          this.postSignin = !this.postSignin;
           console.log("success");
           console.log(response);
-          this.user_Details = JSON.stringify(response);
-          console.log(this.user_Details, "awesome");
-          // window.sessionStorage.setItem('user_details', (response['user']));
-          sessionStorage.setItem('user_details', this.user_Details);
+          this.user_Name = response['user'].name;
+          this.user_Mail = response['user'].email;
+          this.user_Id = response['user'].id;
+          this.user_Phone = response['user'].phone;
+          sessionStorage.setItem('user_Name', this.user_Name);
+          sessionStorage.setItem('user_Mail', this.user_Mail);
+          sessionStorage.setItem('user_ID', this.user_Id);
+          sessionStorage.setItem('user_Phone', this.user_Phone);
         }
-
-
       },
       err => {
         console.log("failed");
       }
-
-
     )
   }
-
+  signup(signupCredentials){
+    console.log(signupCredentials);
+    this._userService.signup(signupCredentials).subscribe(
+      response => {
+        if (response['status'] == 'success') {
+          this.preSignin = !this.preSignin;
+          this.postSignin = !this.postSignin;
+          console.log("success");
+          console.log(response);
+          this.user_Name = response['user'].name;
+          this.user_Mail = response['user'].email;
+          this.user_Id = response['user'].id;
+          this.user_Phone = response['user'].phone;
+          sessionStorage.setItem('user_Name', this.user_Name);
+          sessionStorage.setItem('user_Mail', this.user_Mail);
+          sessionStorage.setItem('user_ID', this.user_Id);
+          sessionStorage.setItem('user_Phone', this.user_Phone);
+        }
+      },
+      err => {
+        console.log("failed");
+      }
+    )
+  }
+  userAccount(){
+    alert("useracc function daaw..!");
+    this.route.navigate(['/santech/user']);
+  }
+  signOut(){
+    sessionStorage.clear();
+    this.preSignin = !this.preSignin;
+    this.postSignin = !this.postSignin;
+    alert(this.translate.instant('We_Miss_You'));
+  }
   ngOnInit() {
   }
 

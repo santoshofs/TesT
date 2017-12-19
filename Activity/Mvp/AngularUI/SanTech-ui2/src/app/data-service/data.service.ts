@@ -5,8 +5,14 @@ export class DataService {
   _flightFrom: string;
   _flightTo: string;
   _travelDate: string;
+  _availableFlights: any;
   constructor() {}
-
+  get availableFlights(): any {
+    return this._availableFlights;
+  }
+  set availableFlights(value: any){
+    this._availableFlights = value;
+  }
   get flightFrom(): string {
     return this._flightFrom;
   }

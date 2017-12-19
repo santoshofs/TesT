@@ -1,3 +1,25 @@
+service alosy method
+component
+  // console.log("success");
+  // this.user_Details=UserService.userDetails;
+  // console.log(this.user_Details,"awesome");
+  // window.sessionStorage.setItem('user_details',this.user_Details);
+  //
+  //
+  //
+  //        //this.user_details = JSON.parse(window.sessionStorage.getItem('userdetails'));
+  //
+  //        this.route.navigate(['/booking']);
+  // this.user_Details = JSON.stringify(response);
+  // window.sessionStorage.setItem('user_details', (response['user']));
+service
+
+          // .map((response:Response) =>
+          // {
+          //     UserService.userDetails=response.json(),
+          //        console.log(UserService.userDetails)});
+
+
 <div class="modal fade" id="usercheckinModal" role="dialog">
 <div class="modal-dialog">
   <!-- Modal content-->

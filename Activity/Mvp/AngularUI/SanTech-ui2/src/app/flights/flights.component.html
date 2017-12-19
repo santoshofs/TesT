@@ -2,12 +2,12 @@
   <div class="row" id="flight-total-div">
     <div class="col-sm-3 col-md-3" id="flight_search">
 
-      <form role="form" class="form-horizontal col-sm-12 col-md-12" ng-submit="searchflight(#flightSearchForm.value)" ng-controller="flightsearchCtrl2" #flightSearchForm>
+      <form role="form" class="form-horizontal col-sm-12 col-md-12" #flightSearchForm="ngForm" (ngSubmit)="flightsearch(searchCredentials)" ngNativeValidate>
 
         <div class="form-group input-group col-sm-12">
           <div class="col-sm-12 col-md-12" id="flight_inherit">
             <span id="flight_ico_span"><img src="../../assets/images/takeoffblck.png" alt="" id="flight_icons" /></span>
-            <select class="form-control" id="from_city" [(ngModel)]="flight_from" name="fromCity" required>
+            <select class="form-control" id="from_city" #flightFrom="ngModel" name="from" [(ngModel)]="searchCredentials.from" required>
               <!-- <option value="" label="{{ 'FROM' | translate }}" disabled selected="selected"></option> -->
               <option value="-1" disabled>FROM</option>
               <option *ngFor="let city of cities">
@@ -20,8 +20,9 @@
         <div class="form-group input-group col-sm-12">
           <div class="col-sm-12 col-md-12 " id="flight_inherit">
             <span id="flight_ico_span"><img src="../../assets/images/landingblack.png" alt="" id="flight_icons" /></span>
-            <select id="to_city" class="form-control" [(ngModel)]="flight_to" name="toCity" required>
-              <option value="" disabled="true" [selected]="!flight_to">TO</option>
+            <select id="to_city" class="form-control" #flightTo="ngModel" name="to" [(ngModel)]="searchCredentials.to" required>
+              <!-- <option value="" disabled="true" [selected]="!flight_to">TO</option> -->
+              <option value="-1" disabled>TO</option>
               <option *ngFor="let city of cities">{{city}}</option>
             </select>
           </div>
@@ -48,7 +49,7 @@
         <div class="form-group input-group col-sm-12">
           <div class="col-sm-12 col-md-12 " id="flight_inherit">
             <span id="flight_ico_span"><img src="../../assets/images/calendar.ico" alt="" id="flight_icons" /></span>
-            <input type="date" class="form-control" id="travel_date" placeholder="yyyy-MM-dd" max="2018-05-01"/>
+            <input type="date" class="form-control" id="travel_date" #flightDate="ngModel" name="date" [(ngModel)]="searchCredentials.date" placeholder="yyyy-MM-dd" max="2018-05-01" required/>
           </div>
         </div>
 
