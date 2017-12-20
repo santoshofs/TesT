@@ -6,7 +6,7 @@ export class DataService {
   _availableFlights: any;
   _selectedFlight: any;
   _passengerDetail: any;
-  _flightTo: string;
+  _userTickets: any;
 
   constructor() {}
   getAvailableFlights(): any {
@@ -33,10 +33,10 @@ export class DataService {
   setPassengerDetail(value: string){
     this._passengerDetail = value;
   }
-  get flightTo(): string {
-    return this._flightTo;
+  getUserTickets(): any {
+    return this._userTickets;
   }
-  set flightTo(value: string){
-    this._flightTo = value;
+  setUserTickets(value: any){
+    this._userTickets = value;
   }
 }

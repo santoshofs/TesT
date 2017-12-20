@@ -20,12 +20,12 @@ export class PaymentPortalComponent implements OnInit {
   constructor(private _bookingService: BookingService, private route: Router,private _DataService: DataService,private translate: TranslateService) {  }
 
   ngOnInit() {
-    this.userName=(window.sessionStorage.getItem('user_Name'));
-    this.userMail=(window.sessionStorage.getItem('user_Mail'));
+    this.userName = (window.sessionStorage.getItem('user_Name'));
+    this.userMail = (window.sessionStorage.getItem('user_Mail'));
     this.flightDetail = this._DataService.getSelectedFlight();
     this.passengerDetail = this._DataService.getPassengerDetail();
     this.travelDate = this._DataService.getTravelDate();
-    this.bookingCredentials={userName: this.userName, userMail: this.userMail,passengerDetail: this.passengerDetail,travelDate: this.travelDate,flightDetail: this.flightDetail};
+    this.bookingCredentials = {userName: this.userName, userMail: this.userMail,passengerDetail: this.passengerDetail,travelDate: this.travelDate,flightDetail: this.flightDetail};
   }
   paynow(){
     console.log(this.bookingCredentials);
