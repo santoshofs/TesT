@@ -26,7 +26,8 @@
 }
 
 .flight_name_col {
-  font-size: xx-large;
+  /* font-size: xx-large; */
+  font-size: larger;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 5px;

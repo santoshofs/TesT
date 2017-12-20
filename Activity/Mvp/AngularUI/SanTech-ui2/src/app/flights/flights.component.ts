@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, OnChanges} from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { DataService } from '../data-service/data.service';
   selector: 'app-flights',
   templateUrl: './flights.component.html',
   styleUrls: ['./flights.component.css'],
-  providers: [FlightService,DataService]
+  providers: [FlightService]
 })
 export class FlightsComponent implements OnInit {
   flight_to : any;
@@ -26,6 +26,9 @@ export class FlightsComponent implements OnInit {
   ngOnInit() {
 
   }
+  ngOnChanges(searchCredentials){
+
+  }
   flightsearch(searchCredentials){
     console.log(searchCredentials);
     this._userService.flightsearch(searchCredentials).subscribe(
@@ -34,8 +37,8 @@ export class FlightsComponent implements OnInit {
           console.log("flight list vantruchu");
           this.availableFlights = response['flights'];
           console.log(this.availableFlights);
-          this._DataService.availableFlights(this.availableFlights);
-          console.log("fromset"+this._DataService.availableFlights);
+          this._DataService.setAvailableFlights(this.availableFlights);
+          this._DataService.setTravelDate(this.searchCredentials.date);
         }
       },
       err => {

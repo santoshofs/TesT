@@ -8,7 +8,7 @@
       <table id="payment_table">
         <tr>
           <th class="paymentTableHead">{{ 'Account_Holder' | translate }}</th>
-          <td class="paymentTableData">{{user.name}}</td>
+          <td class="paymentTableData">{{userName}}</td>
         </tr>
         <tr>
           <th class="paymentTableHead">{{ 'Account_Number' | translate }}</th>
@@ -24,12 +24,12 @@
         </tr>
         <tr>
           <th class="paymentTableHead">{{ 'Amount_to_be_Paid' | translate }}</th>
-          <td class="paymentTableData">₹ {{f_price}}</td>
+          <td class="paymentTableData">₹ {{flightDetail.flight_price}}</td>
         </tr>
       </table>
     </div>
-    <div id="pymntbtndiv" ng-controller="paymentcntrl">
-      <button type="submit" ng-click="paynow()" id="paymentBtn">{{ 'Pay' | translate }}</button>
+    <div id="pymntbtndiv">
+      <button type="submit" (click)="paynow()" id="paymentBtn">{{ 'Pay' | translate }}</button>
     </div>
   </div>
   <div class="col-md-3 col-sm-1"></div>

@@ -18,8 +18,9 @@ service
           // {
           //     UserService.userDetails=response.json(),
           //        console.log(UserService.userDetails)});
-
-
+this.user_Name = JSON.stringify(response['user']);
+sessionStorage.setItem('user_Name', this.user_Name);
+this.userDetails=JSON.parse(sessionStorage.getItem('user_Name'));
 <div class="modal fade" id="usercheckinModal" role="dialog">
 <div class="modal-dialog">
   <!-- Modal content-->

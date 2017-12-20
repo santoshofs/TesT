@@ -63,7 +63,8 @@
       </form>
     </div>
     <div class="col-sm-9 col-md-9">
-      <router-outlet></router-outlet>
+      <app-flights-list *ngIf="availableFlights != null" [flights]="availableFlights"></app-flights-list>
+      <!-- <router-outlet></router-outlet> -->
     </div>
   </div>
 </div>

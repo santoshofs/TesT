@@ -2,33 +2,41 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class DataService {
-  _flightFrom: string;
-  _flightTo: string;
   _travelDate: string;
   _availableFlights: any;
+  _selectedFlight: any;
+  _passengerDetail: any;
+  _flightTo: string;
+
   constructor() {}
-  get availableFlights(): any {
+  getAvailableFlights(): any {
     return this._availableFlights;
   }
-  set availableFlights(value: any){
+  setAvailableFlights(value: any){
     this._availableFlights = value;
   }
-  get flightFrom(): string {
-    return this._flightFrom;
+  getSelectedFlight(): any {
+    return this._selectedFlight;
   }
-  set flightFrom(value: string){
-    this._flightFrom = value;
+  setSelectedFlight(value: any){
+    this._selectedFlight = value;
+  }
+  getTravelDate(): string {
+    return this._travelDate;
+  }
+  setTravelDate(value: string){
+    this._travelDate = value;
+  }
+  getPassengerDetail(): string {
+    return this._passengerDetail;
+  }
+  setPassengerDetail(value: string){
+    this._passengerDetail = value;
   }
   get flightTo(): string {
     return this._flightTo;
   }
   set flightTo(value: string){
     this._flightTo = value;
-  }
-  get travelDate(): string {
-    return this._travelDate;
-  }
-  set travelDate(value: string){
-    this._travelDate = value;
   }
 }

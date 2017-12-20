@@ -20,13 +20,13 @@ const appRoutes: Routes = [
       { path: '', redirectTo: '/santech/home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       {
-        path: 'flight', component: FlightsComponent,
-        children: [
-          { path: '', redirectTo: '/santech/flight/search', pathMatch: 'full' },
-          { path: 'search', component: SearchComponent },
-          { path: 'list', component: FlightsListComponent },
-          { path: '**', redirectTo: '/**', pathMatch: 'full' }
-        ]
+        path: 'flight', component: FlightsComponent
+        // children: [
+        //   { path: '', redirectTo: '/santech/flight/search', pathMatch: 'full' },
+        //   { path: 'search', component: SearchComponent },
+        //   { path: 'list', component: FlightsListComponent },
+        //   { path: '**', redirectTo: '/**', pathMatch: 'full' }
+        // ]
       },
       {
         path: 'user', component: UserComponent,
