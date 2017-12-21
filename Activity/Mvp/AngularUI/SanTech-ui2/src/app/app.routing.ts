@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SanTechComponent } from './san-tech/san-tech.component';
 import { HomeComponent } from './home/home.component';
 import { FlightsComponent } from './flights/flights.component';
+import { HotelsComponent } from './hotels/hotels.component';
 import { SearchComponent } from './search/search.component';
 import { FlightsListComponent } from './flights-list/flights-list.component';
 import { UserComponent } from './user/user.component';
@@ -28,14 +29,15 @@ const appRoutes: Routes = [
         //   { path: '**', redirectTo: '/**', pathMatch: 'full' }
         // ]
       },
+      { path: 'hotel', component: HotelsComponent },
       {
-        path: 'user', component: UserComponent,
-        children: [
-          { path: '', redirectTo: '/santech/user/search', pathMatch: 'full' },
-          { path: 'search', component: SearchComponent },
-          { path: 'history', component: BookingHistoryComponent },
-          { path: '**', redirectTo: '/**', pathMatch: 'full' }
-        ]
+        path: 'user', component: UserComponent
+        // children: [
+        //   { path: '', redirectTo: '/santech/user/search', pathMatch: 'full' },
+        //   { path: 'search', component: SearchComponent },
+        //   { path: 'history', component: BookingHistoryComponent },
+        //   { path: '**', redirectTo: '/**', pathMatch: 'full' }
+        // ]
       },
       { path: '**', redirectTo: '/**', pathMatch: 'full' }
     ]

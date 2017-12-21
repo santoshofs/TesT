@@ -8,6 +8,7 @@ import { Routes, Router } from '@angular/router';
   styleUrls: ['./flights-list.component.css']
 })
 export class FlightsListComponent implements OnInit, OnChanges {
+
   @Input() flights: any;
   constructor(private _DataService: DataService, private route: Router) { }
   ngOnInit() {
@@ -18,8 +19,14 @@ export class FlightsListComponent implements OnInit, OnChanges {
     this.flights = this._DataService.getAvailableFlights();
   }
   selectFlight(flight){
-    this._DataService.setSelectedFlight(flight);
-    console.log(this._DataService.getSelectedFlight());
-    this.route.navigate(['/booking']);
+    if(sessionStorage.getItem('user_Name') != null){
+      this._DataService.setSelectedFlight(flight);
+      console.log(this._DataService.getSelectedFlight());
+      this.route.navigate(['/booking']);
+    }
+    else{
+      alert("login pannu da..!");
+    }
+
   }
 }

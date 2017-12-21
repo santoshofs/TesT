@@ -10,8 +10,9 @@ import { Routes, Router } from '@angular/router';
   providers: [UserService]
 })
 export class SanTechComponent implements OnInit {
-  preSignin: boolean = true;
-  postSignin: boolean = false;
+  preSignin: boolean;
+  postSignin: boolean;
+  userName: string;
   loginCredentials = { email: '', password: '' };
   signupCredentials = { name: '', email: '', password: '', phone: '' };
   user_Name: any;
@@ -77,7 +78,6 @@ export class SanTechComponent implements OnInit {
     )
   }
   userAccount(){
-    alert("useracc function daaw..!");
     this.route.navigate(['/santech/user']);
   }
   signOut(){
@@ -85,8 +85,20 @@ export class SanTechComponent implements OnInit {
     this.preSignin = !this.preSignin;
     this.postSignin = !this.postSignin;
     alert(this.translate.instant('We_Miss_You'));
+    if(this.route.url == "/santech/user"){
+      this.route.navigate(['santech/home']);
+    }
   }
   ngOnInit() {
+    this.userName = (sessionStorage.getItem('user_Name'));
+    if(this.userName != null){
+      this.preSignin = false;
+      this.postSignin = true;
+    }
+    else{
+      this.preSignin = true;
+      this.postSignin = false;
+    }
   }
 
 }

@@ -1,0 +1,17 @@
+#errorPage {
+  height: 100vh;
+  background-image: url(../../assets/images/404da.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #222222;
+}
+
+/* home bg img For mobile devices */
+
+@media only screen and (max-width: 767px) {
+  #errorPage {
+    background-image: url(../../assets/images/404da.png);
+  }
+}

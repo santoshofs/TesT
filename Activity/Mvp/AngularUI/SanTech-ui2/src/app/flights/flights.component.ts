@@ -17,7 +17,6 @@ export class FlightsComponent implements OnInit {
   cities = ['CHENNAI', 'DELHI', 'MUMBAI', 'KOLKATA'];
   searchCredentials = { from: '', to: '', date: '' };
   availableFlights: any;
-  // console.log(flight_to);
   constructor(private _userService: FlightService,private _DataService: DataService, private route: Router) {
     this.searchCredentials.from = "-1";
     this.searchCredentials.to = "-1";

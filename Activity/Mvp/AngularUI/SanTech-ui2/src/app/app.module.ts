@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 
 import { DataService } from './data-service/data.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HotelsComponent } from './hotels/hotels.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BookingPortalComponent,
     PaymentPortalComponent,
     SearchComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HotelsComponent
   ],
   imports: [
     BrowserModule,

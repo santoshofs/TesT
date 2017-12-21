@@ -14,6 +14,7 @@ export class UserComponent implements OnInit {
   userName : any;
   userMail : any;
   userCredentials = { userName: '', userMail: '' };
+  userTickets: any;
   constructor(private _userService: UserService, private route: Router, private _DataService: DataService) { }
 
   ngOnInit() {
@@ -29,7 +30,9 @@ export class UserComponent implements OnInit {
         if (response['status'] == 'success') {
           this._DataService.setUserTickets(response['bookings']);
           console.log(this._DataService.getUserTickets());
-          this.route.navigate(['/santech/user/history']);
+          // this.route.navigate(['/santech/user/history']);
+          this.userTickets = response['bookings'];
+          // this.userTickets = this._DataService.getUserTickets();
         }
       },
       err => {

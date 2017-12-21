@@ -3,6 +3,7 @@
     <div id="welcomenote">Welcome {{userName}}</div>
     <button class="btn btn-danger btn-sm" (click)="bookingHistory()" id="myBookingBtn">View Tickets</button>
   </div>
-  <router-outlet></router-outlet>
+  <!-- <router-outlet></router-outlet> -->
+  <app-booking-history *ngIf="userTickets != null" [tickets]="userTickets"></app-booking-history>
   <div id="bottom_filler"></div>
 </div>
