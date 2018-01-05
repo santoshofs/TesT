@@ -21,15 +21,17 @@
 
 </ion-menu>
 
-<ion-header>
+<ion-header class = "bar bar-header bar-positive" >
   <ion-navbar>
-    <button ion-button menuToggle>
+    <button class = "button icon ion-navicon" ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title id="brandhear">SanTech</ion-title>
+    <ion-buttons end>
+        <button ion-button clear ng-click="popover.show($event)"><ion-icon name="finger-print"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
-
 
 <ion-content  class="no-scroll">
   <h1>SanTech Page</h1>
