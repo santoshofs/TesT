@@ -6,6 +6,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SantechPage } from '../pages/santech/santech';
+import { LoginPage } from "../pages/login/login";
+import { SignupPage } from "../pages/signup/signup";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +17,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    SantechPage
+    SantechPage,
+    LoginPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    SantechPage
+    SantechPage,
+    LoginPage,
+    SignupPage
   ],
   providers: [
     StatusBar,

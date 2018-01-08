@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, Nav, Platform } from 'ionic-angular';
+import { IonicPage, Nav, Platform, ModalController } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 import { ListPage } from '../list/list';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the SantechPage page.
@@ -23,7 +24,7 @@ export class SantechPage {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform) {
+  constructor(public platform: Platform,public modalCtrl: ModalController) {
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -36,7 +37,10 @@ export class SantechPage {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-
+  openModal() {
+    let myModal = this.modalCtrl.create(LoginPage);
+    myModal.present();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SantechPage');
   }

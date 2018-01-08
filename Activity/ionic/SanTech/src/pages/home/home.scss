@@ -1,7 +1,12 @@
 page-home {
+  ion-content{
+    height: 100%;
+    width: 100%;
+  }
   /*homediv responsive backgrnd full*/
   #homediv {
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     background-image: url("../../assets/images/img5.jpg");
     background-position: center center;
     background-repeat: no-repeat;
