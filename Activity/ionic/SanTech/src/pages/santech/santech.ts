@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, Nav, Platform, ModalController } from 'ionic-angular';
 
+import { TranslateService } from '@ngx-translate/core';
+
 import { HomePage } from '../home/home';
 import { ListPage } from '../list/list';
 import { LoginPage } from '../login/login';
@@ -24,7 +26,10 @@ export class SantechPage {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform,public modalCtrl: ModalController) {
+  constructor(public platform: Platform,public modalCtrl: ModalController, public translate: TranslateService) {
+    
+    let browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|tamil/) ? browserLang : 'en');
 
     // used for an example of ngFor and navigation
     this.pages = [

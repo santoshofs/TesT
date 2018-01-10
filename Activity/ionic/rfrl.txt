@@ -1,1 +1,3 @@
 https://alligator.io/ionic/modals/
+
+http://digitalsolutionsblog.com/how-to-add-multi-language-support-to-ionic-3-app-i18n/
