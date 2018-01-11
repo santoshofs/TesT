@@ -11,14 +11,17 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content class="menuContent">
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
     </ion-list>
+    <ion-footer>
+      <button (click)="translate.use('tamil')" id="LangBtn">{{'BUTTON_LANG_TAMIL' | translate }}</button>
+      <button (click)="translate.use('en')" id="LangBtn">{{'BUTTON_LANG_EN' | translate }}</button>
+    </ion-footer>
   </ion-content>
-
 </ion-menu>
 
 <ion-header class="bar bar-header bar-positive">
@@ -37,7 +40,7 @@
   <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
 </ion-content>
 
-<ion-footer>
+<!-- <ion-footer>
   <button (click)="translate.use('tamil')" id="LangBtn">{{'BUTTON_LANG_TAMIL' | translate }}</button>
   <button (click)="translate.use('en')" id="LangBtn">{{'BUTTON_LANG_EN' | translate }}</button>
-</ion-footer>
+</ion-footer> -->
