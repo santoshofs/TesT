@@ -16,6 +16,8 @@ import { SignupPage } from "../signup/signup";
 })
 export class LoginPage {
 
+  loginCredentials = { email: '', password: '' };
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,public modalCtrl: ModalController) {
   }
   closeModal() {
@@ -29,5 +31,7 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-
+  logForm(form) {
+   console.log(form.value)
+ }
 }

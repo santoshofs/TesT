@@ -9,12 +9,58 @@
   <ion-navbar>
     <ion-title>login</ion-title>
   </ion-navbar>
-
 </ion-header> -->
 
 
 <ion-content padding>
-  login modal
+  <div class="col-sm-12" id="loginmodaltext">
+    {{ 'Welcome_Back' | translate }}
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form #form="ngForm" (ngSubmit)="logForm(form)" ngNativeValidate>
+      <ion-item>
+        <ion-label><img src="../../assets/images/mailicon.ico" alt="" id="customicons" /></ion-label>
+        <ion-input type="email" id="email1" #loginEmail="ngModel" name="email" [(ngModel)]="loginCredentials.email" placeholder="{{ 'Email' | translate }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label><img src="../../assets/images/key.png" alt="" id="customicons" /></ion-label>
+        <ion-input type="password" id="exampleInputPassword1" #loginPassword="ngModel" name="password" [(ngModel)]="loginCredentials.password" placeholder="{{ 'Password' | translate }}" required></ion-input>
+      </ion-item>
+      <input type="submit" class="btn btn-primary btn-sm" value="{{ 'Login' | translate }}">
+    </form>
+    <div id="footerModal">
+      {{ 'Not_reg_yet' | translate }}
+      <button id="registercmnt"><a (click)="closeModal();registrationModal()">{{ 'Register_Now' | translate }}</a></button>
+    </div> -->
+  <!-- <div id="LoginForm">
+    <form role="form" class="form-horizontal" #loginForm="ngForm" (ngSubmit)="login(loginCredentials);closeModal()" ngNativeValidate>
+      <div class="form-group input-group col-sm-12">
+        <div class="col-sm-12" id="iconinherit">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <input type="email" class="form-control" id="email1" #loginEmail="ngModel" name="email" [(ngModel)]="loginCredentials.email" placeholder="{{ 'Email' | translate }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required />
+        </div>
+      </div>
+
+      <div class="form-group input-group col-sm-12">
+        <div class="col-sm-12 " id="iconinherit">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input type="password" class="form-control" id="exampleInputPassword1" #loginPassword="ngModel" name="password" [(ngModel)]="loginCredentials.password" placeholder="{{ 'Password' | translate }}" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <input type="submit" class="btn btn-primary btn-sm" value="{{ 'Login' | translate }}">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="footerModal">
+    {{ 'Not_reg_yet' | translate }} <button id="registercmnt"><a (click)="loginModal.close();signupModal.open()">{{ 'Register_Now' | translate }}</a></button>
+  </div> -->
+  <!-- login modal
   <button ion-button block (click)="closeModal()">Close Modal</button>
-  <button ion-button block (click)="registrationModal()">reg Modal</button>
+  <button ion-button block (click)="registrationModal()">reg Modal</button> -->
 </ion-content>
