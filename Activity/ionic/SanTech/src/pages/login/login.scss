@@ -1,13 +1,25 @@
 page-login {
- ion-content{
- }
- .label-md {
-    margin: 2% 0px 2% 0;
-}
-.text-input-md {
-    margin: 0px;
+  text-align: center;
+
+  ion-content {}
+
+  .label-md {
+    margin: 2% 0;
   }
- #customicons {
-  width: 40px;
-}
+
+  .text-input-md {
+    margin: 0;
+  }
+  #modalHeader{
+    font-size: x-large;
+  }
+  .close{
+    font-size: larger;
+  }
+  #customicons {
+    width: 40px;
+  }
+  #FormSubmit{
+    margin: 5% 0% 5% 0%;
+  }
 }

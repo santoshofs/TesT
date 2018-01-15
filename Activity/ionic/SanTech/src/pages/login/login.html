@@ -13,27 +13,31 @@
 
 
 <ion-content padding>
-  <div class="col-sm-12" id="loginmodaltext">
+
+  <div class="col-sm-12" id="modalHeader">
     {{ 'Welcome_Back' | translate }}
     <button type="button" class="close" aria-label="Close" (click)="closeModal()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+
   <form #form="ngForm" (ngSubmit)="logForm(form)" ngNativeValidate>
-      <ion-item>
-        <ion-label><img src="../../assets/images/mailicon.ico" alt="" id="customicons" /></ion-label>
-        <ion-input type="email" id="email1" #loginEmail="ngModel" name="email" [(ngModel)]="loginCredentials.email" placeholder="{{ 'Email' | translate }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label><img src="../../assets/images/key.png" alt="" id="customicons" /></ion-label>
-        <ion-input type="password" id="exampleInputPassword1" #loginPassword="ngModel" name="password" [(ngModel)]="loginCredentials.password" placeholder="{{ 'Password' | translate }}" required></ion-input>
-      </ion-item>
-      <input type="submit" class="btn btn-primary btn-sm" value="{{ 'Login' | translate }}">
-    </form>
-    <div id="footerModal">
-      {{ 'Not_reg_yet' | translate }}
-      <button id="registercmnt"><a (click)="closeModal();registrationModal()">{{ 'Register_Now' | translate }}</a></button>
-    </div> -->
+    <ion-item>
+      <ion-label><img src="../../assets/images/mailicon.ico" alt="" id="customicons" /></ion-label>
+      <ion-input type="email" #loginEmail="ngModel" name="email" [(ngModel)]="loginCredentials.email" placeholder="{{ 'Email' | translate }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><img src="../../assets/images/key.png" alt="" id="customicons" /></ion-label>
+      <ion-input type="password" #loginPassword="ngModel" name="password" [(ngModel)]="loginCredentials.password" placeholder="{{ 'Password' | translate }}" required></ion-input>
+    </ion-item>
+    <input id="FormSubmit" type="submit" class="btn btn-primary btn-sm" value="{{ 'Login' | translate }}">
+  </form>
+
+  <div id="footerModal">
+    {{ 'Not_reg_yet' | translate }}
+    <button id="registercmnt"><a (click)="registrationModal()">{{ 'Register_Now' | translate }}</a></button>
+  </div>
+
   <!-- <div id="LoginForm">
     <form role="form" class="form-horizontal" #loginForm="ngForm" (ngSubmit)="login(loginCredentials);closeModal()" ngNativeValidate>
       <div class="form-group input-group col-sm-12">
@@ -60,7 +64,7 @@
   <div id="footerModal">
     {{ 'Not_reg_yet' | translate }} <button id="registercmnt"><a (click)="loginModal.close();signupModal.open()">{{ 'Register_Now' | translate }}</a></button>
   </div> -->
-  <!-- login modal
-  <button ion-button block (click)="closeModal()">Close Modal</button>
+  <!-- login modal -->
+  <!-- <button ion-button block (click)="closeModal()">Close Modal</button>
   <button ion-button block (click)="registrationModal()">reg Modal</button> -->
 </ion-content>
