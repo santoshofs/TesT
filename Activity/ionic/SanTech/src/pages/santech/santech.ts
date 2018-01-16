@@ -23,11 +23,12 @@ export class SantechPage {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
+  userName: string;
 
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform,public modalCtrl: ModalController, public translate: TranslateService) {
-    
+
     let browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|tamil/) ? browserLang : 'en');
 
@@ -48,6 +49,16 @@ export class SantechPage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SantechPage');
+  }
+
+  userAccount(){
+    this.userName = (sessionStorage.getItem('user_Name'));
+    if(this.userName != null){
+      console.log("testasfaf");
+    }
+    else{
+      this.openModal();
+    }
   }
 
 }
