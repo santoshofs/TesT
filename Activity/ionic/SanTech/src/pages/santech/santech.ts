@@ -6,6 +6,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { HomePage } from '../home/home';
 import { ListPage } from '../list/list';
 import { LoginPage } from '../login/login';
+import { UserPage } from '../user/user';
+
 
 /**
  * Generated class for the SantechPage page.
@@ -35,7 +37,7 @@ export class SantechPage {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }   ];
+      { title: 'List', component: ListPage }  ];
 
   }
   openPage(page) {
@@ -54,7 +56,7 @@ export class SantechPage {
   userAccount(){
     this.userName = (sessionStorage.getItem('user_Name'));
     if(this.userName != null){
-      console.log("testasfaf");
+      this.nav.setRoot(UserPage);
     }
     else{
       this.openModal();

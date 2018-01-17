@@ -10,8 +10,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SantechPage } from '../pages/santech/santech';
-import { LoginPage } from "../pages/login/login";
-import { SignupPage } from "../pages/signup/signup";
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { UserPage } from '../pages/user/user';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +29,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ListPage,
     SantechPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    UserPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         deps: [HttpClient]
         }
       }
-    ) 
+    )
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -50,7 +52,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ListPage,
     SantechPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    UserPage
   ],
   providers: [
     StatusBar,
