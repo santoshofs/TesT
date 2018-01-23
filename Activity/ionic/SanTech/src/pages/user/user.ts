@@ -23,4 +23,15 @@ export class UserPage {
     console.log('ionViewDidLoad UserPage');
     this.userName = (window.sessionStorage.getItem('user_Name'));
   }
+
+  signOut(){
+    sessionStorage.clear();
+    // this.preSignin = !this.preSignin;
+    // this.postSignin = !this.postSignin;
+    // alert(this.translate.instant('We_Miss_You'));
+    // if(this.route.url == "/santech/user"){
+    //   this.route.navigate(['santech/home']);
+    // }
+  }
+
 }
