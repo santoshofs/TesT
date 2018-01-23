@@ -1,6 +1,7 @@
 page-login {
   text-align: center;
 
+
   ion-content {}
 
   .label-md {
@@ -9,6 +10,9 @@ page-login {
 
   .text-input-md {
     margin: 0;
+  }
+  .formPosition{
+    margin-top: 25%;
   }
   #modalHeader{
     font-size: x-large;

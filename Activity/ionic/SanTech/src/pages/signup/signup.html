@@ -24,7 +24,7 @@
     </button>
   </div>
 
-  <form #form="ngForm" (ngSubmit)="signup(signupCredentials)" ngNativeValidate>
+  <form class="formPosition" #form="ngForm" (ngSubmit)="signup(signupCredentials)" ngNativeValidate>
     <ion-item>
       <ion-label><img src="../../assets/images/usericon.png" alt="" id="customicons" /></ion-label>
       <ion-input type="text" #signupName="ngModel" name="name" [(ngModel)]="signupCredentials.name" placeholder="{{ 'Name' | translate }}" pattern="[A-Za-z\s]{3,20}" title="{{ 'name_validator_msg' | translate }}" required></ion-input>

@@ -21,7 +21,7 @@
     </button>
   </div>
 
-  <form #form="ngForm" (ngSubmit)="login(loginCredentials)" ngNativeValidate>
+  <form class="formPosition" #form="ngForm" (ngSubmit)="login(loginCredentials)" ngNativeValidate>
     <ion-item>
       <ion-label><img src="../../assets/images/mailicon.ico" alt="" id="customicons" /></ion-label>
       <ion-input type="email" #loginEmail="ngModel" name="email" [(ngModel)]="loginCredentials.email" placeholder="{{ 'Email' | translate }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required></ion-input>
