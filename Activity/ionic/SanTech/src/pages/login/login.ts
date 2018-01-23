@@ -59,14 +59,15 @@ export class LoginPage {
           // this.postSignin = !this.postSignin;
           console.log("success");
           console.log(response);
-          this.user_Name = response['user'].name;
-          this.user_Mail = response['user'].email;
-          this.user_Id = response['user'].id;
-          this.user_Phone = response['user'].phone;
-          sessionStorage.setItem('user_Name', this.user_Name);
-          sessionStorage.setItem('user_Mail', this.user_Mail);
-          sessionStorage.setItem('user_ID', this.user_Id);
-          sessionStorage.setItem('user_Phone', this.user_Phone);
+          // this.user_Name = response['user'].name;
+          // this.user_Mail = response['user'].email;
+          // this.user_Id = response['user'].id;
+          // this.user_Phone = response['user'].phone;
+          sessionStorage.setItem('user_Name', response['user'].name);
+          sessionStorage.setItem('user_Mail', response['user'].email);
+          sessionStorage.setItem('user_ID', response['user'].id);
+          sessionStorage.setItem('user_Phone', response['user'].phone);
+          this.closeModal();
         }
         else {
           this.loginfailureAlert();
