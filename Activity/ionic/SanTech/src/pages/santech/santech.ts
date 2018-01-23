@@ -27,9 +27,12 @@ export class SantechPage {
   rootPage: any = HomePage;
   userName: string;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform,public modalCtrl: ModalController, public translate: TranslateService) {
+  constructor(
+    public platform: Platform,
+    public modalCtrl: ModalController,
+    public translate: TranslateService) {
 
     let browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|tamil/) ? browserLang : 'en');
@@ -37,8 +40,8 @@ export class SantechPage {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }  ];
-
+      { title: 'List', component: ListPage }
+    ];
   }
   openPage(page) {
     // Reset the content nav to have just this page
@@ -53,12 +56,12 @@ export class SantechPage {
     console.log('ionViewDidLoad SantechPage');
   }
 
-  userAccount(){
+  userAccount() {
     this.userName = (sessionStorage.getItem('user_Name'));
-    if(this.userName != null){
+    if (this.userName != null) {
       this.nav.setRoot(UserPage);
     }
-    else{
+    else {
       this.openModal();
     }
   }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, Nav, NavController, NavParams, AlertController } from 'ionic-angular';
+
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the UserPage page.
@@ -14,9 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'user.html',
 })
 export class UserPage {
-  userName : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  userName: any;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public Nav: Nav,
+    private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -24,14 +31,28 @@ export class UserPage {
     this.userName = (window.sessionStorage.getItem('user_Name'));
   }
 
-  signOut(){
-    sessionStorage.clear();
-    // this.preSignin = !this.preSignin;
-    // this.postSignin = !this.postSignin;
-    // alert(this.translate.instant('We_Miss_You'));
-    // if(this.route.url == "/santech/user"){
-    //   this.route.navigate(['santech/home']);
-    // }
+  signOut() {
+    let alert = this.alertCtrl.create({
+      title: 'We Will Miss You !',
+      message: 'Are you sure to Sign out ?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Sign Out',
+          handler: () => {
+            sessionStorage.clear();
+            this.Nav.setRoot(HomePage);
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }

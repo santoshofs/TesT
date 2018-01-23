@@ -1,3 +1,28 @@
 page-signup {
+  text-align: center;
+
+  ion-content {}
+
+  .label-md {
+    margin: 2% 0;
+  }
+
+  .text-input-md {
+    margin: 0;
+  }
+  #modalHeader{
+    font-size: x-large;
+  }
+  .close{
+    font-size: larger;
+    color: red;
+    opacity: 0.6;
+  }
+  #customicons {
+    width: 40px;
+  }
+  #FormSubmit{
+    margin: 5% 0% 5% 0%;
+  }
 
 }

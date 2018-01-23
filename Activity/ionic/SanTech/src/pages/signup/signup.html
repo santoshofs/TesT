@@ -4,17 +4,48 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<!-- <ion-header>
 
   <ion-navbar>
     <ion-title>signup</ion-title>
   </ion-navbar>
 
-</ion-header>
+</ion-header> -->
 
 
 <ion-content padding>
-  registrationModal modal
+  <!-- registrationModal modal
   <button ion-button block (click)="closeModal()">Close Modal</button>
-  <button ion-button block (click)="loginModal()">Login Modal</button>
+  <button ion-button block (click)="loginModal()">Login Modal</button> -->
+  <div class="col-sm-12" id="modalHeader">
+    {{ 'Welcome' | translate }}
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <form #form="ngForm" (ngSubmit)="signup(signupCredentials)" ngNativeValidate>
+    <ion-item>
+      <ion-label><img src="../../assets/images/usericon.png" alt="" id="customicons" /></ion-label>
+      <ion-input type="text" #signupName="ngModel" name="name" [(ngModel)]="signupCredentials.name" placeholder="{{ 'Name' | translate }}" pattern="[A-Za-z\s]{3,20}" title="{{ 'name_validator_msg' | translate }}" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><img src="../../assets/images/mailicon.ico" alt="" id="customicons" /></ion-label>
+      <ion-input type="email" #signupEmail="ngModel" name="email" [(ngModel)]="signupCredentials.email" placeholder="{{ 'Email' | translate }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><img src="../../assets/images/key.png" alt="" id="customicons" /></ion-label>
+      <ion-input type="password" #signupPassword="ngModel" name="password" [(ngModel)]="signupCredentials.password" placeholder="{{ 'Password' | translate }}" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><img src="../../assets/images/phone.png" alt="" id="customicons" /></ion-label>
+      <ion-input type="number" #signupPhone="ngModel" name="phone" [(ngModel)]="signupCredentials.phone" placeholder="{{ 'Mobile' | translate }}" pattern="[0-9]{10}" title="{{ 'phone_validator_msg' | translate }}" required></ion-input>
+    </ion-item>
+    <input id="FormSubmit" type="submit" class="btn btn-primary btn-sm" value="{{ 'GET_STARTED' | translate }}">
+  </form>
+
+  <div id="footerModal">
+    {{ 'Already_reg' | translate }}
+    <button id="registercmnt"><a (click)="loginModal()">{{ 'SignIn_Now' | translate }}</a></button>
+  </div>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController, AlertController  } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController, AlertController } from 'ionic-angular';
 
 import { SignupPage } from "../signup/signup";
 
@@ -19,12 +19,7 @@ import { UserProvider } from '../../providers/user/user';
 })
 export class LoginPage {
 
-  userName: string;
   loginCredentials = { email: '', password: '' };
-  user_Name: any;
-  user_Mail: any;
-  user_Id: any;
-  user_Phone: any;
 
   constructor(
     public navCtrl: NavController,
@@ -46,27 +41,18 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-  logForm(form) {
-    console.log(form.value)
-  }
-
   login(loginCredentials) {
     console.log(loginCredentials.email);
     this.userprovider.login(loginCredentials).subscribe(
       response => {
         if (response['status'] == 'success') {
-          // this.preSignin = !this.preSignin;
-          // this.postSignin = !this.postSignin;
           console.log("success");
           console.log(response);
-          // this.user_Name = response['user'].name;
-          // this.user_Mail = response['user'].email;
-          // this.user_Id = response['user'].id;
-          // this.user_Phone = response['user'].phone;
           sessionStorage.setItem('user_Name', response['user'].name);
           sessionStorage.setItem('user_Mail', response['user'].email);
           sessionStorage.setItem('user_ID', response['user'].id);
           sessionStorage.setItem('user_Phone', response['user'].phone);
+          this.loginsuccessAlert();
           this.closeModal();
         }
         else {
@@ -79,12 +65,19 @@ export class LoginPage {
       }
     )
   }
+  loginsuccessAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Welcome Back 😍',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
   loginfailureAlert() {
-  let alert = this.alertCtrl.create({
-    title: 'Login Failed',
-    subTitle: 'Check user credentials.!',
-    buttons: ['Dismiss']
-  });
-  alert.present();
-}
+    let alert = this.alertCtrl.create({
+      title: 'Login Failed',
+      subTitle: 'Check user credentials.!',
+      buttons: ['Dismiss']
+    });
+    alert.present();
+  }
 }
