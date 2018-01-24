@@ -2,11 +2,15 @@ page-santech {
   /*font imports*/
   @import url('https://fonts.googleapis.com/css?family=Great+Vibes|Merienda+One|Lily+Script+One|Montez|Rokkitt|Alegreya+Sans+SC|Berkshire+Swash|Chelsea+Market|Courgette|Kaushan+Script|Satisfy|Libre+Barcode+128+Text|Merienda+One|Bree+Serif|Acme|Patua+One');
   /*Santech Brand*/
+  .toolbar-background {
+    background-color: #0e0e0e;
+  }
+
   #brandhear {
     font-family: 'Great Vibes', cursive;
   }
 
-  .ion-md-finger-print {
+  .icon {
     font-size: xx-large;
     color: rgba(248, 182, 135, 1);
   }
@@ -30,15 +34,11 @@ page-santech {
     background-color: rgb(16, 17, 16) !important;
     color: rgba(248, 182, 135, 1);
   }
-
+  $background-ios-color : rgb(16, 17, 16) !important;
   .item-md {
-    padding-left: 0%;
+    padding-left: 0;
     font-family: 'Berkshire Swash', cursive;
     font-size: 3rem;
     background-color: rgb(16, 17, 16) !important;
-  }
-
-  .toolbar-background {
-    background-color: #0e0e0e;
   }
 }
