@@ -4,14 +4,14 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-menu [content]="content">
+<ion-menu [content]="content" type="overlay">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar class="toolbar">
       <ion-title id="brandhear">Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content class="menuContent">
+  <ion-content class="menuContent .no-scroll">
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
