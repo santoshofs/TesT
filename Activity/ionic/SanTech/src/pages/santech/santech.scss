@@ -9,7 +9,9 @@ page-santech {
   #brandhear {
     font-family: 'Great Vibes', cursive;
   }
-
+  .LangBtn{
+    color: rgba(248, 182, 135, 1);
+  }
   .icon {
     font-size: xx-large;
     color: rgba(248, 182, 135, 1);
@@ -25,10 +27,6 @@ page-santech {
     font-size: 2rem;
     font-family: 'Merienda One', cursive;
     color: rgba(248, 182, 135, 1);
-  }
-  .no-scroll .scroll-content {
-    overflow: auto !important;
-    padding-top: 0px !important;
   }
 
   .bar-button {
@@ -48,6 +46,11 @@ page-santech {
     background-color: rgb(16, 17, 16) !important;
   }
   .item-inner{
-    padding-right: 0px;
+    padding-right: 0px!important;
+  }
+  .scroll-content {
+    overflow: auto !important;
+    overflow-y: auto !important;
+    padding-top: 0px !important;
   }
 }

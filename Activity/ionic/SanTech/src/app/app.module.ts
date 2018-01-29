@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SantechPage } from '../pages/santech/santech';
+import { FlightPage } from '../pages/flight/flight'; 
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { UserPage } from '../pages/user/user';
@@ -28,6 +29,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HomePage,
     ListPage,
     SantechPage,
+    FlightPage,
     LoginPage,
     SignupPage,
     UserPage
@@ -51,6 +53,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HomePage,
     ListPage,
     SantechPage,
+    FlightPage,
     LoginPage,
     SignupPage,
     UserPage

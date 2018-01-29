@@ -4,6 +4,7 @@ import { IonicPage, Nav, Platform, ModalController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 
 import { HomePage } from '../home/home';
+import { FlightPage } from '../flight/flight';
 import { ListPage } from '../list/list';
 import { LoginPage } from '../login/login';
 import { UserPage } from '../user/user';
@@ -40,6 +41,7 @@ export class SantechPage {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
+      { title: 'Flights', component: FlightPage },
       { title: 'List', component: ListPage }
     ];
   }
