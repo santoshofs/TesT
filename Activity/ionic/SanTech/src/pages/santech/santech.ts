@@ -40,9 +40,9 @@ export class SantechPage {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Flights', component: FlightPage },
-      { title: 'List', component: ListPage }
+      { title: 'HOME', component: HomePage },
+      { title: 'FLIGHTS', component: FlightPage },
+      { title: 'HOTELS', component: ListPage }
     ];
   }
   openPage(page) {

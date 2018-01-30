@@ -14,8 +14,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'flight.html',
 })
 export class FlightPage {
+
   today: any = new Date();
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  cities = ['CHENNAI', 'DELHI', 'MUMBAI', 'KOLKATA'];
+  searchCredentials = { from: '', to: '', date: '' };
+  availableFlights: any;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
