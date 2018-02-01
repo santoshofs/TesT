@@ -7,3 +7,10 @@ service/provider
 https://www.djamware.com/post/58e657b680aca764ec903c2d/ionic-3-and-angular-4-mobile-app-example
 https://www.joshmorony.com/when-to-use-providersservicesinjectables-in-ionic/
 https://www.joshmorony.com/an-in-depth-explanation-of-providers-in-ionic-2/
+
+
+autocomplete search select
+
+https://www.tomislavstankovic.com/blog/ionic-3-autocomplete-select-search/
+
+https://forum.ionicframework.com/t/ion-select-with-searchbar/89255

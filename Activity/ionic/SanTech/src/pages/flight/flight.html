@@ -23,22 +23,24 @@
   <P>
     {{today | date:'yyyy-MM-dd'}}
   </P>
+  <ion-item>
+  <ion-label>Employee</ion-label>
+  <ion-select [(ngModel)]="employee">
+    <ion-option >bvjbcvjb</ion-option>
+  </ion-select>
+</ion-item>
   <form class="formPosition" #flightSearchForm="ngForm" (ngSubmit)="flightsearch(searchCredentials)" ngNativeValidate>
     <ion-item>
       <ion-label><img src="../../assets/images/usericon.png" alt="" id="customicons" /></ion-label>
-      <ion-input type="text" #signupName="ngModel" name="name" [(ngModel)]="searchCredentials.name" placeholder="{{ 'Name' | translate }}" pattern="[A-Za-z\s]{3,20}" title="{{ 'name_validator_msg' | translate }}" required></ion-input>
+      <ion-input type="text" #signupName="ngModel" name="name" [(ngModel)]="searchCredentials.from" placeholder="{{ 'Name' | translate }}" pattern="[A-Za-z\s]{3,20}" title="{{ 'name_validator_msg' | translate }}" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label><img src="../../assets/images/mailicon.ico" alt="" id="customicons" /></ion-label>
-      <ion-input type="email" #signupEmail="ngModel" name="email" [(ngModel)]="searchCredentials.email" placeholder="{{ 'Email' | translate }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required></ion-input>
+      <ion-input type="email" #signupEmail="ngModel" name="email" [(ngModel)]="searchCredentials.to" placeholder="{{ 'Email' | translate }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="{{ 'email_validator_msg' | translate }}" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label><img src="../../assets/images/key.png" alt="" id="customicons" /></ion-label>
       <ion-input type="password" #signupPassword="ngModel" name="password" [(ngModel)]="searchCredentials.date" placeholder="{{ 'Password' | translate }}" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label><img src="../../assets/images/phone.png" alt="" id="customicons" /></ion-label>
-      <ion-input type="number" #signupPhone="ngModel" name="phone" [(ngModel)]="signupCredentials.phone" placeholder="{{ 'Mobile' | translate }}" pattern="[0-9]{10}" title="{{ 'phone_validator_msg' | translate }}" required></ion-input>
     </ion-item>
     <input id="FormSubmit" type="submit" class="btn btn-primary btn-sm" value="{{ 'GET_STARTED' | translate }}">
   </form>
